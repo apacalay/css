@@ -181,13 +181,26 @@
       const builders = [...new Set(filteredData.map(d => d.base_builder))];
       builderSelect.innerHTML = '<option>All</option>' + builders.map(b => `<option>${b}</option>`).join('');
     }
+	
+	function parseDate(str) {
+	  const [day, month, year] = str.split("/");
+	  return new Date(`${year}-${month}-${day}`);
+	}
+	
 
     function renderCards() {
       let filtered = data.filter(d =>
         (filterTH === 'All' || d.base_th === filterTH) &&
-        (filterBuilder === 'All' || d.base_builder === filterBuilder)
+        (filterBuilder === 'All' || d.base_build === filterBuilder)
       );
-      filtered.sort((a, b) => sortOrder === 'newest' ? new Date(b.date) - new Date(a.date) : new Date(a.date) - new Date(b.date));
+
+		filtered.sort((a, b) => {
+		  const dateA = parseDate(a.date);
+		  const dateB = parseDate(b.date);
+		  return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+		});
+
+
 
       const container = document.getElementById('cardContainer');
       container.innerHTML = '';
