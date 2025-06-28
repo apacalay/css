@@ -191,7 +191,7 @@
     function renderCards() {
       let filtered = data.filter(d =>
         (filterTH === 'All' || d.base_th === filterTH) &&
-        (filterBuilder === 'All' || d.base_build === filterBuilder)
+        (filterBuilder === 'All' || d.base_builder === filterBuilder)
       );
 
 		filtered.sort((a, b) => {
