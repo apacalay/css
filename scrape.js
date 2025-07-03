@@ -5,7 +5,7 @@ const skpdId = process.argv[2];  // ID SKPD dari argumen CLI
 const kodeRekening = process.argv[3]; // kode rekening juga dari argumen CLI
 
 const URL = 'https://service.sipd.kemendagri.go.id/aklap/api/buku-besar/list';
-const BEARER = "Bearer eyJhbGciOi..."; // potong untuk singkat
+const BEARER = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTSVBEX0FVVEhfU0VSVklDRSIsInN1YiI6IjMxNjYyOS4xMjYiLCJleHAiOjE3NTE2MzUxNTMsImlhdCI6MTc1MTQxOTE1MywidGFodW4iOjIwMjQsImlkX3VzZXIiOjMxNjYyOSwiaWRfZGFlcmFoIjoxMjYsImtvZGVfcHJvdmluc2kiOiIxMSIsImtvZGVfZGRuIjoiMTEuMDciLCJpZF9za3BkIjowLCJpZF9yb2xlIjoxOSwiaWRfcGVnYXdhaSI6MzIyODU3LCJzdWJfZG9tYWluX2RhZXJhaCI6InBpZGlla2FiIn0.YQPYCyt4cJgncJNpRW-rp-jJi-7Len5rkNKWGPK5D08"; // potong untuk singkat
 const headers = {
   'Authorization': BEARER,
   'Content-Type': 'application/json;charset=UTF-8',
