@@ -12,8 +12,18 @@
   <button onclick="hitungSelisih()">Hitung Selisih</button>
 
   <p id="result"></p>
+  <h3>Selisih LastUpdated (dari API ClashChamps)</h3>
+  <div id="api-results"></div>
 
   <script>
+    function formatSelisih(ms) {
+      const detik = Math.floor(ms / 1000);
+      const menit = Math.floor(detik / 60);
+      const jam = Math.floor(menit / 60);
+      const hari = Math.floor(jam / 24);
+      return `${hari} hari, ${Math.abs(jam % 24)} jam, ${Math.abs(menit % 60)} menit, ${Math.abs(detik % 60)} detik`;
+    }
+
     function hitungSelisih() {
       const input = document.getElementById("datetime").value.trim();
 
@@ -22,37 +32,64 @@
         return;
       }
 
-      // Ubah format menjadi ISO dengan "T" dan tambahkan "Z" agar dianggap UTC
       const isoString = input.replace(" ", "T") + "Z";
-
       const inputDate = new Date(isoString);
+
       if (isNaN(inputDate.getTime())) {
         document.getElementById("result").textContent = "Format tidak valid. Gunakan: YYYY-MM-DD HH:MM:SS";
         return;
       }
 
       const nowUTC = new Date();
-
       const selisihMs = nowUTC.getTime() - inputDate.getTime();
-
-      const selisihDetik = Math.floor(selisihMs / 1000);
-      const selisihMenit = Math.floor(selisihDetik / 60);
-      const selisihJam = Math.floor(selisihMenit / 60);
-      const selisihHari = Math.floor(selisihJam / 24);
-
       const hasil = `
         Selisih waktu dengan UTC sekarang:
         <ul>
-          <li>${selisihHari} hari</li>
-          <li>${Math.abs(selisihJam % 24)} jam</li>
-          <li>${Math.abs(selisihMenit % 60)} menit</li>
-          <li>${Math.abs(selisihDetik % 60)} detik</li>
+          <li>${Math.floor(selisihMs / (1000 * 60 * 60 * 24))} hari</li>
+          <li>${Math.abs(Math.floor((selisihMs / (1000 * 60 * 60)) % 24))} jam</li>
+          <li>${Math.abs(Math.floor((selisihMs / (1000 * 60)) % 60))} menit</li>
+          <li>${Math.abs(Math.floor((selisihMs / 1000) % 60))} detik</li>
         </ul>
         (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})
       `;
 
       document.getElementById("result").innerHTML = hasil;
     }
+
+    async function ambilLastUpdated() {
+      const usernames = ['danz', 'akuntv', 'beli', 'moklhasot', 'artemici'];
+      const outputDiv = document.getElementById("api-results");
+
+      for (const user of usernames) {
+        try {
+          const response = await fetch(`https://api.clashchamps.com/api/base-layouts?perPage=1&sort[]=-Date&proBuilder[]=${user}&page=1`);
+          const data = await response.json();
+
+          const lastUpdatedStr = data?.data?.[0]?.LastUpdated;
+          if (lastUpdatedStr) {
+            const lastUpdatedDate = new Date(lastUpdatedStr.replace(" ", "T") + "Z");
+            const nowUTC = new Date();
+            const selisihMs = nowUTC.getTime() - lastUpdatedDate.getTime();
+            const hasil = formatSelisih(selisihMs);
+
+            const entry = document.createElement("p");
+            entry.innerHTML = `<strong>${user}</strong>: ${hasil} (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})`;
+            outputDiv.appendChild(entry);
+          } else {
+            const entry = document.createElement("p");
+            entry.innerHTML = `<strong>${user}</strong>: Tidak ada data LastUpdated.`;
+            outputDiv.appendChild(entry);
+          }
+        } catch (error) {
+          const entry = document.createElement("p");
+          entry.innerHTML = `<strong>${user}</strong>: Gagal mengambil data (${error.message})`;
+          outputDiv.appendChild(entry);
+        }
+      }
+    }
+
+    // Jalankan otomatis saat halaman dimuat
+    window.onload = ambilLastUpdated;
   </script>
 </body>
 </html>
