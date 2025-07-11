@@ -7,30 +7,34 @@
 <body>
   <h2>Hitung Selisih dengan Waktu UTC Sekarang</h2>
 
-  <label for="datetime">Masukkan Tanggal & Waktu (UTC):</label>
-  <input type="datetime-local" id="datetime" required>
+  <label for="datetime">Masukkan waktu UTC (format: YYYY-MM-DD HH:MM:SS):</label><br>
+  <input type="text" id="datetime" placeholder="Contoh: 2025-07-10 10:30:31">
   <button onclick="hitungSelisih()">Hitung Selisih</button>
 
   <p id="result"></p>
 
   <script>
     function hitungSelisih() {
-      const input = document.getElementById("datetime").value;
+      const input = document.getElementById("datetime").value.trim();
+
       if (!input) {
         document.getElementById("result").textContent = "Silakan masukkan tanggal dan waktu terlebih dahulu.";
         return;
       }
 
-      // Konversi input ke objek Date (anggap input dalam UTC)
-      const inputDate = new Date(input + "Z"); // tambahkan "Z" agar dianggap UTC
+      // Ubah format menjadi ISO dengan "T" dan tambahkan "Z" agar dianggap UTC
+      const isoString = input.replace(" ", "T") + "Z";
 
-      // Waktu UTC sekarang
+      const inputDate = new Date(isoString);
+      if (isNaN(inputDate.getTime())) {
+        document.getElementById("result").textContent = "Format tidak valid. Gunakan: YYYY-MM-DD HH:MM:SS";
+        return;
+      }
+
       const nowUTC = new Date();
 
-      // Hitung selisih dalam milidetik
       const selisihMs = nowUTC.getTime() - inputDate.getTime();
 
-      // Konversi ke detik, menit, jam, hari
       const selisihDetik = Math.floor(selisihMs / 1000);
       const selisihMenit = Math.floor(selisihDetik / 60);
       const selisihJam = Math.floor(selisihMenit / 60);
@@ -40,9 +44,9 @@
         Selisih waktu dengan UTC sekarang:
         <ul>
           <li>${selisihHari} hari</li>
-          <li>${selisihJam % 24} jam</li>
-          <li>${selisihMenit % 60} menit</li>
-          <li>${selisihDetik % 60} detik</li>
+          <li>${Math.abs(selisihJam % 24)} jam</li>
+          <li>${Math.abs(selisihMenit % 60)} menit</li>
+          <li>${Math.abs(selisihDetik % 60)} detik</li>
         </ul>
         (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})
       `;
