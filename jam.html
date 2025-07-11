@@ -60,7 +60,7 @@
       const usernames = ['danz', 'akuntv', 'beli', 'moklhasot', 'artemici'];
       const outputDiv = document.getElementById("api-results");
 
-      for (const user of usernames) {
+      const promises = usernames.map(async (user) => {
         try {
           const response = await fetch(`https://api.clashchamps.com/api/base-layouts?perPage=1&sort[]=-Date&proBuilder[]=${user}&page=1`);
           const data = await response.json();
@@ -72,23 +72,19 @@
             const selisihMs = nowUTC.getTime() - lastUpdatedDate.getTime();
             const hasil = formatSelisih(selisihMs);
 
-            const entry = document.createElement("p");
-            entry.innerHTML = `<strong>${user}</strong>: ${hasil} (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})`;
-            outputDiv.appendChild(entry);
+            return `<strong>${user}</strong>: ${hasil} (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})`;
           } else {
-            const entry = document.createElement("p");
-            entry.innerHTML = `<strong>${user}</strong>: Tidak ada data LastUpdated.`;
-            outputDiv.appendChild(entry);
+            return `<strong>${user}</strong>: Tidak ada data LastUpdated.`;
           }
         } catch (error) {
-          const entry = document.createElement("p");
-          entry.innerHTML = `<strong>${user}</strong>: Gagal mengambil data (${error.message})`;
-          outputDiv.appendChild(entry);
+          return `<strong>${user}</strong>: Gagal mengambil data (${error.message})`;
         }
-      }
+      });
+
+      const results = await Promise.all(promises);
+      outputDiv.innerHTML = results.map(r => `<p>${r}</p>`).join("");
     }
 
-    // Jalankan otomatis saat halaman dimuat
     window.onload = ambilLastUpdated;
   </script>
 </body>
