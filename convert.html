@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konversi Data Clash of Clans</title>
+    <style>
+        textarea, input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Konversi Data Base Clash of Clans</h2>
+
+<label for="startID">ID Awal:</label>
+<input type="number" id="startID" placeholder="Contoh: 18760">
+
+<label for="rawData">Masukkan Data Mentah:</label>
+<textarea id="rawData" rows="10" placeholder="[3607] 1341|https://link...|Builder|2025-07-05 00:06:08|UUID..."></textarea>
+
+<button onclick="convertData()">Konversi</button>
+
+<h3>Hasil:</h3>
+<pre id="output"></pre>
+
+<script>
+function convertData() {
+    const startID = parseInt(document.getElementById('startID').value);
+    const raw = document.getElementById('rawData').value.trim();
+    const lines = raw.split('\n');
+    const results = [];
+
+    let currentID = startID;
+
+    for (let line of lines) {
+        const parts = line.split('|');
+        if (parts.length < 4) continue;
+
+        const url = parts[1];
+        const builder = parts[2];
+        const dateRaw = parts[3].split(' ')[0];
+        const uuid = parts[4] || '';
+        const thMatch = url.match(/id=(TH\d+)/);
+        const baseTH = thMatch ? thMatch[1] : 'Unknown';
+
+        const formattedDate = dateRaw.split('-').reverse().join('/');
+
+        results.push({
+            ID: currentID++,
+            base_url: url,
+            base_th: baseTH,
+            base_builder: builder,
+            date: formattedDate,
+            image: `https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/${uuid}/image1920`
+        });
+    }
+
+    document.getElementById('output').textContent = JSON.stringify(results, null, 4);
+}
+</script>
+
+</body>
+</html>
