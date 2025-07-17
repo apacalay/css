@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>COC Link Converter</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+    }
+
+    textarea {
+      font-family: monospace;
+      min-height: 100px;
+    }
+
+    button {
+      background: #2d89ef;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #1b5fc6;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Clash of Clans Link Converter</h2>
+
+    <label for="judul">Judul Output:</label>
+    <input type="text" id="judul" placeholder="Contoh: BEST TH14 WAR BASE">
+
+    <label for="nomor">Nomor Awal:</label>
+    <input type="number" id="nomor" value="1">
+
+    <label for="manualSource">Link Sumber Manual (untuk base tanpa redirect YouTube):</label>
+    <input type="text" id="manualSource" placeholder="https://www.youtube.com/watch?v=xxxxxxx">
+
+    <label for="input">Masukkan Link-Link (satu per baris):</label>
+    <textarea id="input" placeholder="Paste link YouTube redirect atau base layout di sini..."></textarea>
+
+    <button onclick="convert()">Convert</button>
+
+    <label for="output">Hasil Output:</label>
+    <textarea id="output" readonly placeholder="Hasil akan muncul di sini..."></textarea>
+
+    <div class="footer-note">Made with ❤️</div>
+  </div>
+
+  <script>
+    function extractRealLink(link) {
+      try {
+        const url = new URL(link);
+        const realLink = url.searchParams.get("q");
+        const videoID = url.searchParams.get("v");
+        const finalLink = realLink || link;
+        const ytLink = videoID ? `https://www.youtube.com/watch?v=${videoID}` : "";
+        return { layoutLink: finalLink, youtubeLink: ytLink };
+      } catch (e) {
+        return { layoutLink: link, youtubeLink: "" };
+      }
+    }
+
+    function convert() {
+      const lines = document.getElementById("input").value.trim().split('\n');
+      const judul = document.getElementById("judul").value.trim();
+      const manualSource = document.getElementById("manualSource").value.trim();
+      let nomor = parseInt(document.getElementById("nomor").value);
+      let hasil = "";
+
+      lines.forEach(line => {
+        line = line.trim();
+        if (!line) return;
+
+        let layoutLink = "";
+        let youtubeLink = "";
+
+        if (line.includes("youtube.com/redirect")) {
+          const result = extractRealLink(line);
+          layoutLink = result.layoutLink;
+          youtubeLink = result.youtubeLink;
+        } else if (line.includes("link.clashofclans.com")) {
+          layoutLink = line;
+          youtubeLink = manualSource;
+        } else if (/^TH\d{2}:[A-Z]+:/.test(line)) {
+          const encodedID = encodeURIComponent(line);
+          layoutLink = `https://link.clashofclans.com/en?action=OpenLayout&id=${encodedID}`;
+          youtubeLink = manualSource;
+        } else {
+          layoutLink = line;
+          youtubeLink = manualSource;
+        }
+
+        hasil += `${layoutLink}|||${judul}|||${nomor}.png|||${youtubeLink}\n`;
+        nomor++;
+      });
+
+      document.getElementById("output").value = hasil.trim();
+    }
+  </script>
+</body>
+</html>
