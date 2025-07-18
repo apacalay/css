@@ -37,7 +37,9 @@
       color: #444;
     }
 
-    input, textarea {
+    input[type="text"],
+    input[type="number"],
+    textarea {
       width: 100%;
       padding: 10px;
       font-size: 12px;
@@ -49,6 +51,18 @@
     textarea {
       font-family: monospace;
       min-height: 100px;
+    }
+
+    .checkbox-group {
+      margin-top: 15px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: #444;
+      gap: 8px;
     }
 
     button {
@@ -87,8 +101,12 @@
     <label for="nomor">Nomor Awal:</label>
     <input type="number" id="nomor" value="1">
 
-    <label for="manualSource">Link Sumber Manual (untuk base tanpa redirect YouTube):</label>
+    <label for="manualSource">Link Sumber:</label>
     <input type="text" id="manualSource" placeholder="https://www.youtube.com/watch?v=xxxxxxx">
+
+    <div class="checkbox-group">
+      <label><input type="checkbox" id="hapusYT"> Hapus Link Sumber</label>
+    </div>
 
     <label for="input">Masukkan Link-Link (satu per baris):</label>
     <textarea id="input" placeholder="Paste link YouTube redirect atau base layout di sini..."></textarea>
@@ -119,6 +137,7 @@
       const lines = document.getElementById("input").value.trim().split('\n');
       const judul = document.getElementById("judul").value.trim();
       const manualSource = document.getElementById("manualSource").value.trim();
+      const hapusYT = document.getElementById("hapusYT").checked;
       let nomor = parseInt(document.getElementById("nomor").value);
       let hasil = "";
 
@@ -144,6 +163,8 @@
           layoutLink = line;
           youtubeLink = manualSource;
         }
+
+        if (hapusYT) youtubeLink = "";
 
         hasil += `${layoutLink}|||${judul}|||${nomor}.png|||${youtubeLink}\n`;
         nomor++;
