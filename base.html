@@ -132,6 +132,12 @@
         return { layoutLink: link, youtubeLink: "" };
       }
     }
+    
+    function cleanLinkOnly(rawLine) {
+      const match = rawLine.match(/https:\/\/link\.clashofclans\.com\/[^\s]+/);
+      return match ? match[0] : rawLine;
+    }
+    
 
     function convert() {
       const lines = document.getElementById("input").value.trim().split('\n');
@@ -144,7 +150,8 @@
       lines.forEach(line => {
         line = line.trim();
         if (!line) return;
-
+        
+        line = cleanLinkOnly(line);
         let layoutLink = "";
         let youtubeLink = "";
 
