@@ -1,21 +1,433 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Selisih Waktu UTC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideIn 0.6s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.3));
+      }
+      to {
+        filter: drop-shadow(0 0 15px rgba(118, 75, 162, 0.5));
+      }
+    }
+
+    h3 {
+      color: #667eea;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 20px 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3::before {
+      content: '';
+      width: 4px;
+      height: 25px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .input-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .input-row input, .input-row select {
+      flex: 1;
+    }
+
+    input[type="text"], input[type="datetime-local"], select {
+      width: 100%;
+      padding: 15px;
+      font-size: 14px;
+      border: 2px solid #e1e5e9;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    input[type="text"]:focus, input[type="datetime-local"]:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      transform: translateY(-2px);
+    }
+
+    input[type="text"]:hover, input[type="datetime-local"]:hover, select:hover {
+      border-color: #667eea;
+      transform: translateY(-1px);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      flex: 1;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #764ba2, #667eea);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    button:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    button.secondary {
+      background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    }
+
+    button.secondary:hover {
+      background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+    }
+
+    button.success {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+    }
+
+    button.success:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+    }
+
+    #result {
+      margin: 25px 0;
+      padding: 20px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+      font-size: 16px;
+      line-height: 1.6;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #result ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    #result li {
+      margin: 8px 0;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      font-weight: 500;
+    }
+
+    #api-results {
+      margin-top: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(5px);
+    }
+
+    #api-results div {
+      margin: 0;
+      padding: 6px 12px;
+      background: transparent;
+      border-radius: 0;
+      border-left: none;
+      font-size: 13px;
+      line-height: 1.4;
+      animation: none;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      transition: none;
+      backdrop-filter: none;
+    }
+
+
+
+    .username {
+      width: 110px;
+      font-weight: 600;
+      color: #667eea;
+      flex-shrink: 0;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      margin-right: 12px;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #api-results strong {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+              .loading {
+      text-align: center;
+      padding: 30px;
+      color: #667eea;
+      font-size: 16px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+      border-radius: 15px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .loading i {
+      animation: spin 1s linear infinite;
+      margin-right: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #667eea;
+    }
+
+    .error {
+      background: rgba(231, 76, 60, 0.1) !important;
+      border-left-color: #e74c3c !important;
+      color: #c0392b;
+    }
+
+    .success {
+      background: rgba(46, 204, 113, 0.1) !important;
+      border-left-color: #27ae60 !important;
+      color: #27ae60;
+    }
+
+    .warning {
+      background: rgba(52, 152, 219, 0.1) !important;
+      border-left-color: #3498db !important;
+      color: #2980b9;
+    }
+
+
+
+    .countdown {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      color: #667eea;
+      margin: 10px 0;
+      padding: 12px;
+      background: rgba(102, 126, 234, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+
+    .timezone-info {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 8px 0;
+      border-left: 3px solid #667eea;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .input-group {
+        padding: 15px;
+      }
+
+      .input-row {
+        flex-direction: column;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>Hitung Selisih dengan Waktu UTC Sekarang</h2>
+  <div class="container">
+    <h2><i class="fas fa-clock icon"></i>Selisih Waktu UTC</h2>
 
-  <label for="datetime">Masukkan waktu UTC (format: YYYY-MM-DD HH:MM:SS):</label><br>
-  <input type="text" id="datetime" placeholder="Contoh: 2025-07-10 10:30:31">
-  <button onclick="hitungSelisih()">Hitung Selisih</button>
+    <div class="input-group">
+      <label for="datetime"><i class="fas fa-calendar-alt icon"></i>Masukkan waktu UTC:</label>
+      <div class="input-row">
+        <input type="datetime-local" id="datetime" step="1">
+        <select id="timezone">
+          <option value="UTC">UTC</option>
+          <option value="WIB">WIB (UTC+7)</option>
+          <option value="WITA">WITA (UTC+8)</option>
+          <option value="WIT">WIT (UTC+9)</option>
+          <option value="EST">EST (UTC-5)</option>
+          <option value="PST">PST (UTC-8)</option>
+        </select>
+      </div>
+      <div class="button-group">
+        <button onclick="hitungSelisih()">
+          <i class="fas fa-calculator icon"></i>Hitung Selisih
+        </button>
+        <button onclick="setCurrentTime()" class="secondary">
+          <i class="fas fa-clock icon"></i>Waktu Sekarang
+        </button>
+        <button onclick="startCountdown()" class="success">
+          <i class="fas fa-hourglass-start icon"></i>Countdown
+        </button>
+      </div>
+    </div>
 
-  <p id="result"></p>
-  <h3>Selisih LastUpdated (dari API ClashChamps)</h3>
-  <div id="api-results"></div>
+    <div id="result"></div>
+    <div id="countdown" class="countdown" style="display: none;"></div>
+
+    <h3><i class="fas fa-database icon"></i>Selisih LastUpdated (dari API ClashChamps)</h3>
+    <div id="api-results">
+      <div class="loading">
+        <i class="fas fa-spinner"></i>Memuat data...
+      </div>
+    </div>
+  </div>
 
   <script>
+    let countdownInterval;
+
     function formatSelisih(ms) {
       const detik = Math.floor(ms / 1000);
       const menit = Math.floor(detik / 60);
@@ -24,33 +436,203 @@
       return `${hari} hari, ${Math.abs(jam % 24)} jam, ${Math.abs(menit % 60)} menit, ${Math.abs(detik % 60)} detik`;
     }
 
+    function setCurrentTime() {
+      const timezone = document.getElementById("timezone").value;
+      const now = new Date();
+      
+      if (timezone === "UTC") {
+        // Set UTC time
+        const utcDateTime = now.toISOString().slice(0, 19);
+        document.getElementById("datetime").value = utcDateTime;
+      } else {
+        // Set time for selected timezone
+        const timezoneOffsets = {
+          "WIB": 7,    // WIB is UTC+7
+          "WITA": 8,   // WITA is UTC+8
+          "WIT": 9,    // WIT is UTC+9
+          "EST": -5,   // EST is UTC-5
+          "PST": -8    // PST is UTC-8
+        };
+        
+        const offset = timezoneOffsets[timezone];
+        const timezoneTime = new Date(now.getTime() + (offset * 60 * 60 * 1000));
+        const timezoneDateTime = timezoneTime.toISOString().slice(0, 19);
+        document.getElementById("datetime").value = timezoneDateTime;
+      }
+    }
+
+    function startCountdown() {
+      const input = document.getElementById("datetime").value;
+      const timezone = document.getElementById("timezone").value;
+      
+      if (!input) {
+        alert("Silakan masukkan waktu terlebih dahulu!");
+        return;
+      }
+
+      // Parse input as if it's in the selected timezone (same logic as hitungSelisih)
+      let targetTime;
+      if (timezone === "UTC") {
+        // For UTC, treat input as UTC time and convert to WIB
+        targetTime = new Date(input + "Z");
+        // Convert UTC to WIB (+7 hours)
+        targetTime = new Date(targetTime.getTime() + (7 * 60 * 60 * 1000));
+      } else {
+        // For other timezones, treat input as if it's in that timezone
+        // Since new Date(input) always treats input as local time,
+        // we need to manually construct the date in the target timezone
+        
+        // Parse the input string to get components
+        const [datePart, timePart] = input.split('T');
+        const [year, month, day] = datePart.split('-').map(Number);
+        const [hour, minute, second] = timePart.split(':').map(Number);
+        
+        // Create date object in target timezone
+        // We'll create it as if it's in UTC, then adjust
+        const targetOffsets = {
+          "WIB": 7,    // WIB is UTC+7
+          "WITA": 8,   // WITA is UTC+8
+          "WIT": 9,    // WIT is UTC+9
+          "EST": -5,   // EST is UTC-5
+          "PST": -8    // PST is UTC-8
+        };
+        
+        const targetOffset = targetOffsets[timezone];
+        
+        // Create UTC time by subtracting the timezone offset
+        const utcHour = hour - targetOffset;
+        const utcDate = new Date(Date.UTC(year, month - 1, day, utcHour, minute, second));
+        
+        // Convert to WIB
+        targetTime = new Date(utcDate.getTime() + (7 * 60 * 60 * 1000));
+      }
+      
+      const countdownDiv = document.getElementById("countdown");
+      countdownDiv.style.display = "block";
+
+      function updateCountdown() {
+        // Get current WIB time
+        const nowUTC = new Date();
+        const nowWIB = new Date(nowUTC.getTime() + (7 * 60 * 60 * 1000)); // UTC+7
+        const diff = nowWIB - targetTime; // Same logic as hitungSelisih
+
+        if (diff >= 0) {
+          // Time has passed (same as "Di masa lalu")
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+          
+          countdownDiv.innerHTML = `
+            <i class="fas fa-history icon"></i>
+            Waktu telah lewat: ${days}d ${hours}h ${minutes}m ${seconds}s
+          `;
+          clearInterval(countdownInterval);
+          return;
+        }
+
+        // Time is in the future (countdown)
+        const absDiff = Math.abs(diff);
+        const days = Math.floor(absDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((absDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((absDiff % (1000 * 60)) / 1000);
+
+        countdownDiv.innerHTML = `
+          <i class="fas fa-hourglass-half icon"></i>
+          Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s
+        `;
+      }
+
+      updateCountdown();
+      countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+
+
     function hitungSelisih() {
       const input = document.getElementById("datetime").value.trim();
+      const timezone = document.getElementById("timezone").value;
 
       if (!input) {
-        document.getElementById("result").textContent = "Silakan masukkan tanggal dan waktu terlebih dahulu.";
+        document.getElementById("result").innerHTML = `
+          <div class="error">
+            <i class="fas fa-exclamation-triangle icon"></i>Silakan masukkan tanggal dan waktu terlebih dahulu.
+          </div>
+        `;
         return;
       }
 
-      const isoString = input.replace(" ", "T") + "Z";
-      const inputDate = new Date(isoString);
+      // Parse input as if it's in the selected timezone
+      let inputDate;
+      if (timezone === "UTC") {
+        // For UTC, treat input as UTC time and convert to WIB
+        inputDate = new Date(input + "Z");
+        // Convert UTC to WIB (+7 hours)
+        inputDate = new Date(inputDate.getTime() + (7 * 60 * 60 * 1000));
+      } else {
+        // For other timezones, treat input as if it's in that timezone
+        // Since new Date(input) always treats input as local time,
+        // we need to manually construct the date in the target timezone
+        
+        // Parse the input string to get components
+        const [datePart, timePart] = input.split('T');
+        const [year, month, day] = datePart.split('-').map(Number);
+        const [hour, minute, second] = timePart.split(':').map(Number);
+        
+        // Create date object in target timezone
+        // We'll create it as if it's in UTC, then adjust
+        const targetOffsets = {
+          "WIB": 7,    // WIB is UTC+7
+          "WITA": 8,   // WITA is UTC+8
+          "WIT": 9,    // WIT is UTC+9
+          "EST": -5,   // EST is UTC-5
+          "PST": -8    // PST is UTC-8
+        };
+        
+        const targetOffset = targetOffsets[timezone];
+        
+        // Create UTC time by subtracting the timezone offset
+        const utcHour = hour - targetOffset;
+        const utcDate = new Date(Date.UTC(year, month - 1, day, utcHour, minute, second));
+        
+        // Convert to WIB
+        inputDate = new Date(utcDate.getTime() + (7 * 60 * 60 * 1000));
+      }
 
       if (isNaN(inputDate.getTime())) {
-        document.getElementById("result").textContent = "Format tidak valid. Gunakan: YYYY-MM-DD HH:MM:SS";
+        document.getElementById("result").innerHTML = `
+          <div class="error">
+            <i class="fas fa-exclamation-triangle icon"></i>Format tidak valid.
+          </div>
+        `;
         return;
       }
 
+      // Get current WIB time
       const nowUTC = new Date();
-      const selisihMs = nowUTC.getTime() - inputDate.getTime();
+      const nowWIB = new Date(nowUTC.getTime() + (7 * 60 * 60 * 1000)); // UTC+7
+      
+      const selisihMs = nowWIB.getTime() - inputDate.getTime();
+      const isFuture = selisihMs < 0;
+      
+      const timezoneInfo = timezone !== "WIB" ? `
+        <div class="timezone-info">
+          <i class="fas fa-globe icon"></i>
+          <strong>Timezone:</strong> ${timezone} → WIB
+          (${timezone === "UTC" ? "UTC+0" : timezone === "WITA" ? "UTC+8" : timezone === "WIT" ? "UTC+9" : timezone === "EST" ? "UTC-5" : "UTC-8"} → UTC+7)
+        </div>
+      ` : '';
+      
       const hasil = `
-        Selisih waktu dengan UTC sekarang:
-        <ul>
-          <li>${Math.floor(selisihMs / (1000 * 60 * 60 * 24))} hari</li>
-          <li>${Math.abs(Math.floor((selisihMs / (1000 * 60 * 60)) % 24))} jam</li>
-          <li>${Math.abs(Math.floor((selisihMs / (1000 * 60)) % 60))} menit</li>
-          <li>${Math.abs(Math.floor((selisihMs / 1000) % 60))} detik</li>
-        </ul>
-        (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})
+        <div class="${isFuture ? 'warning' : 'success'}">
+          <i class="fas fa-${isFuture ? 'rocket' : 'history'} icon"></i>
+          <strong>Selisih waktu dengan WIB sekarang:</strong>
+          <div style="margin: 8px 0; font-size: 14px; font-weight: 500; line-height: 1.4;">
+            ${Math.floor(Math.abs(selisihMs) / (1000 * 60 * 60 * 24))} hari, ${Math.abs(Math.floor((selisihMs / (1000 * 60 * 60)) % 24))} jam, ${Math.abs(Math.floor((selisihMs / (1000 * 60)) % 60))} menit, ${Math.abs(Math.floor((selisihMs / 1000) % 60))} detik ${isFuture ? "Di masa depan" : "Di masa lalu"}
+          </div>
+          ${timezoneInfo}
+        </div>
       `;
 
       document.getElementById("result").innerHTML = hasil;
@@ -60,7 +642,7 @@
       const usernames = ['danz', 'akuntv', 'beli', 'moklhasot', 'artemici'];
       const outputDiv = document.getElementById("api-results");
 
-      const promises = usernames.map(async (user) => {
+      const promises = usernames.map(async (user, index) => {
         try {
           const response = await fetch(`https://api.clashchamps.com/api/base-layouts?perPage=1&sort[]=-Date&proBuilder[]=${user}&page=1`);
           const data = await response.json();
@@ -71,21 +653,43 @@
             const nowUTC = new Date();
             const selisihMs = nowUTC.getTime() - lastUpdatedDate.getTime();
             const hasil = formatSelisih(selisihMs);
+            const isFuture = selisihMs < 0;
 
-            return `<strong>${user}</strong>: ${hasil} (${selisihMs < 0 ? "Di masa depan" : "Di masa lalu"})`;
+            return `<div class="${isFuture ? 'warning' : 'success'}">
+              <div class="username"><i class="fas fa-user icon"></i>${user}</div>
+              <div class="content">
+                : ${hasil} 
+                <i class="fas fa-${isFuture ? 'rocket' : 'history'} icon"></i>
+                (${isFuture ? "Di masa depan" : "Di masa lalu"})
+              </div>
+            </div>`;
           } else {
-            return `<strong>${user}</strong>: Tidak ada data LastUpdated.`;
+                      return `<div class="error">
+            <div class="username"><i class="fas fa-user icon"></i>${user}</div>
+            <div class="content">
+              : <i class="fas fa-exclamation-triangle icon"></i>Tidak ada data LastUpdated.
+            </div>
+          </div>`;
           }
         } catch (error) {
-          return `<strong>${user}</strong>: Gagal mengambil data (${error.message})`;
+          return `<div class="error">
+            <div class="username"><i class="fas fa-user icon"></i>${user}</div>
+            <div class="content">
+              : <i class="fas fa-exclamation-triangle icon"></i>Gagal mengambil data (${error.message})
+            </div>
+          </div>`;
         }
       });
 
       const results = await Promise.all(promises);
-      outputDiv.innerHTML = results.map(r => `<p>${r}</p>`).join("");
+      outputDiv.innerHTML = results.join("");
     }
 
-    window.onload = ambilLastUpdated;
+    // Set current time on page load
+    window.onload = function() {
+      setCurrentTime();
+      ambilLastUpdated();
+    };
   </script>
 </body>
 </html>
