@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <title>COC Link Converter</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f7f9fc;
       margin: 0;
       padding: 20px;
     }
-
     .container {
       max-width: 1000px;
       margin: auto;
@@ -23,12 +19,7 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
+    h2 { text-align: center; color: #333; }
     label {
       font-weight: 600;
       display: block;
@@ -36,10 +27,7 @@
       margin-bottom: 5px;
       color: #444;
     }
-
-    input[type="text"],
-    input[type="number"],
-    textarea {
+    input[type="text"], input[type="number"], textarea {
       width: 100%;
       padding: 10px;
       font-size: 12px;
@@ -47,16 +35,10 @@
       border-radius: 6px;
       resize: vertical;
     }
-
-    textarea {
-      font-family: monospace;
-      min-height: 100px;
-    }
-
+    textarea { font-family: monospace; min-height: 100px; }
     .checkbox-group {
       margin-top: 15px;
     }
-
     .checkbox-group label {
       display: flex;
       align-items: center;
@@ -64,7 +46,6 @@
       color: #444;
       gap: 8px;
     }
-
     button {
       background: #2d89ef;
       color: white;
@@ -78,16 +59,36 @@
       width: 100%;
       transition: background 0.3s ease;
     }
-
-    button:hover {
-      background: #1b5fc6;
-    }
-
+    button:hover { background: #1b5fc6; }
     .footer-note {
       font-size: 12px;
       color: #888;
       text-align: center;
       margin-top: 20px;
+    }
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eee;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #666;
+      border-bottom: 2px solid transparent;
+    }
+    .tab.active {
+      color: #2d89ef;
+      border-bottom: 2px solid #2d89ef;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
@@ -95,23 +96,49 @@
   <div class="container">
     <h2>Clash of Clans Link Converter</h2>
 
-    <label for="judul">Judul Output:</label>
-    <input type="text" id="judul" placeholder="Contoh: BEST TH14 WAR BASE">
-
-    <label for="nomor">Nomor Awal:</label>
-    <input type="number" id="nomor" value="1">
-
-    <label for="manualSource">Link Sumber:</label>
-    <input type="text" id="manualSource" placeholder="https://www.youtube.com/watch?v=xxxxxxx">
-
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="hapusYT"> Hapus Link Sumber</label>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('manual')">Input Manual</div>
+      <div class="tab" onclick="switchTab('youtube')">Ambil dari YouTube</div>
     </div>
 
-    <label for="input">Masukkan Link-Link (satu per baris):</label>
-    <textarea id="input" placeholder="Paste link YouTube redirect atau base layout di sini..."></textarea>
+    <!-- TAB MANUAL -->
+    <div id="tab-manual" class="tab-content active">
+      <label for="judul">Judul Output:</label>
+      <input type="text" id="judul" placeholder="Contoh: BEST TH14 WAR BASE">
 
-    <button onclick="convert()">Convert</button>
+      <label for="nomor">Nomor Awal:</label>
+      <input type="number" id="nomor" value="1">
+
+      <label for="manualSource">Link Sumber:</label>
+      <input type="text" id="manualSource" placeholder="https://www.youtube.com/watch?v=xxxxxxx">
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="hapusYT"> Hapus Link Sumber</label>
+      </div>
+
+      <label for="input">Masukkan Link-Link (satu per baris):</label>
+      <textarea id="input" placeholder="Paste link YouTube redirect atau base layout di sini..."></textarea>
+
+      <button onclick="convert()">Convert</button>
+    </div>
+
+    <!-- TAB YOUTUBE -->
+    <div id="tab-youtube" class="tab-content">
+      <label for="videoId">YouTube Video ID / Link:</label>
+      <input type="text" id="videoId" autocomplete="off" placeholder="yqskXZ3ccXQ atau https://youtube.com/watch?v=...">
+
+      <label for="judulYT">Judul Output:</label>
+      <input type="text" id="judulYT" placeholder="(Otomatis jika kosong)">
+
+      <label for="nomorYT">Nomor Awal:</label>
+      <input type="number" id="nomorYT" value="1">
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="hapusYTYT"> Hapus Link Sumber</label>
+      </div>
+
+      <button onclick="grabFromYouTube()">Ambil dari YouTube</button>
+    </div>
 
     <label for="output">Hasil Output:</label>
     <textarea id="output" readonly placeholder="Hasil akan muncul di sini..."></textarea>
@@ -120,6 +147,25 @@
   </div>
 
   <script>
+    const apiKey = "AIzaSyCVns3Lh4xYBWNgOYeB8LQ5oMLOfL7u6Yw";
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelector(".tab:nth-child(" + (tab === 'manual' ? 1 : 2) + ")").classList.add("active");
+      document.getElementById("tab-" + tab).classList.add("active");
+    }
+
+    function extractVideoId(raw) {
+      const urlMatch = raw.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
+      return urlMatch ? urlMatch[1] : raw.trim();
+    }
+
+    function cleanLinkOnly(rawLine) {
+      const match = rawLine.match(/https:\/\/link\.clashofclans\.com\/[^\s]+/);
+      return match ? match[0] : rawLine;
+    }
+
     function extractRealLink(link) {
       try {
         const url = new URL(link);
@@ -132,12 +178,6 @@
         return { layoutLink: link, youtubeLink: "" };
       }
     }
-    
-    function cleanLinkOnly(rawLine) {
-      const match = rawLine.match(/https:\/\/link\.clashofclans\.com\/[^\s]+/);
-      return match ? match[0] : rawLine;
-    }
-    
 
     function convert() {
       const lines = document.getElementById("input").value.trim().split('\n');
@@ -150,10 +190,9 @@
       lines.forEach(line => {
         line = line.trim();
         if (!line) return;
-        
+
         line = cleanLinkOnly(line);
-        let layoutLink = "";
-        let youtubeLink = "";
+        let layoutLink = "", youtubeLink = "";
 
         if (line.includes("youtube.com/redirect")) {
           const result = extractRealLink(line);
@@ -172,12 +211,53 @@
         }
 
         if (hapusYT) youtubeLink = "";
-
         hasil += `${layoutLink}|||${judul}|||${nomor}.png|||${youtubeLink}\n`;
         nomor++;
       });
 
       document.getElementById("output").value = hasil.trim();
+    }
+
+    async function grabFromYouTube() {
+      const rawInput = document.getElementById("videoId").value.trim();
+      const videoId = extractVideoId(rawInput);
+      const hapusYT = document.getElementById("hapusYTYT").checked;
+      let nomor = parseInt(document.getElementById("nomorYT").value);
+      const judulCustom = document.getElementById("judulYT").value.trim();
+
+      if (!videoId) {
+        alert("Masukkan ID atau URL video YouTube.");
+        return;
+      }
+
+      const url = `https://www.googleapis.com/youtube/v3/videos?key=${apiKey}&part=snippet&id=${videoId}`;
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const snippet = data.items[0].snippet;
+        const deskripsi = snippet.description;
+        const ytLink = `https://www.youtube.com/watch?v=${videoId}`;
+        const title = judulCustom || snippet.title;
+
+        const allLinks = deskripsi.match(/https:\/\/link\.clashofclans\.com\/[^\s]+/g);
+        const baseLinks = allLinks ? allLinks.filter(link => link.includes("action=OpenLayout")) : [];
+
+        if (baseLinks.length === 0) {
+          alert("Tidak ditemukan link layout yang valid di deskripsi video.");
+          return;
+        }
+
+        let hasil = "";
+        baseLinks.forEach(link => {
+          const youtubeLink = hapusYT ? "" : ytLink;
+          hasil += `${link}|||${title}|||${nomor}.png|||${youtubeLink}\n`;
+          nomor++;
+        });
+
+        document.getElementById("output").value = hasil.trim();
+      } catch (err) {
+        alert("Gagal mengambil data dari YouTube API");
+      }
     }
   </script>
 </body>
