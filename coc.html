@@ -5,82 +5,388 @@
     <meta charset="UTF-8" />
     <title>COC Base Viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 1rem;
-            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { 
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+                transform: scale(1); 
+            }
+            to { 
+                text-shadow: 2px 2px 20px rgba(255,255,255,0.5); 
+                transform: scale(1.02); 
+            }
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 0.9; 
+                transform: translateY(0) scale(1); 
+            }
         }
 
         .controls {
-            text-align: center;
-            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            animation: slideIn 1s ease-out 0.3s both;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.9rem;
         }
 
         .controls select {
-            margin: 0 0.5rem;
-            padding: 0.4rem;
+            padding: 0.6rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .controls select:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .controls select:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .controls select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
             justify-items: center;
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-out 0.9s both;
         }
 
         .card {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: cardAppear 0.6s ease-out;
+        }
+
+        @keyframes cardAppear {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px) scale(0.8) rotateX(10deg); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1) rotateX(0deg); 
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            animation: shimmer 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: translateX(2px); 
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover .builder {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(118, 75, 162, 0.4);
+        }
+
+        .card:hover::before {
+            animation: shimmer 1s ease-in-out infinite;
+            background: linear-gradient(90deg, #764ba2, #667eea, #764ba2);
         }
 
         .card h2 {
-            margin: 0;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover h2 {
+            color: #667eea;
+            transform: scale(1.05);
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
         }
 
         .builder {
-            margin: 0.3rem 0;
-            background: #222;
-            color: #fff;
-            padding: 0.2rem 0.7rem;
-            border-radius: 999px;
+            margin: 0.5rem 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
         }
 
         .upload-date {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
+            color: #666;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .upload-date {
+            color: #999;
+            transform: scale(1.02);
+            font-weight: 500;
         }
 
         .card img {
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 280px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 15px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .card img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card:hover img::after {
+            opacity: 1;
+        }
+
+        .card img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.1) contrast(1.05);
         }
 
         .download {
             margin-top: 1rem;
-            background-color: #0056b3;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 0.6rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 25px;
-            font-size: 1rem;
-            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             text-decoration: none;
             text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download i {
+            transition: all 0.3s ease;
+        }
+
+        .download::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+
+        .download:hover::before {
+            left: 100%;
+        }
+
+        .download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .download:hover i {
+            transform: translateY(-1px);
+            animation: bounce 0.6s ease infinite;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { 
+                transform: translateY(0) scale(1); 
+            }
+            40% { 
+                transform: translateY(-3px) scale(1.1); 
+            }
+            60% { 
+                transform: translateY(-1px) scale(1.05); 
+            }
+        }
+
+        .download:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
         .pagination {
-            margin-top: 1rem;
+            margin-top: 2rem;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            animation: slideIn 1s ease-out 1.2s both;
+        }
+
+        .pagination button {
+            padding: 0.6rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 45px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .pagination button:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .pagination button:disabled {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            cursor: not-allowed;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
         }
 
         #lightbox {
@@ -94,6 +400,8 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
         }
 
         #lightbox img {
@@ -103,22 +411,231 @@
             height: auto;
             display: block;
             margin: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            user-select: none;
+            -webkit-user-drag: none;
+            transition: transform 0.1s ease;
         }
 
         #lightbox span {
             position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2.5rem;
             color: white;
             cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        #lightbox span:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        #lightbox span:hover i {
+            transform: rotate(90deg);
+        }
+
+        #lightbox span:active {
+            transform: scale(0.95);
+        }
+
+        #lightbox span i {
+            transition: all 0.3s ease;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: white;
+            font-size: 1.2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: spin 1s linear infinite;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading p {
+            animation: pulse 2s ease-in-out infinite;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .stats {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out 0.6s both;
+        }
+
+        .stats span {
+            margin: 0 1rem;
+            font-weight: 500;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .stats span:hover {
+            color: #764ba2;
+            transform: scale(1.05);
+            text-shadow: 0 2px 4px rgba(118, 75, 162, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .control-group {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            .stats span {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-to-top i {
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+            animation: bounce 0.6s ease infinite;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            animation: bounceIn 0.6s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.3) translateY(20px) rotate(180deg); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.05) translateY(-5px) rotate(0deg); 
+            }
+            70% { 
+                transform: scale(0.9) translateY(0) rotate(0deg); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0) rotate(0deg); 
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        <h1><i class="fas fa-shield-alt"></i> COC Base Viewer</h1>
+        <!--<p>Browse and download the best Clash of Clans bases</p>-->
+    </div>
+
     <div class="controls">
-        <label>Show
+        <div class="control-group">
+            <label><i class="fas fa-list"></i> Show:</label>
             <select id="entriesPerPage">
                 <option>25</option>
                 <option>50</option>
@@ -126,24 +643,50 @@
                 <option>100</option>
                 <option>All</option>
             </select>
-        </label>
-        | Filter TH:
-        <select id="filterTH"></select>
-        Builder:
-        <select id="filterBuilder"></select>
-        | Sort:
-        <select id="sortOrder">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-        </select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-crown"></i> TH:</label>
+            <select id="filterTH"></select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-user"></i> Builder:</label>
+            <select id="filterBuilder"></select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-sort"></i> Sort:</label>
+            <select id="sortOrder">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label><input type="checkbox" id="atrasisMode"> Atrasis Mode</label>
+        </div>
     </div>
 
-    <div class="grid" id="cardContainer"></div>
+    <div class="stats" id="stats">
+        <span id="totalBases">Total: 0</span>
+        <span id="filteredBases">Showing: 0</span>
+    </div>
+
+    <div class="grid" id="cardContainer">
+        <div class="loading">
+            <i class="fas fa-spinner"></i>
+            <p>Loading bases...</p>
+        </div>
+    </div>
+    
     <div class="pagination" id="pagination"></div>
 
     <div id="lightbox">
-        <span onclick="document.getElementById('lightbox').style.display='none'">&times;</span>
+        <span onclick="document.getElementById('lightbox').style.display='none'">
+            <i class="fas fa-times"></i>
+        </span>
         <img id="lightbox-img" src="" alt="Zoomed" />
+    </div>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
     </div>
 
     <script>
@@ -5117,6 +5660,7 @@
         let filterTH = 'All';
         let filterBuilder = 'All';
         let sortOrder = 'newest';
+        let isAtrasisMode = false;
 
         function renderControls() {
             const thSet = new Set();
@@ -5127,7 +5671,13 @@
             });
             const thSelect = document.getElementById('filterTH');
             const builderSelect = document.getElementById('filterBuilder');
-            thSelect.innerHTML = '<option>All</option>' + [...thSet].map(th => `<option>${th}</option>`).join('');
+            // Sort TH levels numerically (TH17, TH16, TH15, ..., TH4)
+            const sortedTH = [...thSet].sort((a, b) => {
+                const numA = parseInt(a.replace('TH', ''));
+                const numB = parseInt(b.replace('TH', ''));
+                return numB - numA;
+            });
+            thSelect.innerHTML = '<option>All</option>' + sortedTH.map(th => `<option>${th}</option>`).join('');
             builderSelect.innerHTML = '<option>All</option>' + [...builderSet].map(b => `<option>${b}</option>`).join('');
 
             document.getElementById('entriesPerPage').onchange = e => {
@@ -5150,6 +5700,11 @@
                 sortOrder = e.target.value;
                 renderCards();
             };
+            
+            document.getElementById('atrasisMode').onchange = e => {
+                isAtrasisMode = e.target.checked;
+                renderCards();
+            };
         }
 
         function updateBuilderFilter() {
@@ -5165,6 +5720,8 @@
         }
 
 
+
+
         function renderCards() {
             let filtered = data.filter(d =>
                 (filterTH === 'All' || d.base_th === filterTH) &&
@@ -5175,8 +5732,9 @@
                 return sortOrder === 'newest' ? b.ID - a.ID : a.ID - b.ID;
             });
 
-
-
+            // Update stats
+            document.getElementById('totalBases').textContent = `Total: ${data.length}`;
+            document.getElementById('filteredBases').textContent = `Showing: ${filtered.length}`;
 
             const container = document.getElementById('cardContainer');
             container.innerHTML = '';
@@ -5186,13 +5744,22 @@
 
             for (let d of pageItems) {
                 const div = document.createElement('div');
-                div.className = 'card';
+                div.className = 'card fade-in';
+                let downloadUrl = d.base_url;
+                if (isAtrasisMode) {
+                    const idx = d.base_url.indexOf('?action=OpenLayout');
+                    if (idx !== -1) {
+                        downloadUrl = 'https://link.ultimate.atrasis.cc/' + d.base_url.substring(idx);
+                    }
+                }
                 div.innerHTML = `
           <h2>${d.base_th}</h2>
           <div class="builder">${d.base_builder}</div>
-          <div class="upload-date">Uploaded: ${d.date} - ${d.ID}</div>
-          <img src="${d.image}" width="300px" height="400px" alt="${d.base_th}" onclick="showLightbox(this.src)" />
-          <a class="download" href="${d.base_url}" target="_blank">⬇ Download</a>
+          <div class="upload-date">Uploaded: ${d.date}</div>
+          <img src="${d.image}" alt="${d.base_th}" onclick="showLightbox(this.src)" />
+          <a class="download" href="${downloadUrl}" target="_blank">
+            <i class="fas fa-download"></i> Download Base
+          </a>
         `;
                 container.appendChild(div);
             }
@@ -5216,15 +5783,137 @@
             }
         }
 
+        let lightboxZoom = 1;
+        let lightboxImg = null;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
+
         function showLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const img = document.getElementById('lightbox-img');
             img.src = src;
             lightbox.style.display = 'flex';
+            
+            // Reset zoom and position when opening
+            lightboxZoom = 1;
+            translateX = 0;
+            translateY = 0;
+            lightboxImg = img;
+            img.style.transform = 'scale(1) translate(0px, 0px)';
+            img.style.cursor = 'zoom-in';
+            
+            // Add click event for zoom in/out
+            img.onclick = function(e) {
+                e.stopPropagation();
+                if (lightboxZoom === 1) {
+                    lightboxZoom = 2;
+                    img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
+                    img.style.cursor = 'grab';
+                } else {
+                    lightboxZoom = 1;
+                    translateX = 0;
+                    translateY = 0;
+                    img.style.transform = 'scale(1) translate(0px, 0px)';
+                    img.style.cursor = 'zoom-in';
+                }
+            };
+            
+            // Add scroll wheel zoom
+            lightbox.onwheel = function(e) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    // Zoom in
+                    lightboxZoom = Math.min(lightboxZoom + 0.5, 4);
+                } else {
+                    // Zoom out
+                    lightboxZoom = Math.max(lightboxZoom - 0.5, 0.5);
+                }
+                img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
+                img.style.cursor = lightboxZoom > 1 ? 'grab' : 'zoom-in';
+            };
+            
+            // Add drag functionality like Discord - smooth and responsive
+            img.onmousedown = function(e) {
+                if (lightboxZoom > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    img.style.cursor = 'grabbing';
+                    img.style.transition = 'none'; // Disable transition for smooth dragging
+                    e.preventDefault();
+                }
+            };
+            
+            img.onmousemove = function(e) {
+                if (isDragging) {
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
+                }
+            };
+            
+            img.onmouseup = function() {
+                if (isDragging) {
+                    isDragging = false;
+                    img.style.cursor = 'grab';
+                    img.style.transition = 'transform 0.1s ease'; // Re-enable smooth transitions
+                }
+            };
+            
+            img.onmouseleave = function() {
+                if (isDragging) {
+                    isDragging = false;
+                    img.style.cursor = 'grab';
+                    img.style.transition = 'transform 0.1s ease';
+                }
+            };
         }
 
-        renderControls();
-        renderCards();
+        // Initialize the app
+        function initApp() {
+            try {
+                renderControls();
+                renderCards();
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                document.getElementById('cardContainer').innerHTML = `
+                    <div class="loading">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Error loading bases. Please refresh the page.</p>
+                    </div>
+                `;
+            }
+        }
+
+
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Initialize when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
     </script>
 </body>
 
