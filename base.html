@@ -3,147 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <title>COC Link Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f9fc;
+    * { 
+      box-sizing: border-box; 
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+    
     .container {
       max-width: 1000px;
       margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideIn 0.6s ease-out;
     }
-    h2 { text-align: center; color: #333; }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    h2 { 
+      text-align: center; 
+      color: #333;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from { 
+        filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.3));
+      }
+      to { 
+        filter: drop-shadow(0 0 15px rgba(118, 75, 162, 0.5));
+      }
+    }
+    
     label {
       font-weight: 600;
       display: block;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      color: #444;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
     }
+    
+    label:hover {
+      color: #667eea;
+      transform: translateX(5px);
+    }
+    
     input[type="text"], input[type="number"], textarea {
       width: 100%;
-      padding: 10px;
-      font-size: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      padding: 15px;
+      font-size: 14px;
+      border: 2px solid #e1e5e9;
+      border-radius: 12px;
       resize: vertical;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: rgba(255, 255, 255, 0.9);
     }
-    textarea { font-family: monospace; min-height: 100px; }
+    
+    input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    input[type="text"]:hover, input[type="number"]:hover, textarea:hover {
+      border-color: #667eea;
+    }
+    
+    #output:hover {
+      border-color: rgba(102, 126, 234, 0.4);
+      transform: none;
+    }
+    
+    textarea { 
+      font-family: 'Monaco', 'Menlo', monospace; 
+      min-height: 120px; 
+      line-height: 1.5;
+    }
+    
     .checkbox-group {
-      margin-top: 15px;
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
     }
+    
     .checkbox-group label {
       display: flex;
       align-items: center;
-      font-weight: 600;
-      color: #444;
-      gap: 8px;
+      font-weight: 500;
+      color: #555;
+      gap: 10px;
+      margin: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
+    
+    .checkbox-group label:hover {
+      color: #667eea;
+      transform: none;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #667eea;
+      cursor: pointer;
+    }
+    
     button {
-      background: #2d89ef;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 16px;
       border: none;
-      border-radius: 6px;
-      padding: 12px 20px;
+      border-radius: 12px;
+      padding: 15px 25px;
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 25px;
       width: 100%;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
     }
-    button:hover { background: #1b5fc6; }
+    
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    button:hover::before {
+      left: 100%;
+    }
+    
+    button:hover { 
+      background: linear-gradient(135deg, #764ba2, #667eea);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+    
+    button:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
     .footer-note {
-      font-size: 12px;
+      font-size: 14px;
       color: #888;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
     }
+    
     .tabs {
       display: flex;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #eee;
+      margin-bottom: 30px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      padding: 5px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
     }
+    
     .tab {
       flex: 1;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
       color: #666;
-      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .tab::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+      transition: left 0.3s ease;
+    }
+    
+    .tab:hover::before {
+      left: 100%;
+    }
+    
+    .tab:hover {
+      color: #667eea;
+      transform: translateY(-2px);
+    }
+    
     .tab.active {
-      color: #2d89ef;
-      border-bottom: 2px solid #2d89ef;
+      color: white;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      transform: translateY(-2px);
     }
+    
     .tab-content {
       display: none;
+      animation: fadeIn 0.5s ease-out;
     }
+    
     .tab-content.active {
       display: block;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .output-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .output-section label {
+      color: #667eea;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    
+    #output {
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(102, 126, 234, 0.2);
+      font-size: 13px;
+      line-height: 1.6;
+      cursor: text;
+      transition: border-color 0.2s ease;
+    }
+    
+    #output:hover {
+      border-color: rgba(102, 126, 234, 0.4);
+    }
+    
+    #output:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .icon {
+      margin-right: 8px;
+      color: #667eea;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .tabs {
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .tab {
+        padding: 12px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Clash of Clans Link Converter</h2>
+    <h2><i class="fas fa-crown icon"></i>Clash of Clans Link Converter</h2>
 
     <div class="tabs">
-      <div class="tab active" onclick="switchTab('manual')">Input Manual</div>
-      <div class="tab" onclick="switchTab('youtube')">Ambil dari YouTube</div>
+      <div class="tab active" onclick="switchTab('manual')">
+        <i class="fas fa-edit icon"></i>Input Manual
+      </div>
+      <div class="tab" onclick="switchTab('youtube')">
+        <i class="fab fa-youtube icon"></i>Ambil dari YouTube
+      </div>
     </div>
 
     <!-- TAB MANUAL -->
     <div id="tab-manual" class="tab-content active">
-      <label for="judul">Judul Output:</label>
+      <label for="judul"><i class="fas fa-heading icon"></i>Judul Output:</label>
       <input type="text" id="judul" placeholder="Contoh: BEST TH14 WAR BASE">
 
-      <label for="nomor">Nomor Awal:</label>
+      <label for="nomor"><i class="fas fa-hashtag icon"></i>Nomor Awal:</label>
       <input type="number" id="nomor" value="1">
 
-      <label for="manualSource">Link Sumber:</label>
+      <label for="manualSource"><i class="fas fa-link icon"></i>Link Sumber:</label>
       <input type="text" id="manualSource" placeholder="https://www.youtube.com/watch?v=xxxxxxx">
 
       <div class="checkbox-group">
-        <label><input type="checkbox" id="hapusYT"> Hapus Link Sumber</label>
+        <label><input type="checkbox" id="hapusYT"> <i class="fas fa-trash icon"></i>Hapus Link Sumber</label>
       </div>
 
-      <label for="input">Masukkan Link-Link (satu per baris):</label>
+      <label for="input"><i class="fas fa-list icon"></i>Masukkan Link-Link (satu per baris):</label>
       <textarea id="input" placeholder="Paste link YouTube redirect atau base layout di sini..."></textarea>
 
-      <button onclick="convert()">Convert</button>
+      <button onclick="convert()">
+        <i class="fas fa-magic icon"></i>Convert
+      </button>
     </div>
 
     <!-- TAB YOUTUBE -->
     <div id="tab-youtube" class="tab-content">
-      <label for="videoId">YouTube Video ID / Link:</label>
+      <label for="videoId"><i class="fab fa-youtube icon"></i>YouTube Video ID / Link:</label>
       <input type="text" id="videoId" autocomplete="off" placeholder="yqskXZ3ccXQ atau https://youtube.com/watch?v=...">
 
-      <label for="judulYT">Judul Output:</label>
+      <label for="judulYT"><i class="fas fa-heading icon"></i>Judul Output:</label>
       <input type="text" id="judulYT" placeholder="(Otomatis jika kosong)">
 
-      <label for="nomorYT">Nomor Awal:</label>
+      <label for="nomorYT"><i class="fas fa-hashtag icon"></i>Nomor Awal:</label>
       <input type="number" id="nomorYT" value="1">
 
       <div class="checkbox-group">
-        <label><input type="checkbox" id="hapusYTYT"> Hapus Link Sumber</label>
+        <label><input type="checkbox" id="hapusYTYT"> <i class="fas fa-trash icon"></i>Hapus Link Sumber</label>
       </div>
 
-      <button onclick="grabFromYouTube()">Ambil dari YouTube</button>
+      <button onclick="grabFromYouTube()">
+        <i class="fas fa-download icon"></i>Ambil dari YouTube
+      </button>
     </div>
 
-    <label for="output">Hasil Output:</label>
-    <textarea id="output" readonly placeholder="Hasil akan muncul di sini..."></textarea>
+    <div class="output-section">
+      <label for="output"><i class="fas fa-code icon"></i>Hasil Output:</label>
+      <textarea id="output" readonly placeholder="Hasil akan muncul di sini..."></textarea>
+    </div>
 
-    <div class="footer-note">Made with ❤️</div>
+    <div class="footer-note">
+      <i class="fas fa-heart" style="color: #e74c3c;"></i> Made with ❤️
+    </div>
   </div>
 
   <script>
