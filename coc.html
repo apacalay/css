@@ -26,6 +26,41 @@
             text-align: center;
             margin-bottom: 2rem;
             color: white;
+            position: relative;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            z-index: 1000;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: auto;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .dark-mode-toggle.dark {
+            background: linear-gradient(135deg, #e6a23c, #d69e2e);
         }
 
         .header h1 {
@@ -189,9 +224,9 @@
         }
 
         .card:hover .builder {
-            background: linear-gradient(135deg, #764ba2, #667eea);
-            transform: scale(1.05);
-            box-shadow: 0 6px 16px rgba(118, 75, 162, 0.4);
+            background: rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: scale(1.02);
         }
 
         .card:hover::before {
@@ -200,9 +235,9 @@
         }
 
         .card h2 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.5rem;
-            font-weight: 600;
+            margin: 0 0 0.4rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #333;
             text-align: center;
             transition: all 0.3s ease;
@@ -215,24 +250,27 @@
         }
 
         .builder {
-            margin: 0.5rem 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            margin: 0.2rem 0 0.3rem 0;
+            background: rgba(102, 126, 234, 0.08);
+            color: #667eea;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 400;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.2);
             transition: all 0.3s ease;
+            display: inline-block;
+            opacity: 0.8;
         }
 
         .upload-date {
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            color: #666;
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+            color: #555;
             font-weight: 400;
             transition: all 0.3s ease;
+            opacity: 0.9;
         }
 
         .card:hover .upload-date {
@@ -624,13 +662,182 @@
                 transform: scale(1) translateY(0) rotate(0deg); 
             }
         }
+
+        /* Dark Mode Styles - June Update: Dark Days Theme */
+        body.dark-mode {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+        }
+
+        body.dark-mode .header {
+            color: #ffffff;
+        }
+
+        body.dark-mode .header h1 {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        body.dark-mode .controls {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .control-group label {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .controls select {
+            background: rgba(40, 40, 40, 0.9);
+            border-color: #555555;
+            color: #ffffff;
+        }
+
+        body.dark-mode .controls select:hover {
+            border-color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .controls select:focus {
+            border-color: #87ceeb;
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+        }
+
+        body.dark-mode .card {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .card::before {
+            background: linear-gradient(90deg, #87ceeb, #4a90e2);
+        }
+
+        body.dark-mode .card h2 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .card:hover h2 {
+            color: #87ceeb;
+            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .builder {
+            background: rgba(135, 206, 235, 0.1);
+            color: #87ceeb;
+            border: 1px solid rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .card:hover .builder {
+            background: rgba(135, 206, 235, 0.15);
+            border-color: rgba(135, 206, 235, 0.5);
+        }
+
+        body.dark-mode .upload-date {
+            color: #cccccc;
+        }
+
+        body.dark-mode .card:hover .upload-date {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .download {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .download:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .pagination button {
+            background: rgba(30, 58, 95, 0.9);
+            border-color: rgba(135, 206, 235, 0.3);
+            color: #87ceeb;
+        }
+
+        body.dark-mode .pagination button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: white;
+            border-color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .pagination button:disabled {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: white;
+            border-color: #87ceeb;
+            box-shadow: 0 2px 8px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .back-to-top {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .back-to-top:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .stats {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .stats span {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .stats span:hover {
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .loading {
+            color: #87ceeb;
+        }
+
+        body.dark-mode #lightbox {
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        body.dark-mode #lightbox span {
+            color: #87ceeb;
+        }
+
+        body.dark-mode #lightbox span:hover {
+            color: #ffffff;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 6px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .dark-mode-toggle.dark {
+            background: linear-gradient(135deg, #e6a23c, #d69e2e);
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
+        <button class="dark-mode-toggle" type="button">
+            <i class="fas fa-moon"></i>
+        </button>
         <h1><i class="fas fa-shield-alt"></i> COC Base Viewer</h1>
-        <!--<p>Browse and download the best Clash of Clans bases</p>-->
+        <p>Browse and download the best Clash of Clans bases</p>
     </div>
 
     <div class="controls">
@@ -691,13 +898,6 @@
 
     <script>
         const rawData = [{
-                "ID": 17157,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGAAAAAJ1-9brFnuagUyzgY_BIt_r",
-                "base_th": "TH16",
-                "base_builder": "Builder Dave",
-                "date": "24/12/2024",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/400754fe-255c-4851-e963-ca3743476a00/image1920"
-            }, {
                 "ID": 17158,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAMgAAAAJI1AwTTIe4iN-jQazj0x93",
                 "base_th": "TH13",
@@ -1524,13 +1724,6 @@
                 "date": "21/01/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/0b99bcb4-a505-458c-ef12-9bbd62224c00/image1920"
             }, {
-                "ID": 17457,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AHV%3AAAAAEgAAAAKR9owAVfUYYjJwFjeB7IMr",
-                "base_th": "TH15",
-                "base_builder": "Sharavanan",
-                "date": "22/01/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ef20ce80-04b0-4b18-3bda-1da5d63fca00/image1920"
-            }, {
                 "ID": 17458,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAOgAAAAI7n0kgfzj06Y7q0KpQilud",
                 "base_th": "TH14",
@@ -2091,20 +2284,6 @@
                 "date": "05/02/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/98395e8e-fff3-47ab-55af-270697cf4c00/image1920"
             }, {
-                "ID": 17644,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWxxB%3xAAAAACgAAasdfasdAAJfm6cB5DhOMprQ4fehwlNM",
-                "base_th": "TH15",
-                "base_builder": "Agester",
-                "date": "12/02/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4d6e8058-7811-4fee-8d81-1a45048c0c00/image1920"
-            }, {
-                "ID": 17647,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABAAAAALa-thkv1ksitDMKJPKcfUN",
-                "base_th": "TH14",
-                "base_builder": "Builder Dave",
-                "date": "13/02/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4b11a377-682d-4923-d74e-df3d9eb95a00/image1920"
-            }, {
                 "ID": 17666,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH11%3AWB%3AAAAAOAAAAAJEOy196YNOYnjji3JH0_NZ",
                 "base_th": "TH11",
@@ -2146,13 +2325,6 @@
                 "base_builder": "Caetano",
                 "date": "20/02/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/0a3a120c-a6a7-4d92-4a59-2570ac0f0d00/image1920"
-            }, {
-                "ID": 17720,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAOgAAAAI1XLIegH_xlAEeCUg2XCuX",
-                "base_th": "TH14",
-                "base_builder": "Sharavanan",
-                "date": "24/02/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/0606cb7a-9e80-46fc-fe9e-2fca5c24d900/image1920"
             }, {
                 "ID": 17723,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKAAAAAJ0RLAA_PVxxNhrROfiM1Yn",
@@ -2714,13 +2886,6 @@
                 "date": "13/03/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/a7ac2c49-cf5f-4fb0-0feb-71e003c6bc00/image1920"
             }, {
-                "ID": 17915,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGAAAAAJ-CEjI3qSmxgLxlMf9NQWo",
-                "base_th": "TH16",
-                "base_builder": "Builder Dave",
-                "date": "14/03/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/16572621-5254-48c4-cfc6-b7ece0b41700/image1920"
-            }, {
                 "ID": 17943,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3AWB%3AAAAAIAAAAAJwguXpHtTLHTdl6zv2-kf0",
                 "base_th": "TH10",
@@ -3190,13 +3355,6 @@
                 "date": "08/04/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/12423bdf-a0f7-4e15-82d1-23def28d8600/image1920"
             }, {
-                "ID": 18166,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAKgAAAAJk1oC7yA3b7kIZLHsspzJX",
-                "base_th": "TH16",
-                "base_builder": "Sharavanan",
-                "date": "10/04/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/04cad468-26ae-4d9d-f815-d4a17006a400/image1920"
-            }, {
                 "ID": 18183,
                 "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLzRxztDmAS809O1xBQY",
                 "base_th": "TH15",
@@ -3246,20 +3404,6 @@
                 "date": "14/04/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/cc8e798e-c162-42dd-52e0-14821f2d8d00/image1920"
             }, {
-                "ID": 18204,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAACgAAAAK0egxErwqAfId2frAMVioz",
-                "base_th": "TH16",
-                "base_builder": "ROMAN07",
-                "date": "18/04/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/1e1c7d25-ca55-4f5d-90b2-550565f4e900/image1920"
-            }, {
-                "ID": 18205,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAOAAAAAJL8K5JQnJVstCRGC4oxc5V",
-                "base_th": "TH15",
-                "base_builder": "ROMAN07",
-                "date": "19/04/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/58ff8195-3912-493e-fd9a-cb6d92b5b700/image1920"
-            }, {
                 "ID": 18208,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAQQAAAAIkYkCwHDf5MUpWKJyMLMOz",
                 "base_th": "TH14",
@@ -3273,13 +3417,6 @@
                 "base_builder": "Caetano",
                 "date": "21/04/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4724c23b-678e-4541-062d-cb3df5344a00/image1920"
-            }, {
-                "ID": 18222,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAOAAAAAJMT86rNCRyViAv3oSKdRjn",
-                "base_th": "TH15",
-                "base_builder": "ROMAN07",
-                "date": "22/04/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/230038e8-f88d-42c2-595d-3bb3e171f900/image1920"
             }, {
                 "ID": 18253,
                 "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sb5F-1G4eOm3KTYmXkYe",
@@ -3855,13 +3992,6 @@
                 "date": "15/05/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ced1eef8-b34e-417a-105f-d0aa0c601f00/image1920"
             }, {
-                "ID": 18416,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAJpja8-WKhJc06mNpSkR5oW",
-                "base_th": "TH16",
-                "base_builder": "Sharavanan",
-                "date": "15/05/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/327163dc-57c0-487f-20ea-bd4d05c06800/image1920"
-            }, {
                 "ID": 18418,
                 "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALYbLth5_gPdTbS7CSjXPmJ",
                 "base_th": "TH9",
@@ -3995,13 +4125,6 @@
                 "date": "22/05/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/f11fb52f-7577-46ed-2cc2-9e8df5107700/image1920"
             }, {
-                "ID": 18454,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAIQAAAAJ3mGSH7j4KOVzaBV4LUtfo",
-                "base_th": "TH15",
-                "base_builder": "ROMAN07",
-                "date": "23/05/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/c2323b97-0980-4716-5909-28f3587a4800/image1920"
-            }, {
                 "ID": 18458,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAEQAAAAKhy4rDYa1moos_Z8J2hPOu",
                 "base_th": "TH14",
@@ -4092,13 +4215,6 @@
                 "base_builder": "Bernaul",
                 "date": "27/05/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/f26bc7e1-8948-4de2-9311-c11db81fe100/image1920"
-            }, {
-                "ID": 18490,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAACgAAAAK5tgfkR0Ls9ScCKLYmub41",
-                "base_th": "TH16",
-                "base_builder": "ROMAN07",
-                "date": "28/05/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/1d6f0bd7-ca3c-41fd-e555-576e143d4300/image1920"
             }, {
                 "ID": 18499,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3AWB%3AAAAAGwAAAAKIvEjzKGtVdRnSzkVSxU2r",
@@ -5136,13 +5252,6 @@
                 "date": "20/06/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/db91887f-48ad-41fb-e06b-fd30d7ae6600/image1920"
             }, {
-                "ID": 18793,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAMwAAAAJdXOBzPfdfiExIp2InvN3e",
-                "base_th": "TH17",
-                "base_builder": "ROMAN07",
-                "date": "20/06/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/78f579fc-7ab2-4b88-1605-bffd18fed900/image1920"
-            }, {
                 "ID": 18794,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAVwAAAAHJBTYWrR-RShBrlTjNPQRP",
                 "base_th": "TH15",
@@ -5317,13 +5426,6 @@
                 "base_builder": "Caetano",
                 "date": "26/06/2025",
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4a6ddcdd-baff-4292-1994-a066c0bf4b00/image1920"
-            }, {
-                "ID": 18819,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAADQAAAAKn2nLnOmrPhfUkjTY51vug",
-                "base_th": "TH17",
-                "base_builder": "Sharavanan",
-                "date": "27/06/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/e62df4ee-a593-41e9-da48-de171b61bb00/image1920"
             }, {
                 "ID": 18834,
                 "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItWjKPsztx9DjR2aJqJIMU",
@@ -5566,14 +5668,6 @@
                 "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/06c778b8-385c-4635-4019-46592c425600/image1920"
             },
             {
-                "ID": 18852,
-                "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAACgAAAAK998-njeiPJzsWf6VsbLmB",
-                "base_th": "TH16",
-                "base_builder": "ROMAN07",
-                "date": "03/07/2025",
-                "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/119f1a1d-5d71-43f9-6bc3-d88f6f8cb900/image1920"
-            },
-            {
                 "ID": 18853,
                 "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKAAAAAKDrmu3Z95L8PkB7lWBjkf2",
                 "base_th": "TH16",
@@ -5678,7 +5772,9 @@
                 return numB - numA;
             });
             thSelect.innerHTML = '<option>All</option>' + sortedTH.map(th => `<option>${th}</option>`).join('');
-            builderSelect.innerHTML = '<option>All</option>' + [...builderSet].map(b => `<option>${b}</option>`).join('');
+            // Sort builder names alphabetically (A-Z)
+            const sortedBuilders = [...builderSet].sort((a, b) => a.localeCompare(b));
+            builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
 
             document.getElementById('entriesPerPage').onchange = e => {
                 entries = e.target.value === 'All' ? Infinity : parseInt(e.target.value);
@@ -5711,7 +5807,9 @@
             const builderSelect = document.getElementById('filterBuilder');
             const filteredData = filterTH === 'All' ? data : data.filter(d => d.base_th === filterTH);
             const builders = [...new Set(filteredData.map(d => d.base_builder))];
-            builderSelect.innerHTML = '<option>All</option>' + builders.map(b => `<option>${b}</option>`).join('');
+            // Sort builder names alphabetically (A-Z)
+            const sortedBuilders = builders.sort((a, b) => a.localeCompare(b));
+            builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
         }
 
         function parseDate(str) {
@@ -5908,11 +6006,66 @@
             }
         });
 
+        // Dark Mode Functions
+        function toggleDarkMode() {
+            const body = document.body;
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                toggleBtn.classList.remove('dark');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.add('dark');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        function initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            const body = document.body;
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+            
+            // Default to dark mode if no preference is saved
+            if (savedMode === null || savedMode === 'true') {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.add('dark');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        function initializeEverything() {
+            // Initialize app
+            initApp();
+            
+            // Initialize dark mode
+            initDarkMode();
+            
+            // Add event listener to toggle button
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleDarkMode();
+                });
+            } else {
+                console.error('Dark mode toggle button not found');
+            }
+        }
+
         // Initialize when DOM is loaded
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initApp);
+            document.addEventListener('DOMContentLoaded', initializeEverything);
         } else {
-            initApp();
+            initializeEverything();
         }
     </script>
 </body>
