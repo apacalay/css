@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Absensi PNS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <style>
+    /* =====================
+       RESET & BASE LAYOUT
+    ===================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideIn 0.6s ease-out;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* =====================
+       TYPOGRAPHY & HEADER
+    ===================== */
+    h2 {
+      text-align: left;
+      color: #ffffff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(135deg, #ffffff, #e0e0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glow 2s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+	  margin-bottom: 20px;
+    }
+    h2 .icon {
+      font-size: 2.2rem;
+      color: #87ceeb;
+      margin-right: 8px;
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.3)); }
+      to { filter: drop-shadow(0 0 15px rgba(118, 75, 162, 0.5)); }
+    }
+
+    /* =====================
+       TABS
+    ===================== */
+    .tabs {
+      display: flex;
+      margin-bottom: 30px;
+      background: rgba(30, 58, 95, 0.2);
+      border-radius: 12px;
+      padding: 5px;
+      border: 1px solid rgba(74, 144, 226, 0.3);
+      gap: 0;
+    }
+    .tab-link {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #87ceeb;
+      border-radius: 8px;
+      background: transparent;
+      border: none;
+      font-size: 1.08rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .tab-link.active {
+      color: white;
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+      transform: translateY(-2px);
+      border-bottom: none;
+    }
+    .tab-link:hover {
+      color: #4a90e2;
+      background: rgba(30, 58, 95, 0.2);
+      transform: translateY(-2px);
+    }
+    .tab-content {
+      display: none;
+      background: rgba(0, 191, 255, 0.1);
+      padding: 36px 28px 28px 28px;
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 2px 12px rgba(0, 191, 255, 0.10);
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      margin-bottom: 32px;
+      animation: fadeIn 0.5s ease-out;
+    }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =====================
+       FORM & INPUTS
+    ===================== */
+    label {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #e0e0e0;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    label:hover { color: #87ceeb; }
+    label .icon {
+      margin-right: 8px;
+      color: #87ceeb;
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 15px;
+    }
+    input[type="date"], select, input[type="text"] {
+      width: 100%;
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      background: rgba(40, 40, 40, 0.9);
+      color: #ffffff;
+      border: 1.5px solid #555555;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input[type="date"]:focus, select:focus, input[type="text"]:focus {
+      border-color: #00bfff;
+      box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2);
+    }
+    input[type="date"]:hover, select:hover, input[type="text"]:hover {
+      border-color: #00bfff;
+    }
+    /* Flatpickr khusus riwayat */
+    #riwayatForm input[type="text"] {
+      /* override jika perlu */
+    }
+    #riwayatForm {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr minmax(180px,2fr);
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 22px 18px 18px 18px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,191,255,0.08);
+      overflow: visible;
+    }
+    #riwayatForm select,
+    #riwayatForm input[type="date"],
+    #riwayatForm button[type="submit"] {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    #riwayatForm button[type="submit"] {
+      min-width: 180px;
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 25px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,191,255,0.10);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #riwayatForm button[type="submit"]:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+      transform: translateY(-2px) scale(1.04);
+    }
+    form {
+      margin-top: 18px;
+      margin-bottom: 24px;
+      padding: 24px 18px 18px 18px;
+      background: rgba(40, 40, 40, 0.85);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    form input[type="hidden"] { display: none; }
+    form button[type="submit"] {
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      padding: 15px 25px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    form button[type="submit"]:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(46, 204, 113, 0.15);
+    }
+
+    /* =====================
+       STATUS & RESULT
+    ===================== */
+    #status {
+      margin-top: 22px;
+      font-size: 1.08rem;
+      color: #00bfff;
+      font-weight: 600;
+      min-height: 28px;
+      margin-bottom: 10px;
+    }
+    #result {
+      margin-top: 18px;
+      padding: 24px 18px;
+      background: rgba(0, 191, 255, 0.1);
+      border-radius: 14px;
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e0e0e0;
+      animation: fadeIn 0.5s ease-out;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.08);
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #222;
+      color: #e0e0e0;
+      padding: 10px;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    /* =====================
+       TABLES
+    ===================== */
+    table {
+      border-collapse: collapse;
+      margin-top: 1.5em;
+      width: 100%;
+      background: rgba(40, 40, 40, 0.95);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 191, 255, 0.10);
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #1e3a5f;
+      padding: 12px 16px;
+      font-size: 15px;
+      text-align: left;
+    }
+    .row-libur td {
+      color: #ff4d4f !important;
+      font-weight: 700;
+    }
+    th {
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #fff;
+      font-weight: 700;
+    }
+    td {
+      background: rgba(40, 40, 40, 0.9);
+      color: #e0e0e0;
+    }
+    img {
+      margin-top: 10px;
+      max-height: 80px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.08);
+    }
+
+    /* =====================
+       INPUT ABSEN FORM
+    ===================== */
+    #inputAbsenForm .form-group > div {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    #randomKoordinatBtn {
+      padding: 12px 18px;
+      font-size: 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    #randomKoordinatBtn:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+    }
+    #absenResult {
+      margin-top: 18px;
+      padding: 18px 14px;
+      background: rgba(0, 191, 255, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      font-size: 15px;
+      color: #e0e0e0;
+      min-height: 40px;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.08);
+    }
+
+    /* =====================
+       ADD USER SECTION
+    ===================== */
+    .add-user-section {
+      width: 100%;
+      margin: 36px 0 0 0;
+      background: rgba(40, 40, 40, 0.95);
+      border-radius: 14px;
+      border: 1.5px solid #222c;
+      padding: 22px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .add-user-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #87ceeb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      letter-spacing: 0.2px;
+    }
+    .add-user-title .icon {
+      font-size: 1.5rem;
+      color: #87ceeb;
+      margin-right: 6px;
+    }
+    .add-user-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      border: none;
+      max-width: 100%;
+    }
+    .add-user-form label {
+      font-size: 15px;
+      color: #e0e0e0;
+      font-weight: 600;
+      margin-bottom: 3px;
+      margin-top: 0;
+      letter-spacing: 0.05px;
+    }
+    .add-user-form input[type="text"] {
+      width: 100%;
+      padding: 10px 9px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      background: rgba(40, 40, 40, 0.9);
+      color: #fff;
+      border: 1.5px solid #555555;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 4px;
+    }
+    .add-user-form input[type="text"]:focus {
+      border-color: #00bfff;
+      box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.13);
+    }
+    .add-user-form input[type="text"]:hover {
+      border-color: #00bfff;
+    }
+    .add-user-form button[type="submit"] {
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      border: none;
+      border-radius: 12px;
+      padding: 13px 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 8px;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 191, 255, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      letter-spacing: 0.05px;
+    }
+    .add-user-form button[type="submit"]:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(46, 204, 113, 0.13);
+    }
+    .add-user-output {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #00bfff;
+      word-break: break-all;
+    }
+    .add-user-output-action {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .add-user-output-action button {
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .add-user-output-action button:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+      color: #fff;
+    }
+    .add-user-output-box {
+      position: relative;
+      background: #222;
+      border-radius: 8px;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,191,255,0.08);
+    }
+    .add-user-output-box pre {
+      background: transparent;
+      color: #fff;
+      padding: 8px 12px 8px 12px;
+      margin: 0;
+      border-radius: 8px;
+      font-size: 13px;
+      min-height: 32px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .add-user-output-box .add-user-output-action {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      gap: 4px;
+      margin: 0;
+      z-index: 2;
+    }
+    .add-user-output-box .add-user-output-action button {
+      padding: 4px 8px;
+      font-size: 13px;
+      border-radius: 6px;
+      background: #333;
+      color: #87ceeb;
+      border: none;
+      cursor: pointer;
+      margin-left: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .add-user-output-box .add-user-output-action button:hover {
+      background: #444;
+      color: #fff;
+    }
+    .toggle-add-user-btn {
+      background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+      color: #87ceeb;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 18px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,191,255,0.08);
+      transition: background 0.2s, color 0.2s;
+    }
+    .toggle-add-user-btn:hover {
+      background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+      color: #fff;
+    }
+
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media (max-width: 900px) {
+      #riwayatForm {
+        grid-template-columns: 1fr 1fr auto;
+      }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 20px; margin: 10px; }
+      h2 { font-size: 1.5rem; margin-bottom: 18px; }
+      .tabs { flex-direction: column; gap: 5px; margin-bottom: 18px; }
+      .tab-link { padding: 12px 0; font-size: 1rem; }
+      .tab-content { padding: 12px 4px 8px 4px; border-radius: 0 0 10px 10px; }
+    }
+    @media (max-width: 700px) {
+      #riwayatForm { grid-template-columns: 1fr; gap: 12px; padding: 12px 4px 8px 4px; }
+      #riwayatForm button[type="submit"] { width: 100%; min-width: 0; }
+      #inputAbsenForm .form-group > div { flex-direction: column; gap: 8px; align-items: stretch; }
+      #randomKoordinatBtn { width: 100%; }
+      .add-user-section { width: 100%; padding: 12px 2vw 8px 2vw; }
+      .add-user-form { max-width: 100%; padding: 14px 4px 10px 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h2><i class="fas fa-clipboard-list icon"></i>Aplikasi Absensi</h2>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab('login')"><i class="fas fa-lock"></i> Login</button>
+      <button class="tab-link" onclick="openTab('infodata')"><i class="fas fa-info-circle"></i> Informasi Data</button>
+      <button class="tab-link" onclick="openTab('riwayat')"><i class="fas fa-file-alt"></i> Riwayat</button>
+      <button class="tab-link" onclick="openTab('inputabsen')"><i class="fas fa-fingerprint"></i> Input Absen</button>
+    </div>
+
+	<div id="login" class="tab-content active">
+	  <form id="absenForm">
+		<div class="form-group">
+		  <label for="userSelect"><i class="fas fa-user icon"></i> Pilih User</label>
+		  <select id="userSelect" onchange="selectUser(this.value)"></select>
+		</div>
+
+		<input type="hidden" name="id" id="id">
+		<input type="hidden" name="password" id="password">
+		<input type="hidden" name="id_device" id="id_device">
+
+		<button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+	  </form>
+
+	  <div id="status" style="margin-top: 15px;"></div>
+
+	  <button id="toggleAddUserBtn" type="button" class="toggle-add-user-btn">
+		<i class="fas fa-user-plus"></i> Tambah User Baru
+	  </button>
+
+	  <div class="add-user-section" id="addUserSection" style="display:none;">
+		<div class="add-user-title"><i class="fas fa-user-plus icon"></i>Tambah User Baru</div>
+		<form id="addUserForm" class="add-user-form">
+		  <label for="newAlias"><i class="fas fa-user-tag icon"></i> Alias</label>
+		  <input type="text" id="newAlias" autocomplete="off" name="alias" placeholder="Alias (unik)">
+		  <label for="newUsername"><i class="fas fa-id-card icon"></i> Username/NIP</label>
+		  <input type="text" id="newUsername" autocomplete="off" name="username" placeholder="NIP/Username">
+		  <label for="newPassword"><i class="fas fa-key icon"></i> Password</label>
+		  <input type="text" id="newPassword" autocomplete="off" name="password" placeholder="Password">
+		  <button type="submit"><i class="fas fa-save"></i> Simpan User</button>
+		</form>
+		<div id="addUserOutput" class="add-user-output"></div>
+	  </div>
+	</div>
+
+
+    <div id="riwayat" class="tab-content">
+      <form id="riwayatForm">
+        <div class="form-group">
+          <label for="riwayatUser"><i class="fas fa-user icon"></i> User</label>
+          <select id="riwayatUser" name="user"></select>
+        </div>
+        <div class="form-group">
+          <label for="tgl1"><i class="fas fa-calendar icon"></i> Dari</label>
+          <input type="text" id="tgl1" name="tgl1">
+        </div>
+        <div class="form-group">
+          <label for="tgl2"><i class="fas fa-calendar icon"></i> Sampai</label>
+          <input type="text" id="tgl2" name="tgl2">
+        </div>
+        <button type="submit"><i class="fas fa-search"></i> Lihat Riwayat</button>
+      </form>
+      <div id="result">Belum ada data.</div>
+    </div>
+    <div id="inputabsen" class="tab-content">
+      <form id="inputAbsenForm" style="margin-bottom:18px;">
+        <div class="form-group">
+          <label for="absenUser"><i class="fas fa-user icon"></i> User</label>
+          <select id="absenUser" name="user"></select>
+        </div>
+        <div class="form-group">
+          <label for="koordinat"><i class="fas fa-map-marker-alt icon"></i> Koordinat</label>
+          <div>
+            <input type="text" id="koordinat" name="koordinat" value="5.3671932, 95.9574731" style="flex:1;">
+            <button type="button" id="randomKoordinatBtn"><i class="fas fa-random"></i> Random Koordinat</button>
+          </div>
+		  <iframe id="mapFrame" width="100%" height="150" style="margin-top:15px; border-radius:10px;" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <button type="submit"><i class="fas fa-fingerprint"></i> Input Absen</button>
+      </form>
+      <div id="absenResult">Belum ada aksi.</div>
+    </div>
+    <div id="infodata" class="tab-content">
+      <form id="infoDataForm" style="margin-bottom:18px;">
+        <div class="form-group">
+          <label for="infoUser"><i class="fas fa-user icon"></i> Pilih User</label>
+          <select id="infoUser" name="user"></select>
+        </div>
+        <button type="submit"><i class="fas fa-search"></i> Ambil Data</button>
+      </form>
+      <div id="infoResult">Belum ada data.</div>
+    </div>
+  </div>
+
+  <script>
+    const users = {
+      nabila: {
+        id: "199709212021082001",
+        password: "akunabila21",
+        id_device: "%7B%22android_info%22%3A%7B%22id%22%3A%22TP1A.220624.014%22%2C%22version%22%3A%7B%22sdkInt%22%3A33%2C%22release%22%3A%2213%22%7D%2C%22brand%22%3A%22samsung%22%2C%22device%22%3A%22a54x%22%2C%22hardware%22%3A%22s5e8835%22%2C%22product%22%3A%22a54xnsxx%22%2C%22serial_Number%22%3A%22unknown%22%2C%22system_features%22%3A%5B%22android.hardware.sensor.proximity%22%2C%22com.samsung.android.sdk.camera.processor%22%2C%22com.samsung.feature.aodservice_v10%22%2C%22com.sec.feature.motionrecognition_service%22%2C%22com.sec.feature.cover.sview%22%2C%22android.hardware.telephony.ims.singlereg%22%2C%22android.hardware.sensor.accelerometer%22%2C%22android.software.controls%22%2C%22android.hardware.faketouch%22%2C%22android.software.telecom%22%2C%22com.samsung.feature.audio_listenback%22%2C%22android.hardware.telephony.subscription%22%2C%22android.hardware.usb.accessory%22%2C%22android.hardware.telephony.data%22%2C%22android.software.backup%22%2C%22android.hardware.touchscreen%22%2C%22android.hardware.touchscreen.multitouch%22%2C%22android.software.erofs%22%2C%22android.software.print%22%2C%22android.software.activities_on_secondary_displays%22%2C%22com.sec.feature.nfc_authentication_cover%22%2C%22com.samsung.feature.SAMSUNG_EXPERIENCE%22%2C%22com.google.android.feature.ACCESSIBILITY_PRELOAD%22%2C%22com.sec.feature.nfc_authentication%22%2C%22android.software.voice_recognizers%22%2C%22android.software.picture_in_picture%22%2C%22android.hardware.fingerprint%22%2C%22com.samsung.android.knox.knoxsdk%22%2C%22android.hardware.sensor.gyroscope%22%2C%22android.hardware.audio.low_latency%22%2C%22android.software.vulkan.deqp.level%22%2C%22android.software.cant_save_state%22%2C%22android.hardware.security.model.compatible%22%2C%22android.hardware.telephony.messaging%22%2C%22com.samsung.feature.device_category_phone%22%2C%22com.samsung.android.nfc.t4temul%22%2C%22android.hardware.telephony.calling%22%2C%22android.hardware.opengles.aep%22%2C%22com.sec.feature.sensorhub%22%2C%22android.hardware.bluetooth%22%2C%22android.software.window_magnification%22%2C%22android.hardware.telephony.radio.access%22%2C%22android.hardware.camera.autofocus%22%2C%22android.hardware.telephony.gsm%22%2C%22android.hardware.telephony.ims%22%2C%22com.sec.feature.cocktailpanel%22%2C%22android.software.incremental_delivery%22%2C%22android.software.sip.voip%22%2C%22android.software.opengles.deqp.level%22%2C%22com.sec.feature.saccessorymanager%22%2C%22com.samsung.feature.samsung_experience_mobile%22%2C%22android.hardware.usb.host%22%2C%22android.hardware.audio.output%22%2C%22android.software.verified_boot%22%2C%22android.hardware.camera.flash%22%2C%22android.hardware.camera.front%22%2C%22android.hardware.se.omapi.uicc%22%2C%22android.hardware.screen.portrait%22%2C%22com.google.android.feature.ASI%22%2C%22android.hardware.nfc%22%2C%22com.google.android.feature.TURBO_PRELOAD%22%2C%22com.samsung.feature.ipsgeofence%22%2C%22com.nxp.mifare%22%2C%22com.samsung.feature.SAMSUNG_EXPERIENCE_AM%22%2C%22android.hardware.sensor.stepdetector%22%2C%22android.software.home_screen%22%2C%22android.hardware.microphone%22%2C%22com.sec.feature.cover.clearcameraviewcover%22%2C%22com.samsung.feature.aremoji.v2%22%2C%22android.software.autofill%22%2C%22com.samsung.android.sdk.camera.processor.effect%22%2C%22android.software.securely_removes_users%22%2C%22android.hardware.bluetooth_le%22%2C%22android.hardware.sensor.compass%22%2C%22android.hardware.touchscreen.multitouch.jazzhand%22%2C%22android.software.app_widgets%22%2C%22android.software.input_methods%22%2C%22android.hardware.sensor.light%22%2C%22android.hardware.vulkan.version%22%2C%22android.software.companion_device_setup%22%2C%22com.google.android.feature.galaxyfinder_v7%22%2C%22android.software.device_admin%22%2C%22android.hardware.wifi.passpoint%22%2C%22android.hardware.camera%22%2C%22android.hardware.screen.landscape%22%2C%22android.software.device_id_attestation%22%2C%22com.google.android.feature.AER_OPTIMIZED%22%2C%22android.hardware.ram.normal%22%2C%22com.samsung.feature.samsungpositioning.snlp%22%2C%22com.samsung.android.authfw%22%2C%22com.samsung.android.api.version.2402%22%2C%22com.samsung.android.api.version.2403%22%2C%22com.samsung.android.api.version.2501%22%2C%22com.samsung.android.api.version.2502%22%2C%22com.samsung.android.api.version.2601%22%2C%22com.samsung.android.api.version.2701%22%2C%22com.samsung.android.api.version.2801%22%2C%22com.samsung.android.api.version.2802%22%2C%22com.samsung.android.api.version.2803%22%2C%22com.samsung.android.api.version.2901%22%2C%22com.samsung.android.api.version.2902%22%2C%22com.samsung.android.api.version.2903%22%2C%22com.samsung.android.api.version.3001%22%2C%22com.samsung.android.api.version.3002%22%2C%22com.samsung.android.api.version.3101%22%2C%22com.samsung.android.api.version.3201%22%2C%22com.samsung.android.api.version.3301%22%2C%22com.sec.feature.cover%22%2C%22android.software.managed_users%22%2C%22com.sec.feature.nsflp%22%2C%22android.software.webview%22%2C%22android.hardware.sensor.stepcounter%22%2C%22android.hardware.camera.any%22%2C%22android.hardware.vulkan.compute%22%2C%22android.hardware.touchscreen.multitouch.distinct%22%2C%22android.hardware.location.network%22%2C%22com.sec.android.secimaging%22%2C%22android.software.cts%22%2C%22android.software.sip%22%2C%22android.software.app_enumeration%22%2C%22com.sec.feature.usb_authentication%22%2C%22android.hardware.wifi.direct%22%2C%22android.software.live_wallpaper%22%2C%22android.software.ipsec_tunnels%22%2C%22android.hardware.audio.pro%22%2C%22android.hardware.nfc.hcef%22%2C%22android.hardware.nfc.uicc%22%2C%22com.samsung.feature.support_repair_mode%22%2C%22android.hardware.location.gps%22%2C%22com.samsung.android.camera.deviceinjector%22%2C%22android.software.midi%22%2C%22com.samsung.feature.samsungpositioning%22%2C%22android.hardware.nfc.any%22%2C%22android.hardware.nfc.hce%22%2C%22android.hardware.hardware_keystore%22%2C%22com.sec.feature.pocketsensitivitymode%22%2C%22android.hardware.wifi%22%2C%22android.hardware.location%22%2C%22android.hardware.vulkan.level%22%2C%22android.hardware.keystore.app_attest_key%22%2C%22com.samsung.android.cameraxservice%22%2C%22com.samsung.android.knox.knoxsdk.api.level.33%22%2C%22com.samsung.android.knox.knoxsdk.api.level.34%22%2C%22com.samsung.android.knox.knoxsdk.api.level.35%22%2C%22com.samsung.android.knox.knoxsdk.api.level.36%22%2C%22android.hardware.wifi.aware%22%2C%22android.software.secure_lock_screen%22%2C%22android.hardware.biometrics.face%22%2C%22android.hardware.telephony%22%2C%22com.sec.android.smartface.smart_stay%22%2C%22android.software.file_based_encryption%22%5D%7D%7D"
+      },
+      mukrim: {
+        id: "199806122020121003",
+        password: "123",
+        id_device: "%7B%22android_info%22%3A%7B%22id%22%3A%22AP3A.240905.015.A2%22%2C%22version%22%3A%7B%22sdkInt%22%3A35%2C%22release%22%3A%2215%22%7D%2C%22brand%22%3A%22Xiaomi%22%2C%22device%22%3A%22degas%22%2C%22hardware%22%3A%22mt6897%22%2C%22product%22%3A%22degas_global%22%2C%22serial_Number%22%3A%22unknown%22%2C%22system_features%22%3A%5B%22android.hardware.sensor.proximity%22%2C%22com.google.android.feature.CONTEXTUAL_SEARCH%22%2C%22android.hardware.sensor.accelerometer%22%2C%22android.software.controls%22%2C%22android.hardware.faketouch%22%2C%22android.software.telecom%22%2C%22android.hardware.telephony.subscription%22%2C%22com.google.android.feature.D2D_CABLE_MIGRATION_FEATURE%22%2C%22android.hardware.telephony.euicc%22%2C%22android.hardware.usb.accessory%22%2C%22android.hardware.telephony.cdma%22%2C%22android.hardware.telephony.data%22%2C%22android.hardware.sensor.dynamic.head_tracker%22%2C%22android.software.backup%22%2C%22android.hardware.touchscreen%22%2C%22android.hardware.touchscreen.multitouch%22%2C%22android.software.erofs%22%2C%22android.software.print%22%2C%22android.hardware.consumerir%22%2C%22android.software.activities_on_secondary_displays%22%2C%22android.software.device_lock%22%2C%22android.software.voice_recognizers%22%2C%22com.google.lens.feature.CAMERA_INTEGRATION%22%2C%22android.software.picture_in_picture%22%2C%22android.hardware.fingerprint%22%2C%22android.hardware.sensor.gyroscope%22%2C%22android.hardware.audio.low_latency%22%2C%22com.google.android.feature.PERSONAL_SAFETY%22%2C%22android.software.vulkan.deqp.level%22%2C%22android.software.cant_save_state%22%2C%22android.hardware.security.model.compatible%22%2C%22android.hardware.telephony.messaging%22%2C%22android.hardware.telephony.calling%22%2C%22android.hardware.opengles.aep%22%2C%22android.hardware.bluetooth%22%2C%22android.software.window_magnification%22%2C%22android.hardware.telephony.radio.access%22%2C%22android.hardware.camera.autofocus%22%2C%22android.hardware.telephony.gsm%22%2C%22android.hardware.telephony.ims%22%2C%22android.software.incremental_delivery%22%2C%22android.hardware.se.omapi.ese%22%2C%22android.software.opengles.deqp.level%22%2C%22android.hardware.camera.concurrent%22%2C%22android.hardware.usb.host%22%2C%22android.hardware.audio.output%22%2C%22android.software.ipsec_tunnel_migration%22%2C%22android.software.verified_boot%22%2C%22android.hardware.camera.flash%22%2C%22android.hardware.camera.front%22%2C%22android.hardware.se.omapi.uicc%22%2C%22android.hardware.strongbox_keystore%22%2C%22android.hardware.screen.portrait%22%2C%22com.google.android.feature.ASI%22%2C%22android.hardware.nfc%22%2C%22com.android.se%22%2C%22com.nxp.mifare%22%2C%22android.hardware.sensor.stepdetector%22%2C%22android.software.home_screen%22%2C%22android.hardware.context_hub%22%2C%22android.hardware.microphone%22%2C%22com.google.ambient.streaming%22%2C%22android.software.autofill%22%2C%22android.software.securely_removes_users%22%2C%22android.hardware.bluetooth_le%22%2C%22android.hardware.sensor.compass%22%2C%22android.hardware.touchscreen.multitouch.jazzhand%22%2C%22android.software.app_widgets%22%2C%22android.software.input_methods%22%2C%22android.hardware.sensor.light%22%2C%22android.hardware.vulkan.version%22%2C%22android.software.companion_device_setup%22%2C%22com.google.android.feature.AICORE_MT_MT6897%22%2C%22android.software.device_admin%22%2C%22com.google.android.feature.WELLBEING%22%2C%22android.hardware.wifi.passpoint%22%2C%22android.hardware.camera%22%2C%22android.software.credentials%22%2C%22android.hardware.screen.landscape%22%2C%22android.software.device_id_attestation%22%2C%22com.google.android.feature.AER_OPTIMIZED%22%2C%22android.hardware.ram.normal%22%2C%22com.google.android.feature.AICORE_MT%22%2C%22android.software.managed_users%22%2C%22android.software.webview%22%2C%22android.hardware.sensor.stepcounter%22%2C%22android.hardware.camera.capability.manual_post_processing%22%2C%22com.google.lens.feature.IMAGE_INTEGRATION%22%2C%22android.hardware.camera.any%22%2C%22android.hardware.camera.capability.raw%22%2C%22android.hardware.vulkan.compute%22%2C%22com.google.android.apps.dialer.call_recording_audio%22%2C%22android.hardware.touchscreen.multitouch.distinct%22%2C%22android.hardware.location.network%22%2C%22android.software.cts%22%2C%22android.hardware.camera.capability.manual_sensor%22%2C%22android.software.app_enumeration%22%2C%22com.google.android.apps.dialer.SUPPORTED%22%2C%22android.hardware.camera.level.full%22%2C%22android.hardware.identity_credential%22%2C%22android.hardware.wifi.direct%22%2C%22android.software.live_wallpaper%22%2C%22com.mediatek.hardware.vow_dsp.riscv%22%2C%22android.software.ipsec_tunnels%22%2C%22android.hardware.nfc.hcef%22%2C%22android.hardware.nfc.uicc%22%2C%22android.hardware.location.gps%22%2C%22android.software.midi%22%2C%22com.mediatek.hardware.vow.2e2k%22%2C%22android.hardware.nfc.any%22%2C%22android.hardware.nfc.ese%22%2C%22android.hardware.nfc.hce%22%2C%22android.hardware.hardware_keystore%22%2C%22android.hardware.telephony.euicc.mep%22%2C%22android.hardware.wifi%22%2C%22android.hardware.location%22%2C%22android.hardware.vulkan.level%22%2C%22android.hardware.keystore.app_attest_key%22%2C%22android.software.secure_lock_screen%22%2C%22android.hardware.biometrics.face%22%2C%22android.hardware.telephony%22%2C%22android.software.file_based_encryption%22%5D%7D%7D"
+      },
+      mukhlis: {
+        id: "196812311992101001",
+        password: "427668",
+        id_device: "%7B%22android_info%22%3A%7B%22id%22%3A%22SP1A.210812.016%22%2C%22version%22%3A%7B%22sdkInt%22%3A31%2C%22release%22%3A%2212%22%7D%2C%22brand%22%3A%22samsung%22%2C%22device%22%3A%22a21s%22%2C%22hardware%22%3A%22exynos850%22%2C%22product%22%3A%22a21snnxx%22%2C%22serial_Number%22%3A%22unknown%22%2C%22system_features%22%3A%5B%22android.hardware.sensor.proximity%22%2C%22com.samsung.android.sdk.camera.processor%22%2C%22com.sec.feature.motionrecognition_service%22%2C%22android.hardware.telephony.ims.singlereg%22%2C%22android.hardware.sensor.accelerometer%22%2C%22android.software.controls%22%2C%22android.hardware.faketouch%22%2C%22com.samsung.feature.audio_listenback%22%2C%22android.hardware.usb.accessory%22%2C%22android.software.backup%22%2C%22android.hardware.touchscreen%22%2C%22android.hardware.touchscreen.multitouch%22%2C%22android.software.print%22%2C%22android.software.activities_on_secondary_displays%22%2C%22com.samsung.feature.SAMSUNG_EXPERIENCE%22%2C%22com.google.android.feature.ACCESSIBILITY_PRELOAD%22%2C%22android.software.voice_recognizers%22%2C%22android.software.picture_in_picture%22%2C%22android.hardware.fingerprint%22%2C%22com.samsung.android.knox.knoxsdk%22%2C%22android.hardware.sensor.gyroscope%22%2C%22android.hardware.audio.low_latency%22%2C%22android.software.vulkan.deqp.level%22%2C%22android.software.cant_save_state%22%2C%22android.hardware.security.model.compatible%22%2C%22com.samsung.feature.device_category_phone%22%2C%22com.samsung.android.nfc.t4temul%22%2C%22android.hardware.opengles.aep%22%2C%22com.sec.feature.sensorhub%22%2C%22android.hardware.bluetooth%22%2C%22android.hardware.camera.autofocus%22%2C%22android.hardware.telephony.gsm%22%2C%22android.hardware.telephony.ims%22%2C%22com.sec.feature.cocktailpanel%22%2C%22android.software.sip.voip%22%2C%22android.software.opengles.deqp.level%22%2C%22com.sec.feature.saccessorymanager%22%2C%22android.hardware.usb.host%22%2C%22android.hardware.audio.output%22%2C%22android.software.verified_boot%22%2C%22android.hardware.camera.flash%22%2C%22android.hardware.camera.front%22%2C%22com.samsung.feature.clockpack_v09%22%2C%22android.hardware.se.omapi.uicc%22%2C%22android.hardware.screen.portrait%22%2C%22com.google.android.feature.TURBO_PRELOAD%22%2C%22com.samsung.feature.samsung_experience_mobile_lite%22%2C%22android.hardware.sensor.stepdetector%22%2C%22android.software.home_screen%22%2C%22android.hardware.microphone%22%2C%22android.software.autofill%22%2C%22com.samsung.android.sdk.camera.processor.effect%22%2C%22android.software.securely_removes_users%22%2C%22android.hardware.bluetooth_le%22%2C%22android.hardware.sensor.compass%22%2C%22android.hardware.touchscreen.multitouch.jazzhand%22%2C%22android.software.app_widgets%22%2C%22android.software.input_methods%22%2C%22android.hardware.vulkan.version%22%2C%22android.software.companion_device_setup%22%2C%22com.samsung.feature.galaxyfinder_v7%22%2C%22android.software.device_admin%22%2C%22android.hardware.keystore.limited_use_key%22%2C%22android.hardware.wifi.passpoint%22%2C%22android.hardware.camera%22%2C%22android.hardware.screen.landscape%22%2C%22android.hardware.ram.normal%22%2C%22com.samsung.android.api.version.2402%22%2C%22com.samsung.android.api.version.2403%22%2C%22com.samsung.android.api.version.2501%22%2C%22com.samsung.android.api.version.2502%22%2C%22com.samsung.android.api.version.2601%22%2C%22com.samsung.android.api.version.2701%22%2C%22com.samsung.android.api.version.2801%22%2C%22com.samsung.android.api.version.2802%22%2C%22com.samsung.android.api.version.2803%22%2C%22com.samsung.android.api.version.2901%22%2C%22com.samsung.android.api.version.2902%22%2C%22com.samsung.android.api.version.2903%22%2C%22com.samsung.android.api.version.3001%22%2C%22com.samsung.android.api.version.3002%22%2C%22com.samsung.android.api.version.3101%22%2C%22android.software.managed_users%22%2C%22com.sec.feature.nsflp%22%2C%22android.software.webview%22%2C%22android.hardware.sensor.stepcounter%22%2C%22android.hardware.camera.any%22%2C%22android.hardware.vulkan.compute%22%2C%22android.software.connectionservice%22%2C%22android.hardware.touchscreen.multitouch.distinct%22%2C%22android.hardware.location.network%22%2C%22com.sec.android.secimaging%22%2C%22android.software.cts%22%2C%22android.software.sip%22%2C%22android.software.app_enumeration%22%2C%22com.sec.feature.usb_authentication%22%2C%22android.hardware.wifi.direct%22%2C%22android.software.live_wallpaper%22%2C%22android.software.ipsec_tunnels%22%2C%22android.software.freeform_window_management%22%2C%22android.hardware.location.gps%22%2C%22android.software.midi%22%2C%22android.hardware.wifi%22%2C%22android.hardware.location%22%2C%22android.hardware.vulkan.level%22%2C%22com.samsung.android.knox.knoxsdk.api.level.33%22%2C%22com.samsung.android.knox.knoxsdk.api.level.34%22%2C%22com.samsung.android.knox.knoxsdk.api.level.35%22%2C%22android.software.secure_lock_screen%22%2C%22android.hardware.biometrics.face%22%2C%22android.hardware.telephony%22%2C%22com.sec.android.smartface.smart_stay%22%2C%22android.software.file_based_encryption%22%5D%7D%7D"
+      },
+      cut_novi: {
+        id: "199212222024212017",
+        password: "aleaathar",
+        id_device: "%7B%22android_info%22%3A%7B%22id%22%3A%22TP1A.220905.001%22%2C%22version%22%3A%7B%22sdkInt%22%3A33%2C%22release%22%3A%2213%22%7D%2C%22brand%22%3A%22OPPO%22%2C%22device%22%3A%22OP533FL1%22%2C%22hardware%22%3A%22qcom%22%2C%22product%22%3A%22CPH2461T2%22%2C%22serial_Number%22%3A%22unknown%22%2C%22system_features%22%3A%5B%22oppo.runtime.permission.alert.support%22%2C%22com.oplus.software.children_space_google_play_exp%22%2C%22android.hardware.sensor.proximity%22%2C%22com.oplus.software.viewtalk_google_play%22%2C%22com.google.android.feature.ASI_MINIMAL%22%2C%22android.hardware.sensor.accelerometer%22%2C%22android.software.controls%22%2C%22android.hardware.faketouch%22%2C%22com.google.android.feature.D2D_CABLE_MIGRATION_FEATURE%22%2C%22android.hardware.usb.accessory%22%2C%22oppo.back.touch.fingerprint.sensor%22%2C%22android.hardware.telephony.cdma%22%2C%22android.software.backup%22%2C%22android.hardware.touchscreen%22%2C%22android.hardware.touchscreen.multitouch%22%2C%22oppo.common.support.curved.display%22%2C%22android.software.print%22%2C%22com.oplus.assistantscreen.google_play_exp%22%2C%22android.software.activities_on_secondary_displays%22%2C%22oplus.misc.lights.support%22%2C%22oplus.software.support_gp.type_phone%22%2C%22android.software.voice_recognizers%22%2C%22com.google.lens.feature.CAMERA_INTEGRATION%22%2C%22android.software.picture_in_picture%22%2C%22oplus.deviceowner.support%22%2C%22android.hardware.fingerprint%22%2C%22android.hardware.sensor.gyroscope%22%2C%22android.hardware.audio.low_latency%22%2C%22android.software.vulkan.deqp.level%22%2C%22android.software.cant_save_state%22%2C%22android.hardware.security.model.compatible%22%2C%22android.hardware.opengles.aep%22%2C%22oplus.software.support_gp.product_full%22%2C%22android.hardware.bluetooth%22%2C%22oplus.software.support_gp.region_export%22%2C%22android.software.window_magnification%22%2C%22android.hardware.camera.autofocus%22%2C%22android.hardware.telephony.gsm%22%2C%22android.hardware.telephony.ims%22%2C%22android.software.incremental_delivery%22%2C%22android.software.sip.voip%22%2C%22oplus.secrecy.support%22%2C%22android.hardware.usb.host%22%2C%22oppo.hardware.fingerprint.optical.support%22%2C%22android.hardware.audio.output%22%2C%22oppo.version.exp%22%2C%22android.software.verified_boot%22%2C%22android.hardware.camera.flash%22%2C%22android.hardware.camera.front%22%2C%22oppo.exp.default.browser%22%2C%22android.hardware.se.omapi.uicc%22%2C%22android.hardware.screen.portrait%22%2C%22android.hardware.nfc%22%2C%22com.nxp.mifare%22%2C%22android.hardware.sensor.stepdetector%22%2C%22android.software.home_screen%22%2C%22oppo.common_center.wlan.assistant%22%2C%22android.hardware.microphone%22%2C%22android.software.autofill%22%2C%22android.software.securely_removes_users%22%2C%22android.hardware.bluetooth_le%22%2C%22android.hardware.sensor.compass%22%2C%22android.hardware.touchscreen.multitouch.jazzhand%22%2C%22android.software.app_widgets%22%2C%22android.software.input_methods%22%2C%22android.hardware.sensor.light%22%2C%22android.hardware.vulkan.version%22%2C%22android.software.companion_device_setup%22%2C%22android.software.device_admin%22%2C%22com.google.android.feature.WELLBEING%22%2C%22android.hardware.wifi.passpoint%22%2C%22android.hardware.camera%22%2C%22com.games.exp%22%2C%22android.hardware.screen.landscape%22%2C%22android.hardware.ram.normal%22%2C%22com.games.oppo%22%2C%22android.software.managed_users%22%2C%22com.oplus.android.feature.PAI%22%2C%22android.software.webview%22%2C%22android.hardware.sensor.stepcounter%22%2C%22android.hardware.camera.capability.manual_post_processing%22%2C%22com.google.lens.feature.IMAGE_INTEGRATION%22%2C%22android.hardware.camera.any%22%2C%22android.hardware.camera.capability.raw%22%2C%22android.hardware.vulkan.compute%22%2C%22android.software.connectionservice%22%2C%22android.hardware.touchscreen.multitouch.distinct%22%2C%22android.hardware.location.network%22%2C%22android.software.cts%22%2C%22android.software.sip%22%2C%22android.hardware.camera.capability.manual_sensor%22%2C%22android.software.app_enumeration%22%2C%22oplus.software.support_gp.brand_oppo%22%2C%22oppo.qualcomm.gemini.support%22%2C%22android.hardware.camera.level.full%22%2C%22oppo.hw.manufacturer.qualcomm%22%2C%22android.hardware.wifi.direct%22%2C%22android.software.live_wallpaper%22%2C%22oppo.docvault.support%22%2C%22android.software.ipsec_tunnels%22%2C%22android.hardware.nfc.hcef%22%2C%22android.hardware.nfc.uicc%22%2C%22android.hardware.location.gps%22%2C%22android.software.midi%22%2C%22android.hardware.nfc.any%22%2C%22android.hardware.nfc.hce%22%2C%22android.hardware.hardware_keystore%22%2C%22android.hardware.wifi%22%2C%22android.hardware.location%22%2C%22android.hardware.vulkan.level%22%2C%22com.oplus.software.screenrecorder_google_play%22%2C%22android.software.secure_lock_screen%22%2C%22android.hardware.biometrics.face%22%2C%22android.hardware.telephony%22%2C%22android.software.file_based_encryption%22%5D%7D%7D"
+      }
+    };
+
+    const tokenStore = {}; // Penyimpan token per user
+    const namaStore = {}; // Penyimpan nama
+    const avatarStore = {}; // Penyimpan foto
+
+    function openTab(name) {
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".tab-link").forEach(el => el.classList.remove("active"));
+      document.getElementById(name).classList.add("active");
+      document.querySelector(`.tab-link[onclick*="${name}"]`).classList.add("active");
+    }
+
+    function selectUser(name) {
+      const u = users[name];
+      if (!u) return alert("User tidak ditemukan");
+      document.getElementById("id").value = u.id;
+      document.getElementById("password").value = u.password;
+      document.getElementById("id_device").value = u.id_device;
+      document.getElementById("status").innerHTML = `<b>✅ ${name.toUpperCase()} dipilih</b>`;
+      document.getElementById("result").innerHTML = "Belum ada data.";
+    }
+
+	function formatKeyToName(key) {
+	  return key
+		.toLowerCase()
+		.split('_')
+		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(' ');
+	}
+
+    // Tambahkan inisialisasi dropdown user di riwayat
+	function populateRiwayatUserDropdown() {
+	  const select = document.getElementById('riwayatUser');
+	  select.innerHTML = '';
+	  for (const key in users) {
+		const opt = document.createElement('option');
+		opt.value = key;
+		opt.textContent = formatKeyToName(key);
+		select.appendChild(opt);
+	  }
+	}
+
+
+	function populateLoginUserDropdown() {
+	  const select = document.getElementById('userSelect');
+	  select.innerHTML = '';
+	  for (const key in users) {
+		const opt = document.createElement('option');
+		opt.value = key;
+		opt.textContent = formatKeyToName(key); // Ganti ini
+		select.appendChild(opt);
+	  }
+	}
+
+
+    // Simpan token ke localStorage setelah login
+    document.getElementById("absenForm").onsubmit = async function(e) {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      form.append("target", "https://e-absensi.pidiekab.go.id/api/in_login_password");
+      const res1 = await fetch("https://f9997a84-8740-4244-a66f-d36e76abb0a9-00-1duyeoz04ut6.sisko.replit.dev/proxy", {
+        method: "POST",
+        body: new URLSearchParams(form)
+      });
+      const text1 = await res1.text();
+      let login;
+      try {
+        login = JSON.parse(text1);
+      } catch {
+        openTab('riwayat');
+        return showResult(`<pre>❌ Gagal parsing login:\n${text1}</pre>`);
+      }
+      const token = login?.return?.token || login?.token;
+      const nama = login?.return?.pegawai?.nama_peg || "-";
+      const avatar = login?.return?.avatar || null;
+      const pegawai = login?.return?.pegawai || {};
+      const idInput = document.getElementById("id").value;
+      const userKey = Object.keys(users).find(k => users[k].id === idInput);
+      if (!token || !userKey) {
+        openTab('riwayat');
+        return showResult(`<b>❌ Token/User tidak ditemukan</b><pre>${text1}</pre>`);
+      }
+      tokenStore[userKey] = token;
+      namaStore[userKey] = nama;
+      avatarStore[userKey] = avatar;
+      // Simpan semua data user dalam satu key
+      const userData = {
+        token,
+        avatar,
+        pegawai: {
+          nama_peg: pegawai.nama_peg || '',
+          jenis_peg: pegawai.jenis_peg || '',
+          nip: pegawai.nip || '',
+          email: pegawai.email || '',
+          no_hp: pegawai.no_hp || '',
+          satuan_kerja: pegawai.satuan_kerja || '',
+          unit_organisasi: pegawai.unit_organisasi || '',
+          nama_jabatan: pegawai.nama_jabatan || '',
+          last_login: pegawai.last_login || '',
+          created_at: pegawai.created_at || ''
+        }
+      };
+      localStorage.setItem('user_' + userKey, JSON.stringify(userData));
+      document.getElementById('status').innerHTML = '<b>✅ Token berhasil diambil.</b>';
+    };
+
+    // Ubah loadRiwayat agar menerima parameter userKey, tgl1, tgl2
+    function loadRiwayat(userKey, tgl1, tgl2) {
+      const token = tokenStore[userKey];
+      const nama = namaStore[userKey] || userKey;
+      const avatar = avatarStore[userKey];
+      if (!token) return alert("Token belum tersedia. Login dulu dengan user ini.");
+      const body2 = new URLSearchParams({
+        token,
+        tgl1,
+        tgl2,
+        target: "https://e-absensi.pidiekab.go.id/api/in_riwayat"
+      });
+      fetch("https://f9997a84-8740-4244-a66f-d36e76abb0a9-00-1duyeoz04ut6.sisko.replit.dev/proxy", {
+        method: "POST",
+        body: body2
+      }).then(res => res.text()).then(text => {
+        let riwayat;
+        try {
+          riwayat = JSON.parse(text);
+        } catch {
+          return showResult(`<pre>❌ Gagal parsing riwayat:\n${text}</pre>`);
+        }
+        // Jika token invalid/mati, hapus dari localStorage dan tokenStore
+        if (riwayat?.status === false && /token/i.test(riwayat?.pesan || '')) {
+          localStorage.removeItem('user_' + userKey);
+          delete tokenStore[userKey];
+          delete avatarStore[userKey];
+          showResult('<b>❌ Token expired/invalid. Silakan login ulang.</b>');
+          return;
+        }
+        const rows = riwayat?.return;
+        if (!Array.isArray(rows)) return showResult("<b>📭 Data tidak ditemukan</b>");
+        let html = `<b>Nama:</b> ${nama}<br>`;
+        if (avatar) html += `<img src="${avatar}"><br>`;
+        html += `<table><tr><th>Tanggal</th><th>Hari</th><th>Status</th><th>Keterangan</th></tr>`;
+        for (const r of rows) {
+          const isLibur = r.hari === 'Sabtu' || r.hari === 'Minggu';
+          html += `<tr${isLibur ? ' class="row-libur"' : ''}><td>${formatTanggal(r.tanggal)}</td><td>${r.hari}</td><td>${r.kode_status.toUpperCase()}</td><td>${r.status}</td></tr>`;
+        }
+        html += `</table>`;
+        openTab('riwayat');
+        showResult(html);
+      });
+    }
+
+    // Tangani submit form riwayat
+    document.getElementById('riwayatForm').onsubmit = function(e) {
+      e.preventDefault();
+      const userKey = document.getElementById('riwayatUser').value;
+      // Ambil dan ubah format tanggal dari dd/mm/yyyy ke yyyy-mm-dd
+      function toYMD(val) {
+        if (!val) return '';
+        const parts = val.split('/');
+        if (parts.length !== 3) return val;
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+      }
+      const tgl1 = toYMD(document.getElementById('tgl1').value);
+      const tgl2 = toYMD(document.getElementById('tgl2').value);
+      if (!userKey || !tgl1 || !tgl2) {
+        showResult('<b>❌ Pilih user dan tanggal terlebih dahulu</b>');
+        return;
+      }
+      loadRiwayat(userKey, tgl1, tgl2);
+    };
+
+    function showResult(html) {
+      document.getElementById("result").innerHTML = html;
+    }
+
+    // Populate user dropdown for input absen
+	function populateAbsenUserDropdown() {
+	  const select = document.getElementById('absenUser');
+	  select.innerHTML = '';
+	  for (const key in users) {
+		const opt = document.createElement('option');
+		opt.value = key;
+		opt.textContent = formatKeyToName(key);
+		select.appendChild(opt);
+	  }
+	}
+
+
+    document.getElementById('inputAbsenForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const userKey = document.getElementById('absenUser').value;
+      const koordinat = document.getElementById('koordinat').value;
+      const userData = JSON.parse(localStorage.getItem('user_' + userKey) || '{}');
+      const token = userData.token;
+      const id_device = users[userKey]?.id_device;
+      if (!token || !id_device) {
+        document.getElementById('absenResult').innerHTML = '<b>❌ Token atau id_device tidak ditemukan. Login dulu.</b>';
+        return;
+      }
+      const body = new URLSearchParams({
+        token,
+        koordinat,
+        id_device,
+        target: 'https://e-absensi.pidiekab.go.id/api/in_absen_pegawai'
+      });
+      document.getElementById('absenResult').innerHTML = '⏳ Memproses...';
+      try {
+        const res = await fetch('https://f9997a84-8740-4244-a66f-d36e76abb0a9-00-1duyeoz04ut6.sisko.replit.dev/proxy', {
+          method: 'POST',
+          body
+        });
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          document.getElementById('absenResult').innerHTML = `<pre>❌ Gagal parsing response:\n${text}</pre>`;
+          return;
+        }
+        if (data?.status === false) {
+          document.getElementById('absenResult').innerHTML = `<b>❌ ${data?.pesan || 'Gagal absen.'}</b>`;
+        } else {
+          document.getElementById('absenResult').innerHTML = `<b>✅ Absen berhasil!</b><br><pre>${JSON.stringify(data, null, 2)}</pre>`;
+        }
+      } catch (err) {
+        document.getElementById('absenResult').innerHTML = `<b>❌ Error:</b> ${err.message}`;
+      }
+    };
+
+    // Random koordinat dalam radius 20 meter dari titik default
+    function randomKoordinat(lat0, lng0, radiusMeter = 20) {
+      const r = radiusMeter / 111320; // 1 deg lat ~ 111.32 km
+      const u = Math.random();
+      const v = Math.random();
+      const w = r * Math.sqrt(u);
+      const t = 2 * Math.PI * v;
+      const dx = w * Math.cos(t);
+      const dy = w * Math.sin(t);
+      const newLat = lat0 + dy;
+      const newLng = lng0 + dx / Math.cos(lat0 * Math.PI / 180);
+      return `${newLat.toFixed(7)}, ${newLng.toFixed(7)}`;
+    }
+	document.getElementById('randomKoordinatBtn').onclick = function () {
+	  const lat0 = 5.367315;
+	  const lng0 = 95.957463;
+	  const koordinat = randomKoordinat(lat0, lng0, 20);
+	  document.getElementById('koordinat').value = koordinat;
+
+	  // Tampilkan peta di iframe
+	  const [lat, lng] = koordinat.split(',').map(s => s.trim());
+	  const url = `https://www.google.com/maps?q=${lat},${lng}&t=k&z=20&ie=UTF8&iwloc=&output=embed`;
+	  document.getElementById('mapFrame').src = url;
+	};
+
+
+    function formatTanggal(tgl) {
+      // tgl: "2025-07-23" atau "2025/07/23"
+      if (!tgl) return '';
+      const parts = tgl.split(/[-\/]/);
+      if (parts.length !== 3) return tgl;
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+
+    // Populate user dropdown for info data
+	function populateInfoUserDropdown() {
+	  const select = document.getElementById('infoUser');
+	  select.innerHTML = '';
+	  for (const key in users) {
+		const opt = document.createElement('option');
+		opt.value = key;
+		opt.textContent = formatKeyToName(key);
+		select.appendChild(opt);
+	  }
+	}
+
+
+    document.getElementById('infoDataForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const userKey = document.getElementById('infoUser').value;
+      const userData = JSON.parse(localStorage.getItem('user_' + userKey) || '{}');
+      const token = userData.token;
+      const avatar = userData.avatar;
+      const pegawai = userData.pegawai || {};
+      if (!token) {
+        document.getElementById('infoResult').innerHTML = '<b>❌ Token tidak ditemukan. Login dulu.</b>';
+        return;
+      }
+      const body = new URLSearchParams({
+        token,
+        target: 'https://e-absensi.pidiekab.go.id/api/in_page_absensi'
+      });
+      document.getElementById('infoResult').innerHTML = '⏳ Memproses...';
+      try {
+        const res = await fetch('https://f9997a84-8740-4244-a66f-d36e76abb0a9-00-1duyeoz04ut6.sisko.replit.dev/proxy', {
+          method: 'POST',
+          body
+        });
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          document.getElementById('infoResult').innerHTML = `<pre>❌ Gagal parsing response:\n${text}</pre>`;
+          return;
+        }
+        if (data?.status !== 1) {
+          document.getElementById('infoResult').innerHTML = `<b>❌ ${data?.pesan || 'Gagal mengambil data.'}</b>`;
+          return;
+        }
+        const abs = data?.return?.status?.absensi;
+        if (!abs) {
+          document.getElementById('infoResult').innerHTML = '<b>❌ Data absensi tidak ditemukan.</b>';
+          return;
+        }
+        let html = `<div style="display:flex;align-items:center;gap:18px;margin-bottom:12px;">`;
+        if (avatar) html += `<img src="${avatar}" style="max-width:70px;max-height:70px;border-radius:10px;box-shadow:0 2px 8px rgba(0,191,255,0.08);">`;
+        html += `<div><b>${pegawai.nama_peg || userKey}</b><br><span style="font-size:14px;color:#87ceeb;">${pegawai.satuan_kerja || ''}</span></div></div>`;
+        html += `<table style="margin-top:10px;">
+          <tr><th>Jenis Pegawai</th><td>${pegawai.jenis_peg || '-'}</td></tr>
+          <tr><th>NIP</th><td>${pegawai.nip || '-'}</td></tr>
+          <tr><th>Email</th><td>${pegawai.email || '-'}</td></tr>
+          <tr><th>No HP</th><td>${pegawai.no_hp || '-'}</td></tr>
+          <tr><th>Unit Organisasi</th><td>${pegawai.unit_organisasi || '-'}</td></tr>
+          <tr><th>Jabatan</th><td>${pegawai.nama_jabatan || '-'}</td></tr>
+          <tr><th>Last Login</th><td>${pegawai.last_login || '-'}</td></tr>
+          <tr><th>Created At</th><td>${pegawai.created_at || '-'}</td></tr>
+        </table>`;
+        html += `<table style="margin-top:18px;">
+          <tr><th>Jam Masuk</th><td>${abs.jam_masuk || '-'}</td></tr>
+          <tr><th>Koordinat Masuk</th><td>${abs.koodrinat_masuk || '-'}</td></tr>
+          <tr><th>Jarak Masuk</th><td>${abs.jarak_masuk || '-'}</td></tr>
+          <tr><th>Jam Pulang</th><td>${abs.jam_pulang || '-'}</td></tr>
+          <tr><th>Koordinat Pulang</th><td>${abs.koodrinat_pulang || '-'}</td></tr>
+          <tr><th>Jarak Pulang</th><td>${abs.jarak_pulang || '-'}</td></tr>
+          <tr><th>Keterangan</th><td>${abs.keterangan || '-'}</td></tr>
+        </table>`;
+        document.getElementById('infoResult').innerHTML = html;
+      } catch (err) {
+        document.getElementById('infoResult').innerHTML = `<b>❌ Error:</b> ${err.message}`;
+      }
+    };
+
+    document.getElementById('toggleAddUserBtn').onclick = function() {
+      const section = document.getElementById('addUserSection');
+      section.style.display = section.style.display === 'none' ? 'block' : 'none';
+      if (section.style.display === 'block') {
+        document.getElementById('toggleAddUserBtn').innerHTML = '<i class="fas fa-times"></i> Tutup Form User Baru';
+      } else {
+        document.getElementById('toggleAddUserBtn').innerHTML = '<i class="fas fa-user-plus"></i> Tambah User Baru';
+      }
+    };
+
+    document.getElementById('addUserForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const alias = document.getElementById('newAlias').value.trim();
+      const username = document.getElementById('newUsername').value.trim();
+      const password = document.getElementById('newPassword').value.trim();
+      const outputDiv = document.getElementById('addUserOutput');
+      if (!alias || !username || !password) {
+        outputDiv.innerHTML = '<b>❌ Lengkapi semua field!</b>';
+        return;
+      }
+      outputDiv.innerHTML = '⏳ Mengambil id_device...';
+      try {
+        const form = new URLSearchParams({
+          id: username,
+          password: password,
+          id_device: '',
+          target: 'https://e-absensi.pidiekab.go.id/api/in_login_password'
+        });
+        const res = await fetch('https://f9997a84-8740-4244-a66f-d36e76abb0a9-00-1duyeoz04ut6.sisko.replit.dev/proxy', {
+          method: 'POST',
+          body: form
+        });
+        const text = await res.text();
+        let login;
+        try {
+          login = JSON.parse(text);
+        } catch {
+          outputDiv.innerHTML = `<b>❌ Gagal parsing response:</b><br><pre>${text}</pre>`;
+          return;
+        }
+        if (!login?.return?.id_device) {
+          outputDiv.innerHTML = `<b>❌ Gagal ambil id_device:</b><br><pre>${text}</pre>`;
+          return;
+        }
+        const iddev = encodeURIComponent(login.return.id_device);
+        const js = `${alias}: {\n  id: \"${username}\",\n  password: \"${password}\",\n  id_device: \"${iddev}\"\n},`;
+        outputDiv.innerHTML = `<b>Salin ke users:</b><br><div class='add-user-output-box'><pre id='copyUserOutput'>${js}</pre><div class='add-user-output-action'><button type='button' id='copyUserBtn'><i class='fas fa-copy'></i></button><button type='button' id='clearUserBtn'><i class='fas fa-times'></i></button></div></div>`;
+        setTimeout(() => {
+          const copyBtn = document.getElementById('copyUserBtn');
+          const clearBtn = document.getElementById('clearUserBtn');
+          if (copyBtn) {
+            copyBtn.onclick = function() {
+              const text = document.getElementById('copyUserOutput').innerText;
+              navigator.clipboard.writeText(text);
+              copyBtn.innerHTML = "<i class='fas fa-check'></i>";
+              setTimeout(()=>{copyBtn.innerHTML = "<i class='fas fa-copy'></i>";}, 1200);
+            };
+          }
+          if (clearBtn) {
+            clearBtn.onclick = function() {
+              outputDiv.innerHTML = '';
+            };
+          }
+        }, 100);
+      } catch (err) {
+        outputDiv.innerHTML = `<b>❌ Error:</b> ${err.message}`;
+      }
+    };
+
+    // Saat load halaman, ambil token dan avatar dari localStorage untuk semua user
+    window.onload = function() {
+      populateLoginUserDropdown();
+      selectUser("nabila");
+      document.getElementById('userSelect').value = "nabila";
+      populateRiwayatUserDropdown();
+      populateInfoUserDropdown();
+      populateAbsenUserDropdown();
+      // Inisialisasi flatpickr untuk input tanggal riwayat
+      flatpickr("#tgl1", {
+        dateFormat: "d/m/Y",
+        defaultDate: "today",
+        allowInput: true
+      });
+      flatpickr("#tgl2", {
+        dateFormat: "d/m/Y",
+        defaultDate: "today",
+        allowInput: true
+      });
+      // Ambil token dan avatar dari localStorage untuk semua user
+      for (const key in users) {
+        const userDataStr = localStorage.getItem('user_' + key);
+        if (userDataStr) {
+          try {
+            const userData = JSON.parse(userDataStr);
+            if (userData.token) tokenStore[key] = userData.token;
+            if (userData.avatar) avatarStore[key] = userData.avatar;
+            if (userData.pegawai && userData.pegawai.nama_peg) namaStore[key] = userData.pegawai.nama_peg;
+          } catch {}
+        }
+      }
+    };
+  </script>
+</body>
+</html>
