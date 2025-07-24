@@ -1,34 +1,34 @@
 const express = require("express");
-const fetch = require("node-fetch"); // versi 2
 const cors = require("cors");
+const fetch = require("node-fetch");
+const path = require("path");
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
+app.use(express.json());
 
+// Serve hehe.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "hehe.html"));
+});
+
+// Proxy route
 app.post("/proxy", async (req, res) => {
-  const targetUrl = req.body.target;
-  const { target, ...params } = req.body;
-
-  const form = new URLSearchParams(params).toString();
-  console.log("⏩ Sending to:", targetUrl);
-  console.log("📦 Data:", form);
-
   try {
-    const response = await fetch(targetUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: form
+    const response = await fetch(req.body.url, {
+      method: req.body.method || "GET",
+      headers: req.body.headers || {},
+      body: req.body.body ? JSON.stringify(req.body.body) : undefined,
     });
-
-    const text = await response.text();
-    res.set("Content-Type", "text/plain");
-    res.send(text);
+    const data = await response.text();
+    res.send(data);
   } catch (err) {
-    res.status(500).json({ error: "Proxy failed", detail: err.message });
+    res.status(500).send("Proxy error: " + err.message);
   }
 });
 
-app.listen(3000, () => console.log("✅ Proxy running at http://localhost:3000"));
+app.listen(PORT, () => {
+  console.log(`Proxy listening on port ${PORT}`);
+});
