@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Futures Risk Calculator — Simple</title>
+  <style>
+    :root { --bg:#0b0f14; --panel:#121926; --muted:#7a8ca5; --text:#e6eef9; --accent:#4da3ff; --good:#2ecc71; --bad:#ff6b6b; --radius:16px; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;background:radial-gradient(1200px 800px at 80% -10%, #0e1624, var(--bg));color:var(--text)}
+    .wrap{max-width:980px;margin:36px auto;padding:20px;display:grid;gap:18px}
+    header h1{margin:0 0 6px;font-size:28px} header p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:1/-1;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.35);padding:18px}
+    .inputs{grid-column:span 6}.outputs{grid-column:span 6}
+    @media (max-width:940px){.inputs,.outputs{grid-column:1/-1}}
+    .row{display:grid;gap:12px;grid-template-columns:repeat(12,1fr);align-items:end}
+    .field{grid-column:span 6}.field.third{grid-column:span 4}
+    label{display:block;margin:0 0 6px;font-size:15px;color:var(--muted);font-weight:600}
+    input,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:#0f1520;color:var(--text);outline:none}
+    input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(77,163,255,.25)}
+    .btn{appearance:none;border:1px solid rgba(255,255,255,.10);background:#0f1520;color:var(--text);border-radius:12px;padding:10px 14px;cursor:pointer}
+    .btn:hover{border-color:var(--accent)}
+    .btn-primary{background:var(--accent);color:#fff;font-weight:700;border:none}
+    .btn-primary:hover{background:#357ac8}
+    .warn{color:#ffb020;font-size:12px}
+    .mono{font-variant-numeric:tabular-nums;font-family:ui-monospace,Menlo,Consolas,monospace}
+    .board{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+    .tile{grid-column:span 6;background:#0f1520;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+    .tile .title{font-size:14px;color:var(--muted);margin-bottom:4px;font-weight:600}
+    .tile .big{font-size:26px;font-weight:700}
+    .tile .sub{font-size:16px;color:var(--muted);margin-top:6px;font-weight:600}
+    .good{color:var(--good)} .bad{color:var(--bad)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Futures Risk Calculator — Simple</h1>
+      <p>Masukkan balance, risk %, entry/stop/TP → lihat posisi yang disarankan, risk, margin, R, dan estimasi profit.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card inputs">
+        <div class="row">
+          <div class="field third">
+            <label>Balance</label>
+            <input id="balance" type="number" step="0.00000001" value="100" />
+          </div>
+          <div class="field third">
+            <label>Risk % per trade</label>
+            <input id="riskPercent" type="number" step="0.01" value="2.0" />
+          </div>
+          <div class="field third">
+            <label>Leverage (x)</label>
+            <input id="leverage" type="number" step="0.1" value="50" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field third">
+            <label>Entry price</label>
+            <input id="entry" type="number" step="0.00000001" value="5" />
+          </div>
+          <div class="field third">
+            <label>Stop-loss price</label>
+            <input id="stop" type="number" step="0.00000001" value="4.9" />
+          </div>
+          <div class="field third">
+            <label>Take-profit price</label>
+            <input id="tp" type="number" step="0.00000001" value="5.1" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field third">
+            <label>Side</label>
+            <select id="side"><option value="long" selected>Long</option><option value="short">Short</option></select>
+          </div>
+          <div class="field third">
+            <label>&nbsp;</label>
+            <button id="calcBtn" class="btn btn-primary" style="width:100%">Calculate</button>
+          </div>
+        </div>
+        <p id="msg" class="warn" style="margin-top:10px; display:none;"></p>
+      </div>
+
+      <div class="card outputs">
+        <h3 style="margin:0 0 10px; color: var(--muted); font-weight:600;">Calculation Results</h3>
+        <div class="board">
+          <div class="tile">
+            <div class="title">Recommended Position Size</div>
+            <div class="big mono" id="recPosDollar">–</div>
+            <div class="sub mono" id="recPosContracts" style="font-size:20px; color:#fff">– contracts</div>
+          </div>
+          <div class="tile">
+            <div class="title">Risk Amount</div>
+            <div class="big mono bad" id="riskAmtSimple">–</div>
+            <div class="sub">Maximum potential loss</div>
+          </div>
+          <div class="tile">
+            <div class="title">Leveraged Amount</div>
+            <div class="big mono" id="levAmt">–</div>
+            <div class="sub">Actual capital used (margin)</div>
+          </div>
+          <div class="tile">
+            <div class="title">Risk-to-Reward Ratio</div>
+            <div class="big mono" id="rrSimple">–</div>
+            <div class="sub">Acceptable ratio</div>
+          </div>
+          <div class="tile">
+            <div class="title">Estimated Profit</div>
+            <div class="big mono good" id="estProfit">–</div>
+            <div class="sub">If TP is hit (after fees)</div>
+          </div>
+        </div>
+        <div class="footer" style="display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:10px;color:var(--muted)">
+          <span style="background:#0f1520;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:8px 12px;">Asumsi linear/USDT; abaikan funding & slippage.</span>
+          <button id="shareBtn" class="btn">Share URL</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const fmt = (n) => isFinite(n) ? Number(n).toLocaleString(undefined,{maximumFractionDigits:6}) : '–';
+    const sign = (side) => side === 'long' ? 1 : -1;
+
+    function calc(){
+      const balance = parseFloat($("balance").value);
+      const riskPercent = parseFloat($("riskPercent").value);
+      const entry = parseFloat($("entry").value);
+      const stop = parseFloat($("stop").value);
+      const tp = parseFloat($("tp").value);
+      const side = $("side").value;
+      const leverage = parseFloat($("leverage").value);
+      const msg = $("msg"); msg.style.display='none'; msg.textContent='';
+
+      try{
+        if(!(balance>0)) throw new Error('Balance harus > 0');
+        if(!(riskPercent>0 && riskPercent<100)) throw new Error('Risk % harus antara 0–100');
+        if(!(entry>0 && stop>0 && tp>0)) throw new Error('Entry/Stop/TP harus > 0');
+        const stopDist = Math.abs(entry-stop);
+        if(stopDist===0) throw new Error('Stop tidak boleh sama dengan Entry');
+
+        const riskAmount = balance * (riskPercent/100);
+        const riskPerContract = stopDist;
+        if(!(riskPerContract>0)) throw new Error('Risk per contract tidak valid');
+        const rawContracts = riskAmount / riskPerContract;
+        const contracts = rawContracts;
+        const notional = contracts * entry;
+        const pnlStop = sign(side) * (stop-entry) * contracts;
+        const pnlTp = sign(side) * (tp-entry) * contracts;
+        const potentialLoss = Math.abs(pnlStop);
+        const potentialProfit = Math.max(0, pnlTp);
+        const rr = potentialLoss>0 ? potentialProfit/potentialLoss : Infinity;
+        const margin = notional / Math.max(1e-9, leverage);
+
+        $("recPosDollar").textContent = `$${fmt(notional)}`;
+        $("recPosContracts").textContent = `${fmt(contracts)} contracts`;
+        $("riskAmtSimple").textContent = `$${fmt(potentialLoss)}`;
+        $("levAmt").textContent = `$${fmt(margin)}`;
+        $("rrSimple").textContent = isFinite(rr) ? `1:${rr.toFixed(2)}` : '∞';
+        $("estProfit").textContent = `$${fmt(potentialProfit)}`;
+      } catch(e){
+        msg.style.display='block'; msg.textContent = e.message || 'Input error';
+      }
+    }
+
+    function share(){
+      const params = new URLSearchParams({
+        balance: $("balance").value, riskPercent: $("riskPercent").value,
+        entry: $("entry").value, stop: $("stop").value, tp: $("tp").value, side: $("side").value,
+        leverage: $("leverage").value,
+      });
+      const url = `${location.origin}${location.pathname}?${params.toString()}`;
+      navigator.clipboard.writeText(url).then(()=>{const b=$("shareBtn");const t=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=t,1200);}).catch(()=>alert(url));
+    }
+
+    function loadFromQuery(){
+      const q = new URLSearchParams(location.search); const get=(k,d)=>q.get(k)??d;
+      $("balance").value=get('balance',$("balance").value); $("riskPercent").value=get('riskPercent',$("riskPercent").value);
+      $("entry").value=get('entry',$("entry").value); $("stop").value=get('stop',$("stop").value); $("tp").value=get('tp',$("tp").value);
+      $("side").value=get('side',$("side").value); $("leverage").value=get('leverage',$("leverage").value);
+    }
+
+    $("calcBtn").addEventListener('click', calc);
+    $("shareBtn").addEventListener('click', share);
+    loadFromQuery(); calc();
+  </script>
+</body>
+</html>
