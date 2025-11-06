@@ -1043,18 +1043,65 @@
             const pages = Math.ceil(total / entries);
             const container = document.getElementById('pagination');
             container.innerHTML = '';
-            for (let i = 1; i <= pages; i++) {
+        
+            // Tidak perlu pagination kalau cuma 1 halaman
+            if (pages <= 1) return;
+        
+            const maxButtons = 7; // jumlah tombol yang ditampilkan sekaligus
+        
+            // Tambah tombol "Previous"
+            const prev = document.createElement('button');
+            prev.textContent = '←';
+            prev.disabled = currentPage === 1;
+            prev.onclick = () => { currentPage--; renderCards(); };
+            container.appendChild(prev);
+        
+            // Tentukan range halaman yang ditampilkan
+            let start = Math.max(1, currentPage - 3);
+            let end = Math.min(pages, currentPage + 3);
+        
+            // Jika di awal, tampilkan langsung halaman pertama
+            if (start > 1) {
+                addPageButton(1);
+                if (start > 2) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.padding = '0.5rem';
+                    container.appendChild(dots);
+                }
+            }
+        
+            // Tambahkan tombol di sekitar halaman aktif
+            for (let i = start; i <= end; i++) addPageButton(i);
+        
+            // Jika masih ada halaman di akhir
+            if (end < pages) {
+                if (end < pages - 1) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.padding = '0.5rem';
+                    container.appendChild(dots);
+                }
+                addPageButton(pages);
+            }
+        
+            // Tambah tombol "Next"
+            const next = document.createElement('button');
+            next.textContent = '→';
+            next.disabled = currentPage === pages;
+            next.onclick = () => { currentPage++; renderCards(); };
+            container.appendChild(next);
+        
+            // Helper untuk buat tombol halaman
+            function addPageButton(i) {
                 const btn = document.createElement('button');
                 btn.textContent = i;
-                btn.style.margin = '0 4px';
                 btn.disabled = i === currentPage;
-                btn.onclick = () => {
-                    currentPage = i;
-                    renderCards();
-                };
+                btn.onclick = () => { currentPage = i; renderCards(); };
                 container.appendChild(btn);
             }
         }
+
 
         let lightboxZoom = 1;
         let lightboxImg = null;
