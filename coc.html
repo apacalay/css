@@ -7515,9 +7515,9 @@
                 div.className = 'card fade-in';
                 let downloadUrl = d.base_url;
                 if (isAtrasisMode) {
-                    const idx = d.base_url.indexOf('?action=OpenLayout');
+                    const idx = d.base_url.indexOf('action=OpenLayout');
                     if (idx !== -1) {
-                        downloadUrl = 'https://link.ultimate.atrasis.cc/' + d.base_url.substring(idx);
+                        downloadUrl = 'atrasis-ultimate://' + d.base_url.substring(idx);
                     }
                 }
                 div.innerHTML = `
