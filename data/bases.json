@@ -9,7 +9,7 @@
   	},
   	{
   		"ID": 2,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAKQAAAAJpvtgnOn0_c8LBCh_ggUtE",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKQAAAAJpvtgnOn0_c8LBCh_ggUtE",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "26/12/2024",
@@ -17,7 +17,7 @@
   	},
   	{
   		"ID": 3,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJqOR2TF7HHVIfUEFSsrkZx",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJqOR2TF7HHVIfUEFSsrkZx",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "26/12/2024",
@@ -33,7 +33,7 @@
   	},
   	{
   		"ID": 5,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJuYW8p781UWWjb3YykTjWo",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJuYW8p781UWWjb3YykTjWo",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "28/12/2024",
@@ -41,7 +41,7 @@
   	},
   	{
   		"ID": 6,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ4q9gz-8PQ3xYtIg_MqOUv",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ4q9gz-8PQ3xYtIg_MqOUv",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "28/12/2024",
@@ -97,7 +97,7 @@
   	},
   	{
   		"ID": 13,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5yxDWP-9vCCj_Snmtfos9",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5yxDWP-9vCCj_Snmtfos9",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "03/01/2025",
@@ -105,7 +105,7 @@
   	},
   	{
   		"ID": 14,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubs7oLpHHkRVLivKGYEB",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubs7oLpHHkRVLivKGYEB",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "03/01/2025",
@@ -241,7 +241,7 @@
   	},
   	{
   		"ID": 31,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5ysbGJ4Z_C0WkORHIfAoe",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5ysbGJ4Z_C0WkORHIfAoe",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/01/2025",
@@ -257,7 +257,7 @@
   	},
   	{
   		"ID": 33,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubcJFX9h57jR-yLJNq_q",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubcJFX9h57jR-yLJNq_q",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "04/01/2025",
@@ -265,7 +265,7 @@
   	},
   	{
   		"ID": 34,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5ysjTMrivtoD_1iUbpE0v",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ5ysjTMrivtoD_1iUbpE0v",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "05/01/2025",
@@ -281,7 +281,7 @@
   	},
   	{
   		"ID": 36,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJqOR7UbO10Q0glwGvQN7rD",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJqOR7UbO10Q0glwGvQN7rD",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "05/01/2025",
@@ -313,7 +313,7 @@
   	},
   	{
   		"ID": 40,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWIBE1M97TMHwmayfYtxj",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWIBE1M97TMHwmayfYtxj",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "05/01/2025",
@@ -433,7 +433,7 @@
   	},
   	{
   		"ID": 55,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubj3OzfSbPjRnsrpu908",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJtubj3OzfSbPjRnsrpu908",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "12/01/2025",
@@ -441,7 +441,7 @@
   	},
   	{
   		"ID": 56,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWISOftiaCktnrVmWXne1",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWISOftiaCktnrVmWXne1",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "12/01/2025",
@@ -537,7 +537,7 @@
   	},
   	{
   		"ID": 68,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWIV_wvAFFo9IJ_-d3oqV",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJXWIV_wvAFFo9IJ_-d3oqV",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "16/01/2025",
@@ -889,7 +889,7 @@
   	},
   	{
   		"ID": 112,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y8jjAfU8b6zFeDlhjKcl",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y8jjAfU8b6zFeDlhjKcl",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "20/01/2025",
@@ -897,7 +897,7 @@
   	},
   	{
   		"ID": 113,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y8ef6VqAWfXv1IXlTt8c",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y8ef6VqAWfXv1IXlTt8c",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "20/01/2025",
@@ -905,7 +905,7 @@
   	},
   	{
   		"ID": 114,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y_jvJdu3c-9BTxPDp1qc",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ7Y_jvJdu3c-9BTxPDp1qc",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "20/01/2025",
@@ -1033,7 +1033,7 @@
   	},
   	{
   		"ID": 130,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJxwjX95TZhqHFaez5DT7IZ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJxwjX95TZhqHFaez5DT7IZ",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "31/01/2025",
@@ -1041,7 +1041,7 @@
   	},
   	{
   		"ID": 131,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJxwj8MB2ILqTNcml2K2uBD",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJxwj8MB2ILqTNcml2K2uBD",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "31/01/2025",
@@ -1081,7 +1081,7 @@
   	},
   	{
   		"ID": 136,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweICilTiffvhwJd0audUD",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweICilTiffvhwJd0audUD",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "01/02/2025",
@@ -1089,7 +1089,7 @@
   	},
   	{
   		"ID": 137,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweIU-SwCRWSK3_bmUuCyg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweIU-SwCRWSK3_bmUuCyg",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "01/02/2025",
@@ -1097,7 +1097,7 @@
   	},
   	{
   		"ID": 138,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweB--L8UhNJVR5JBwn7bg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweB--L8UhNJVR5JBwn7bg",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "01/02/2025",
@@ -1105,7 +1105,7 @@
   	},
   	{
   		"ID": 139,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweCHtd43ghJytTwgRJiuX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweCHtd43ghJytTwgRJiuX",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "01/02/2025",
@@ -1113,7 +1113,7 @@
   	},
   	{
   		"ID": 140,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ8K5N3_cs_w2yEsKAtecxL",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ8K5N3_cs_w2yEsKAtecxL",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "01/02/2025",
@@ -1121,7 +1121,7 @@
   	},
   	{
   		"ID": 141,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ8K71Xt61WOZil3fB4FnAB",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ8K71Xt61WOZil3fB4FnAB",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "01/02/2025",
@@ -1201,7 +1201,7 @@
   	},
   	{
   		"ID": 151,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ82RWzPb5N_4LKoDC6g9ZK",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ82RWzPb5N_4LKoDC6g9ZK",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "03/02/2025",
@@ -1233,7 +1233,7 @@
   	},
   	{
   		"ID": 155,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweCOk_13yeQzkdeTKzmCI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJweCOk_13yeQzkdeTKzmCI",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "04/02/2025",
@@ -1593,7 +1593,7 @@
   	},
   	{
   		"ID": 200,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBr7NH1W1lghUrS720DmN",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBr7NH1W1lghUrS720DmN",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "17/02/2025",
@@ -1601,7 +1601,7 @@
   	},
   	{
   		"ID": 201,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBssltS8BHIBdixGP86Wn",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBssltS8BHIBdixGP86Wn",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "17/02/2025",
@@ -1609,7 +1609,7 @@
   	},
   	{
   		"ID": 202,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBsDqs_SX3nVeOQ_QXcmR",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJyBsDqs_SX3nVeOQ_QXcmR",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "17/02/2025",
@@ -1785,7 +1785,7 @@
   	},
   	{
   		"ID": 224,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOvK2e3mb0wkrYO-_s1o",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOvK2e3mb0wkrYO-_s1o",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "03/03/2025",
@@ -1889,7 +1889,7 @@
   	},
   	{
   		"ID": 237,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3VDOnzzLMwaByUkH0k63",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3VDOnzzLMwaByUkH0k63",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -1913,7 +1913,7 @@
   	},
   	{
   		"ID": 240,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3VJ5RxCX_vf7d89VR_nq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3VJ5RxCX_vf7d89VR_nq",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -1921,7 +1921,7 @@
   	},
   	{
   		"ID": 241,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ4FeviEmG4w6Poja75B23y",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ4FeviEmG4w6Poja75B23y",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -1969,7 +1969,7 @@
   	},
   	{
   		"ID": 247,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCf-id0WCsf9Ba82ihSg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCf-id0WCsf9Ba82ihSg",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -1985,7 +1985,7 @@
   	},
   	{
   		"ID": 249,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCnsPj5oVpi6yuHRd6A-",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCnsPj5oVpi6yuHRd6A-",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2009,7 +2009,7 @@
   	},
   	{
   		"ID": 252,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCv8SnW0UmTC2nk-ggX4",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCv8SnW0UmTC2nk-ggX4",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2025,7 +2025,7 @@
   	},
   	{
   		"ID": 254,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R24dpmqFEeqCTSf_s9Zf",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R24dpmqFEeqCTSf_s9Zf",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2041,7 +2041,7 @@
   	},
   	{
   		"ID": 256,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R3DQx4zj69kXUSzTZj9W",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R3DQx4zj69kXUSzTZj9W",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2049,7 +2049,7 @@
   	},
   	{
   		"ID": 257,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3Zf44tYaPIqwGK_5EK9J",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3Zf44tYaPIqwGK_5EK9J",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2057,7 +2057,7 @@
   	},
   	{
   		"ID": 258,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3ZjOP_kfs0hXsCO4ol2d",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3ZjOP_kfs0hXsCO4ol2d",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2065,7 +2065,7 @@
   	},
   	{
   		"ID": 259,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ1Bpm2Aryvr5X4ApL4-j3g",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ1Bpm2Aryvr5X4ApL4-j3g",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2073,7 +2073,7 @@
   	},
   	{
   		"ID": 260,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ1BpvcLNh76PYec-TI6q9H",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ1BpvcLNh76PYec-TI6q9H",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "04/03/2025",
@@ -2113,7 +2113,7 @@
   	},
   	{
   		"ID": 265,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3XgZPQW0aVGWVW1NJNYT",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3XgZPQW0aVGWVW1NJNYT",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/03/2025",
@@ -2121,7 +2121,7 @@
   	},
   	{
   		"ID": 266,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3Xk2XbQXk2OjjmxgoYKu",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAJ_3Xk2XbQXk2OjjmxgoYKu",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/03/2025",
@@ -2129,7 +2129,7 @@
   	},
   	{
   		"ID": 267,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOg0U8wsSThBcuCxB1nj",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOg0U8wsSThBcuCxB1nj",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -2137,7 +2137,7 @@
   	},
   	{
   		"ID": 268,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCNKV0IGqihDF4O9QGYe",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCNKV0IGqihDF4O9QGYe",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -2145,7 +2145,7 @@
   	},
   	{
   		"ID": 269,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R3JKzQsawFYTqbqyMM_n",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAGQAAAAJ_R3JKzQsawFYTqbqyMM_n",
   		"base_th": "TH13",
   		"base_builder": "Patolino",
   		"date": "04/03/2025",
@@ -2369,7 +2369,7 @@
   	},
   	{
   		"ID": 297,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOpHpQdPwW5aBNlv3YCF",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJzeOpHpQdPwW5aBNlv3YCF",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "29/03/2025",
@@ -2409,7 +2409,7 @@
   	},
   	{
   		"ID": 302,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH9%3AWB%3AAAAAIAAAAAJyNXdzhYXpth0vkqDtC0fw",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3AWB%3AAAAAIAAAAAJyNXdzhYXpth0vkqDtC0fw",
   		"base_th": "TH9",
   		"base_builder": "Simo",
   		"date": "01/04/2025",
@@ -2417,7 +2417,7 @@
   	},
   	{
   		"ID": 303,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH12%3AWB%3AAAAAAAAAAALrdt3uvyuSokvm_WvApJD2",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAAAAAAALrdt3uvyuSokvm_WvApJD2",
   		"base_th": "TH12",
   		"base_builder": "Simo",
   		"date": "01/04/2025",
@@ -2449,7 +2449,7 @@
   	},
   	{
   		"ID": 307,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLo7X25suSGiBC5fogIW",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLo7X25suSGiBC5fogIW",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "03/04/2025",
@@ -2457,7 +2457,7 @@
   	},
   	{
   		"ID": 308,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCa1q0pkWBREdwNsz-ez",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJgwCa1q0pkWBREdwNsz-ez",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "03/04/2025",
@@ -2465,7 +2465,7 @@
   	},
   	{
   		"ID": 309,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLuo4kxlrKDKGlx4bzIQ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLuo4kxlrKDKGlx4bzIQ",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "03/04/2025",
@@ -2473,7 +2473,7 @@
   	},
   	{
   		"ID": 310,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDU6-2ALANg6DMB0XFVt2h",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDU6-2ALANg6DMB0XFVt2h",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/04/2025",
@@ -2481,7 +2481,7 @@
   	},
   	{
   		"ID": 311,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDVBsexPfM1RvyKY3vzIRq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDVBsexPfM1RvyKY3vzIRq",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/04/2025",
@@ -2489,7 +2489,7 @@
   	},
   	{
   		"ID": 312,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH13%3AWB%3AAAAADgAAAAKh3kPfGB-0yWPQj7jZwnLb",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAADgAAAAKh3kPfGB-0yWPQj7jZwnLb",
   		"base_th": "TH13",
   		"base_builder": "Simo",
   		"date": "04/04/2025",
@@ -2505,7 +2505,7 @@
   	},
   	{
   		"ID": 314,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH12%3AHV%3AAAAABgAAAALKh2xpPma6l9EttPJlAAXk",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AHV%3AAAAABgAAAALKh2xpPma6l9EttPJlAAXk",
   		"base_th": "TH12",
   		"base_builder": "Simo",
   		"date": "04/04/2025",
@@ -2529,7 +2529,7 @@
   	},
   	{
   		"ID": 317,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH12%3AWB%3AAAAAAAAAAALrz7O068kCE44RbOyEMopr",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAAAAAAALrz7O068kCE44RbOyEMopr",
   		"base_th": "TH12",
   		"base_builder": "Simo",
   		"date": "04/04/2025",
@@ -2577,7 +2577,7 @@
   	},
   	{
   		"ID": 323,
-  		"base_url": "https://link.clashofclans.com/de?action=OpenLayout&id=TH9%3AWB%3AAAAAIAAAAAJymEAr4wlLJjhG2KiaL1aq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3AWB%3AAAAAIAAAAAJymEAr4wlLJjhG2KiaL1aq",
   		"base_th": "TH9",
   		"base_builder": "Simo",
   		"date": "04/04/2025",
@@ -2601,7 +2601,7 @@
   	},
   	{
   		"ID": 326,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDU7QB-ZFoKjvjHo32A8rH",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDU7QB-ZFoKjvjHo32A8rH",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "05/04/2025",
@@ -2809,7 +2809,7 @@
   	},
   	{
   		"ID": 352,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLzRxztDmAS809O1xBQY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ2sLzRxztDmAS809O1xBQY",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2817,7 +2817,7 @@
   	},
   	{
   		"ID": 353,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sbfUoOcXKJCA8JbohexS",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sbfUoOcXKJCA8JbohexS",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2825,7 +2825,7 @@
   	},
   	{
   		"ID": 354,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKEYIpoMnhSdVeppXAiMZvI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKEYIpoMnhSdVeppXAiMZvI",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2833,7 +2833,7 @@
   	},
   	{
   		"ID": 355,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKEYIjg3lTXub62kbE642G9",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKEYIjg3lTXub62kbE642G9",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2841,7 +2841,7 @@
   	},
   	{
   		"ID": 356,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ503HGyoNSmq-XE6neqBhL",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ503HGyoNSmq-XE6neqBhL",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2849,7 +2849,7 @@
   	},
   	{
   		"ID": 357,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJlfageBJEnGGqwjzqUeeM4",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJlfageBJEnGGqwjzqUeeM4",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2857,7 +2857,7 @@
   	},
   	{
   		"ID": 358,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJlfarX-m7ZijOMX8W1r3Sr",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJlfarX-m7ZijOMX8W1r3Sr",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "14/04/2025",
@@ -2881,7 +2881,7 @@
   	},
   	{
   		"ID": 361,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sb5F-1G4eOm3KTYmXkYe",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sb5F-1G4eOm3KTYmXkYe",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "27/04/2025",
@@ -2969,7 +2969,7 @@
   	},
   	{
   		"ID": 372,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ6DEfJ3QqRhcs3NVAU06h9",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ6DEfJ3QqRhcs3NVAU06h9",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "30/04/2025",
@@ -2977,7 +2977,7 @@
   	},
   	{
   		"ID": 373,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ8B1i8l-CktVLsQx-K4QCn",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ8B1i8l-CktVLsQx-K4QCn",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "30/04/2025",
@@ -2985,7 +2985,7 @@
   	},
   	{
   		"ID": 374,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ8B1xy3o-bjx5lbCcO8tRE",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ8B1xy3o-bjx5lbCcO8tRE",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "30/04/2025",
@@ -2993,7 +2993,7 @@
   	},
   	{
   		"ID": 375,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wPDzo1wXuyWPovrwLEG",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wPDzo1wXuyWPovrwLEG",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "30/04/2025",
@@ -3001,7 +3001,7 @@
   	},
   	{
   		"ID": 376,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wUjunFDG1r0jKtZOIlX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wUjunFDG1r0jKtZOIlX",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "30/04/2025",
@@ -3009,7 +3009,7 @@
   	},
   	{
   		"ID": 377,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIlpxJw6sAKguRgu3nxr6Nu",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIlpxJw6sAKguRgu3nxr6Nu",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "01/05/2025",
@@ -3017,7 +3017,7 @@
   	},
   	{
   		"ID": 378,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIlp03ia6oJpMFz121vIa8T",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIlp03ia6oJpMFz121vIa8T",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "01/05/2025",
@@ -3217,7 +3217,7 @@
   	},
   	{
   		"ID": 403,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AHV%3AAAAAEAAAAAKfPe7BBoTqwX7xsGQzsDPj",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AHV%3AAAAAEAAAAAKfPe7BBoTqwX7xsGQzsDPj",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "04/05/2025",
@@ -3225,7 +3225,7 @@
   	},
   	{
   		"ID": 404,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AHV%3AAAAAEAAAAAKfPfExdO8BjoiJo1EmEstY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AHV%3AAAAAEAAAAAKfPfExdO8BjoiJo1EmEstY",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "04/05/2025",
@@ -3257,7 +3257,7 @@
   	},
   	{
   		"ID": 408,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKfPepM1LywSR4yktD0Fvz9",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKfPepM1LywSR4yktD0Fvz9",
   		"base_th": "TH13",
   		"base_builder": "Patolino",
   		"date": "04/05/2025",
@@ -3265,7 +3265,7 @@
   	},
   	{
   		"ID": 409,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wDGQRpEku4Z0rORT8pJ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wDGQRpEku4Z0rORT8pJ",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "04/05/2025",
@@ -3273,7 +3273,7 @@
   	},
   	{
   		"ID": 410,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sbrp0o56CGgbbFMcCfY7",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ3sbrp0o56CGgbbFMcCfY7",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "04/05/2025",
@@ -3281,7 +3281,7 @@
   	},
   	{
   		"ID": 411,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDVB1L3oyToAVcIrHGYK1Q",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKDVB1L3oyToAVcIrHGYK1Q",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "04/05/2025",
@@ -3393,7 +3393,7 @@
   	},
   	{
   		"ID": 425,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ6DEXNB0RIseGgPSPbx_qa",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ6DEXNB0RIseGgPSPbx_qa",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "04/05/2025",
@@ -3465,7 +3465,7 @@
   	},
   	{
   		"ID": 434,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKHD20zR-i_h75xx05w6qdt",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKHD20zR-i_h75xx05w6qdt",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "11/05/2025",
@@ -3473,7 +3473,7 @@
   	},
   	{
   		"ID": 435,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKHD2wpM1bPp94aTUa3go52",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKHD2wpM1bPp94aTUa3go52",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "11/05/2025",
@@ -3513,7 +3513,7 @@
   	},
   	{
   		"ID": 440,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5bU74cgmI8IHburIOUy",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5bU74cgmI8IHburIOUy",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "15/05/2025",
@@ -3521,7 +3521,7 @@
   	},
   	{
   		"ID": 441,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5QcyS7T7XLbkGWKnYoC",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5QcyS7T7XLbkGWKnYoC",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "15/05/2025",
@@ -3529,7 +3529,7 @@
   	},
   	{
   		"ID": 442,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5XR5kQr6xYK10PX3qyC",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y5XR5kQr6xYK10PX3qyC",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "15/05/2025",
@@ -3537,7 +3537,7 @@
   	},
   	{
   		"ID": 443,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALYbLth5_gPdTbS7CSjXPmJ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALYbLth5_gPdTbS7CSjXPmJ",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "16/05/2025",
@@ -3545,7 +3545,7 @@
   	},
   	{
   		"ID": 444,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAInVL3UQNRbXglp695cUU8W",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAInVL3UQNRbXglp695cUU8W",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "16/05/2025",
@@ -3593,7 +3593,7 @@
   	},
   	{
   		"ID": 450,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJpyCEAt5bbcYsICBOf_Mvk",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJpyCEAt5bbcYsICBOf_Mvk",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "17/05/2025",
@@ -3601,7 +3601,7 @@
   	},
   	{
   		"ID": 451,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJpyCSHnHIh1ZT0dqxM5dFR",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJpyCSHnHIh1ZT0dqxM5dFR",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "17/05/2025",
@@ -3609,7 +3609,7 @@
   	},
   	{
   		"ID": 452,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ-IumIeByqPr747UvaSEKs",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ-IumIeByqPr747UvaSEKs",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "17/05/2025",
@@ -3617,7 +3617,7 @@
   	},
   	{
   		"ID": 453,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ-Iu4c-EKEb5zuqSHe7ggY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ-Iu4c-EKEb5zuqSHe7ggY",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "17/05/2025",
@@ -3649,7 +3649,7 @@
   	},
   	{
   		"ID": 457,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ8u0XB5XoJvfamBFawnKgI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ8u0XB5XoJvfamBFawnKgI",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "22/05/2025",
@@ -3657,7 +3657,7 @@
   	},
   	{
   		"ID": 458,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y9Yz6_YQT1o-CSS12Gkl",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y9Yz6_YQT1o-CSS12Gkl",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "22/05/2025",
@@ -3713,7 +3713,7 @@
   	},
   	{
   		"ID": 465,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKVpGlYsIJ5-Qk2cBsiV4B",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKVpGlYsIJ5-Qk2cBsiV4B",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "25/05/2025",
@@ -3721,7 +3721,7 @@
   	},
   	{
   		"ID": 466,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrCX10WwXPmjMR2Or4oegn",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrCX10WwXPmjMR2Or4oegn",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "27/05/2025",
@@ -3729,7 +3729,7 @@
   	},
   	{
   		"ID": 467,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKe8WlT2YusvupWHpZPkWy",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKe8WlT2YusvupWHpZPkWy",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "27/05/2025",
@@ -3785,7 +3785,7 @@
   	},
   	{
   		"ID": 474,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKe8MXOocUJHjoHfhfft_P",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKKe8MXOocUJHjoHfhfft_P",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "27/05/2025",
@@ -3817,7 +3817,7 @@
   	},
   	{
   		"ID": 478,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIpCLvqxARl9ZbQBDQ2sZCz",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIpCLvqxARl9ZbQBDQ2sZCz",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "29/05/2025",
@@ -3825,7 +3825,7 @@
   	},
   	{
   		"ID": 479,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALaVbM0xFNuXyrr0Y__aEW2",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALaVbM0xFNuXyrr0Y__aEW2",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "29/05/2025",
@@ -3865,7 +3865,7 @@
   	},
   	{
   		"ID": 484,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ_7ovQyRmRM3PH5eKfPNQ-",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ_7ovQyRmRM3PH5eKfPNQ-",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3873,7 +3873,7 @@
   	},
   	{
   		"ID": 485,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ_7pGk2vbb_aJ_fHZ_yxXY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH12%3AWB%3AAAAAKAAAAAJ_7pGk2vbb_aJ_fHZ_yxXY",
   		"base_th": "TH12",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3881,7 +3881,7 @@
   	},
   	{
   		"ID": 486,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKjGFdXY8muoxRIJCaYmQ0k",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKjGFdXY8muoxRIJCaYmQ0k",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3889,7 +3889,7 @@
   	},
   	{
   		"ID": 487,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKjGFtKGQkxAUqdr-X-masw",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKjGFtKGQkxAUqdr-X-masw",
   		"base_th": "TH13",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3897,7 +3897,7 @@
   	},
   	{
   		"ID": 488,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj4O2WT-tGu9esEg9ZpGU",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj4O2WT-tGu9esEg9ZpGU",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3905,7 +3905,7 @@
   	},
   	{
   		"ID": 489,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj4oj0R-FjvZltMsfycuq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj4oj0R-FjvZltMsfycuq",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3913,7 +3913,7 @@
   	},
   	{
   		"ID": 490,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ9vUvkw3zLL6Jp3j8SWIUh",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ9vUvkw3zLL6Jp3j8SWIUh",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3921,7 +3921,7 @@
   	},
   	{
   		"ID": 491,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ9vU6KCD0y36c_IP3ROYVo",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ9vU6KCD0y36c_IP3ROYVo",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3929,7 +3929,7 @@
   	},
   	{
   		"ID": 492,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ9vVEKNEqnFDh0PNe9zZUO",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ9vVEKNEqnFDh0PNe9zZUO",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3937,7 +3937,7 @@
   	},
   	{
   		"ID": 493,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKK7kDMsjLv7qPdTMlyzz0y",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKK7kDMsjLv7qPdTMlyzz0y",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "30/05/2025",
@@ -3945,7 +3945,7 @@
   	},
   	{
   		"ID": 494,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALan_-FOtoegJlsdF7vqS2U",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALan_-FOtoegJlsdF7vqS2U",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "31/05/2025",
@@ -3985,7 +3985,7 @@
   	},
   	{
   		"ID": 499,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKK7jyzU7KPwx56bM1W4Uam",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKK7jyzU7KPwx56bM1W4Uam",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "04/06/2025",
@@ -3993,7 +3993,7 @@
   	},
   	{
   		"ID": 500,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y9g3rqbvDsL_t-fOLtPC",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ7y9g3rqbvDsL_t-fOLtPC",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "04/06/2025",
@@ -4001,7 +4001,7 @@
   	},
   	{
   		"ID": 501,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wJgmSgKpjlskaW5wKfl",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJn7wJgmSgKpjlskaW5wKfl",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "04/06/2025",
@@ -4009,7 +4009,7 @@
   	},
   	{
   		"ID": 502,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKfPezSwEiwiB3AkP_YAArx",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH13%3AWB%3AAAAAEAAAAAKfPezSwEiwiB3AkP_YAArx",
   		"base_th": "TH13",
   		"base_builder": "Patolino",
   		"date": "04/06/2025",
@@ -4329,7 +4329,7 @@
   	},
   	{
   		"ID": 542,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKK7Ix0N1OEZJBEy8oKIxS4",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKK7Ix0N1OEZJBEy8oKIxS4",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "05/06/2025",
@@ -4377,7 +4377,7 @@
   	},
   	{
   		"ID": 548,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALbpkAr8B1XLiIbrvT_60NX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALbpkAr8B1XLiIbrvT_60NX",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "08/06/2025",
@@ -4385,7 +4385,7 @@
   	},
   	{
   		"ID": 549,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-6BrgbA4hDDaT7J7DAnqI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-6BrgbA4hDDaT7J7DAnqI",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "09/06/2025",
@@ -4433,7 +4433,7 @@
   	},
   	{
   		"ID": 555,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9LFsHpgP3GRNpEK6UOum",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9LFsHpgP3GRNpEK6UOum",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "11/06/2025",
@@ -4441,7 +4441,7 @@
   	},
   	{
   		"ID": 556,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9LTZ3m_iJc9qxwWYk0Th",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9LTZ3m_iJc9qxwWYk0Th",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "11/06/2025",
@@ -4449,7 +4449,7 @@
   	},
   	{
   		"ID": 557,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj40kQ2f16wnCq8DEwjv-",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJrj40kQ2f16wnCq8DEwjv-",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "11/06/2025",
@@ -4457,7 +4457,7 @@
   	},
   	{
   		"ID": 558,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9K7eGSurj27FO6IOYC-h",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ-9K7eGSurj27FO6IOYC-h",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "11/06/2025",
@@ -4465,7 +4465,7 @@
   	},
   	{
   		"ID": 559,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjVCUEmW4hzNPcfa8Sg5A",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjVCUEmW4hzNPcfa8Sg5A",
   		"base_th": "TH16",
   		"base_builder": "Patolino",
   		"date": "13/06/2025",
@@ -4513,7 +4513,7 @@
   	},
   	{
   		"ID": 565,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAMZbwoq7nhPdioW3EMa4",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAMZbwoq7nhPdioW3EMa4",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4521,7 +4521,7 @@
   	},
   	{
   		"ID": 566,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAUTQeYL1gRD0L59wzfQL",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAUTQeYL1gRD0L59wzfQL",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4529,7 +4529,7 @@
   	},
   	{
   		"ID": 567,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAU83EG4UTCxmbPg2j1GV",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAU83EG4UTCxmbPg2j1GV",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4537,7 +4537,7 @@
   	},
   	{
   		"ID": 568,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAV_4hz_MoyPQtlDdpnc4",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAV_4hz_MoyPQtlDdpnc4",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4545,7 +4545,7 @@
   	},
   	{
   		"ID": 569,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAW9wr-5OJob1VAHug1pg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAW9wr-5OJob1VAHug1pg",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4553,7 +4553,7 @@
   	},
   	{
   		"ID": 570,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAXrI2ijA6nLIFzLPTLIc",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAXrI2ijA6nLIFzLPTLIc",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4561,7 +4561,7 @@
   	},
   	{
   		"ID": 571,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAYvgmnF9GQheBmpjcuUR",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAYvgmnF9GQheBmpjcuUR",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4569,7 +4569,7 @@
   	},
   	{
   		"ID": 572,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAZxFy8JZ7cpaqGp1bY9n",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsAZxFy8JZ7cpaqGp1bY9n",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4577,7 +4577,7 @@
   	},
   	{
   		"ID": 573,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_7vuqt9qO0-Nbbdo3Xbm",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_7vuqt9qO0-Nbbdo3Xbm",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4585,7 +4585,7 @@
   	},
   	{
   		"ID": 574,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_73BBBo3WTT4BT1ddGxQ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_73BBBo3WTT4BT1ddGxQ",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4705,7 +4705,7 @@
   	},
   	{
   		"ID": 589,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfUV24GlIKa1jMsbenCA",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfUV24GlIKa1jMsbenCA",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "16/06/2025",
@@ -4713,7 +4713,7 @@
   	},
   	{
   		"ID": 590,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfI1lqYjym0Tr6P9lg0K",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfI1lqYjym0Tr6P9lg0K",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "16/06/2025",
@@ -4721,7 +4721,7 @@
   	},
   	{
   		"ID": 591,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKMjS03KU85vB01LO_QFVSs",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKMjS03KU85vB01LO_QFVSs",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "16/06/2025",
@@ -4729,7 +4729,7 @@
   	},
   	{
   		"ID": 592,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKMjTFzxtqj6c-iO5B9KAIG",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKMjTFzxtqj6c-iO5B9KAIG",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "16/06/2025",
@@ -4753,7 +4753,7 @@
   	},
   	{
   		"ID": 595,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsBXd8i3t-kWsP7VGj5akf",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsBXd8i3t-kWsP7VGj5akf",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4761,7 +4761,7 @@
   	},
   	{
   		"ID": 596,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_7_oV1BPMMMyLCNT62FB",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_7_oV1BPMMMyLCNT62FB",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4769,7 +4769,7 @@
   	},
   	{
   		"ID": 597,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_8qlYTonMpOj7wZVGPrg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_8qlYTonMpOj7wZVGPrg",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4777,7 +4777,7 @@
   	},
   	{
   		"ID": 598,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_8xmUslJG4K7Kfj0SKqs",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIr_8xmUslJG4K7Kfj0SKqs",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4785,7 +4785,7 @@
   	},
   	{
   		"ID": 599,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjQZeZKH2j9eswiNqFJhf",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjQZeZKH2j9eswiNqFJhf",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4793,7 +4793,7 @@
   	},
   	{
   		"ID": 600,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjQnif1UysJ65ztP0Ycn8",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKMjQnif1UysJ65ztP0Ycn8",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "16/06/2025",
@@ -4881,7 +4881,7 @@
   	},
   	{
   		"ID": 611,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsM1Nk9dV9s8WiaI-qinMs",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsM1Nk9dV9s8WiaI-qinMs",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "18/06/2025",
@@ -4921,7 +4921,7 @@
   	},
   	{
   		"ID": 616,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsRaQ-h8yojZh2jXUF-sPx",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsRaQ-h8yojZh2jXUF-sPx",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "19/06/2025",
@@ -4929,7 +4929,7 @@
   	},
   	{
   		"ID": 617,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsRaW3wyPEsLhrfWe2tdS2",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsRaW3wyPEsLhrfWe2tdS2",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "19/06/2025",
@@ -4937,7 +4937,7 @@
   	},
   	{
   		"ID": 618,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsSJIOJbcgTDWUVM2nlZVF",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsSJIOJbcgTDWUVM2nlZVF",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "19/06/2025",
@@ -4945,7 +4945,7 @@
   	},
   	{
   		"ID": 619,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsNmhc9225dPTg6QTcOg66",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsNmhc9225dPTg6QTcOg66",
   		"base_th": "TH17",
   		"base_builder": "Patolino",
   		"date": "19/06/2025",
@@ -4993,7 +4993,7 @@
   	},
   	{
   		"ID": 625,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsr8ETc3nuT3lw9OGiEjGp",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsr8ETc3nuT3lw9OGiEjGp",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "23/06/2025",
@@ -5001,7 +5001,7 @@
   	},
   	{
   		"ID": 626,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGx3gKR9Kwnd2t2ocXXL5",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGx3gKR9Kwnd2t2ocXXL5",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "23/06/2025",
@@ -5009,7 +5009,7 @@
   	},
   	{
   		"ID": 627,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGx9XK_IsGFAj_N7Y4GVL",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGx9XK_IsGFAj_N7Y4GVL",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "23/06/2025",
@@ -5017,7 +5017,7 @@
   	},
   	{
   		"ID": 628,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGyDHCnj4cNLeTZkkZwML",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsGyDHCnj4cNLeTZkkZwML",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "23/06/2025",
@@ -5025,7 +5025,7 @@
   	},
   	{
   		"ID": 629,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1BvnySnEvsEaRy83OvS",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1BvnySnEvsEaRy83OvS",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "23/06/2025",
@@ -5033,7 +5033,7 @@
   	},
   	{
   		"ID": 630,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALdjfVQBsO844ecERu2vjPj",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALdjfVQBsO844ecERu2vjPj",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "24/06/2025",
@@ -5049,7 +5049,7 @@
   	},
   	{
   		"ID": 632,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALdjp_HxpnKJ-f0Og58Am5h",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH9%3ABB2%3AAAAABQAAAALdjp_HxpnKJ-f0Og58Am5h",
   		"base_th": "TH9",
   		"base_builder": "Martinni",
   		"date": "24/06/2025",
@@ -5057,7 +5057,7 @@
   	},
   	{
   		"ID": 633,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIr4i6fspaDU-EkiR7Z4Ksy",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIr4i6fspaDU-EkiR7Z4Ksy",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "24/06/2025",
@@ -5065,7 +5065,7 @@
   	},
   	{
   		"ID": 634,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIr4uBtmc1Q0IfzG5ChieDL",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH10%3ABB2%3AAAAAPwAAAAIr4uBtmc1Q0IfzG5ChieDL",
   		"base_th": "TH10",
   		"base_builder": "Martinni",
   		"date": "24/06/2025",
@@ -5113,7 +5113,7 @@
   	},
   	{
   		"ID": 640,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAGwAAAAKL2cceyIP6A6ZasFPDqUju",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAGwAAAAKL2cceyIP6A6ZasFPDqUju",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "26/06/2025",
@@ -5129,7 +5129,7 @@
   	},
   	{
   		"ID": 642,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItFmzv6UxjLnhtYrdpRI3X",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItFmzv6UxjLnhtYrdpRI3X",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "26/06/2025",
@@ -5177,7 +5177,7 @@
   	},
   	{
   		"ID": 648,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItWjKPsztx9DjR2aJqJIMU",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItWjKPsztx9DjR2aJqJIMU",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "28/06/2025",
@@ -5185,7 +5185,7 @@
   	},
   	{
   		"ID": 649,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItWi_FB3bdiUXW6NFkPU61",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAItWi_FB3bdiUXW6NFkPU61",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "28/06/2025",
@@ -5209,7 +5209,7 @@
   	},
   	{
   		"ID": 652,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsY9fsLpizK8i4xUO1JULy",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsY9fsLpizK8i4xUO1JULy",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "28/06/2025",
@@ -5217,7 +5217,7 @@
   	},
   	{
   		"ID": 653,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsL4kYEOAcS7y5KR9CpabX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsL4kYEOAcS7y5KR9CpabX",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "28/06/2025",
@@ -5225,7 +5225,7 @@
   	},
   	{
   		"ID": 654,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrhc49ipl1EXGdY5I6ypI0",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrhc49ipl1EXGdY5I6ypI0",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "28/06/2025",
@@ -5233,7 +5233,7 @@
   	},
   	{
   		"ID": 655,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrhWkeRy-2LOb1T8l19kpm",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrhWkeRy-2LOb1T8l19kpm",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "27/06/2025",
@@ -5241,7 +5241,7 @@
   	},
   	{
   		"ID": 656,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrODQa8BaM5kgahayT1Krn",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrODQa8BaM5kgahayT1Krn",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "27/06/2025",
@@ -5249,7 +5249,7 @@
   	},
   	{
   		"ID": 657,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrN28T9eWAmZOw2Km6hUxj",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIrN28T9eWAmZOw2Km6hUxj",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "27/06/2025",
@@ -5273,7 +5273,7 @@
   	},
   	{
   		"ID": 660,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1OAz7eqCj1zXLKcZZvU",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1OAz7eqCj1zXLKcZZvU",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "27/06/2025",
@@ -5281,7 +5281,7 @@
   	},
   	{
   		"ID": 661,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1HfsHCQ1w5vKmr-E-L1",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAIsG1HfsHCQ1w5vKmr-E-L1",
   		"base_th": "TH17",
   		"base_builder": "Bernaul",
   		"date": "27/06/2025",
@@ -5297,7 +5297,7 @@
   	},
   	{
   		"ID": 663,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQf2nQQRMgJf6yt8trhtak",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQf2nQQRMgJf6yt8trhtak",
   		"base_th": "TH14",
   		"base_builder": "Caetano",
   		"date": "05/07/2025",
@@ -5305,7 +5305,7 @@
   	},
   	{
   		"ID": 664,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQpKn9rUr1WGh6WL_kGOoI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQpKn9rUr1WGh6WL_kGOoI",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "05/07/2025",
@@ -5313,7 +5313,7 @@
   	},
   	{
   		"ID": 665,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpe0llZ7xZBA1uTz8g0jp",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpe0llZ7xZBA1uTz8g0jp",
   		"base_th": "TH14",
   		"base_builder": "Patolino",
   		"date": "05/07/2025",
@@ -5321,7 +5321,7 @@
   	},
   	{
   		"ID": 666,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQpKyHXOuhM8qLx9z23sdi",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQpKyHXOuhM8qLx9z23sdi",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "05/07/2025",
@@ -5337,7 +5337,7 @@
   	},
   	{
   		"ID": 668,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQ61_dnA25t83k8r4U2LaB",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALQ61_dnA25t83k8r4U2LaB",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "06/07/2025",
@@ -5345,7 +5345,7 @@
   	},
   	{
   		"ID": 669,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRNt8NEEBumMfTbV1ybxSX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRNt8NEEBumMfTbV1ybxSX",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "09/07/2025",
@@ -5353,7 +5353,7 @@
   	},
   	{
   		"ID": 670,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpeiPmZJ6J-VFjEN38BPQ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpeiPmZJ6J-VFjEN38BPQ",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "10/07/2025",
@@ -5361,7 +5361,7 @@
   	},
   	{
   		"ID": 671,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRVfz6cUUmITyLUge_FuYX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRVfz6cUUmITyLUge_FuYX",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "10/07/2025",
@@ -5425,7 +5425,7 @@
   	},
   	{
   		"ID": 679,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKO9sxqFNAc4JlXPnaUHDAJ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKO9sxqFNAc4JlXPnaUHDAJ",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "04/07/2025",
@@ -5457,7 +5457,7 @@
   	},
   	{
   		"ID": 683,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ_tff-UNJwa1ENbK2XjyG8",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ_tff-UNJwa1ENbK2XjyG8",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "11/07/2025",
@@ -5465,7 +5465,7 @@
   	},
   	{
   		"ID": 684,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ_tflSJMrmk0OQ8b-yN-7J",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AHV%3AAAAAKQAAAAJ_tflSJMrmk0OQ8b-yN-7J",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "10/07/2025",
@@ -5497,7 +5497,7 @@
   	},
   	{
   		"ID": 688,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfZhnFrrCdqkDC14McjO",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAJ_tfZhnFrrCdqkDC14McjO",
   		"base_th": "TH15",
   		"base_builder": "Patolino",
   		"date": "05/07/2025",
@@ -5513,7 +5513,7 @@
   	},
   	{
   		"ID": 690,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRmwbdaILNB2dLkA7McrfD",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALRmwbdaILNB2dLkA7McrfD",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "13/07/2025",
@@ -5521,7 +5521,7 @@
   	},
   	{
   		"ID": 691,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpesOScTEpYbxClHDxjDg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJtpesOScTEpYbxClHDxjDg",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "21/07/2025",
@@ -5537,7 +5537,7 @@
   	},
   	{
   		"ID": 693,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALR296qBFIGlwk0z_kz3oGH",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALR296qBFIGlwk0z_kz3oGH",
   		"base_th": "TH14",
   		"base_builder": "Caetano",
   		"date": "28/07/2025",
@@ -5545,7 +5545,7 @@
   	},
   	{
   		"ID": 694,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJxoq5NG6Q5OHg1U4MIN5BP",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAAKgAAAAJxoq5NG6Q5OHg1U4MIN5BP",
   		"base_th": "TH14",
   		"base_builder": "Aquiles",
   		"date": "28/07/2025",
@@ -5553,7 +5553,7 @@
   	},
   	{
   		"ID": 695,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKQ-LxAqDYBJy-Ky7n9MbUA",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKQ-LxAqDYBJy-Ky7n9MbUA",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "21/07/2025",
@@ -5561,7 +5561,7 @@
   	},
   	{
   		"ID": 696,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNcfYi1ihCgQrD-YX4Cac",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNcfYi1ihCgQrD-YX4Cac",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "23/07/2025",
@@ -5585,7 +5585,7 @@
   	},
   	{
   		"ID": 699,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNnHLQdUkGTwDLvlvTOcv",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNnHLQdUkGTwDLvlvTOcv",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "28/07/2025",
@@ -5601,7 +5601,7 @@
   	},
   	{
   		"ID": 701,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNm5Z5YbvP61-VV06XEeZ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKRNm5Z5YbvP61-VV06XEeZ",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "31/07/2025",
@@ -5617,7 +5617,7 @@
   	},
   	{
   		"ID": 703,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALTxPMnsU6Hz2JbWYpO2ya_",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALTxPMnsU6Hz2JbWYpO2ya_",
   		"base_th": "TH14",
   		"base_builder": "LoOP",
   		"date": "29/07/2025",
@@ -5625,7 +5625,7 @@
   	},
   	{
   		"ID": 704,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALT-YgUnswXTrVm9cCdzSc6",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AWB%3AAAAABwAAAALT-YgUnswXTrVm9cCdzSc6",
   		"base_th": "TH14",
   		"base_builder": "Satans",
   		"date": "01/08/2025",
@@ -5633,7 +5633,7 @@
   	},
   	{
   		"ID": 705,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDhiY6oSAlgnFzTVQRvP3D",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDhiY6oSAlgnFzTVQRvP3D",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "22/07/2025",
@@ -5641,7 +5641,7 @@
   	},
   	{
   		"ID": 706,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDhioK8wPLADhUZCCRa7dq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDhioK8wPLADhUZCCRa7dq",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "22/07/2025",
@@ -5673,7 +5673,7 @@
   	},
   	{
   		"ID": 710,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkJl25efJD-0EeiUncbI",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkJl25efJD-0EeiUncbI",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "23/07/2025",
@@ -5681,7 +5681,7 @@
   	},
   	{
   		"ID": 711,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkTQCRIlsxtJoAKgsUVV",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkTQCRIlsxtJoAKgsUVV",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "23/07/2025",
@@ -5697,7 +5697,7 @@
   	},
   	{
   		"ID": 713,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkZxRLy78CpkKzL9nNEl",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKDxkZxRLy78CpkKzL9nNEl",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "24/07/2025",
@@ -5769,7 +5769,7 @@
   	},
   	{
   		"ID": 722,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKFN4tS1zNLE1ceQl5O7Yqt",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKFN4tS1zNLE1ceQl5O7Yqt",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "05/08/2025",
@@ -5785,7 +5785,7 @@
   	},
   	{
   		"ID": 724,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHTUG9GLsB-BLyHrmLnVe_",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHTUG9GLsB-BLyHrmLnVe_",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "27/08/2025",
@@ -5817,7 +5817,7 @@
   	},
   	{
   		"ID": 728,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHThVxvN9emAqcBaHl17oE",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHThVxvN9emAqcBaHl17oE",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "05/09/2025",
@@ -5825,7 +5825,7 @@
   	},
   	{
   		"ID": 729,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHThN8h5pOmiwDaz6SgKWB",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHThN8h5pOmiwDaz6SgKWB",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "08/09/2025",
@@ -5873,7 +5873,7 @@
   	},
   	{
   		"ID": 735,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSshA22Cu9dTVovLWnazZO",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSshA22Cu9dTVovLWnazZO",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "05/08/2025",
@@ -5881,7 +5881,7 @@
   	},
   	{
   		"ID": 736,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSsd1rRcbttKUmYEw_F9Xv",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSsd1rRcbttKUmYEw_F9Xv",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "05/08/2025",
@@ -5929,7 +5929,7 @@
   	},
   	{
   		"ID": 742,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSshFySZNTRW6-W0CbbtPk",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSshFySZNTRW6-W0CbbtPk",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "05/09/2025",
@@ -5937,7 +5937,7 @@
   	},
   	{
   		"ID": 743,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKXL4V7ktCFLXlYn1lD_ppk",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKXL4V7ktCFLXlYn1lD_ppk",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "08/09/2025",
@@ -5945,7 +5945,7 @@
   	},
   	{
   		"ID": 744,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSsd8jLza_2k15T6fCjFU2",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKSsd8jLza_2k15T6fCjFU2",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "08/09/2025",
@@ -5969,7 +5969,7 @@
   	},
   	{
   		"ID": 747,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOA3_sjZCpFYBTsLjvdia",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOA3_sjZCpFYBTsLjvdia",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "30/09/2025",
@@ -5993,7 +5993,7 @@
   	},
   	{
   		"ID": 750,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHTUS_xhrUkGodDvQHDo9Q",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKHTUS_xhrUkGodDvQHDo9Q",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "04/10/2025",
@@ -6017,7 +6017,7 @@
   	},
   	{
   		"ID": 753,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOA9-EQWFpqRpid4wGEQA",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOA9-EQWFpqRpid4wGEQA",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "06/10/2025",
@@ -6025,7 +6025,7 @@
   	},
   	{
   		"ID": 754,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYda9lZKKJ7-W4HUKVwnZ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYda9lZKKJ7-W4HUKVwnZ",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "07/10/2025",
@@ -6033,7 +6033,7 @@
   	},
   	{
   		"ID": 755,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOAwxyPQwRaKvdhZ5LygT",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLOAwxyPQwRaKvdhZ5LygT",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "11/10/2025",
@@ -6041,7 +6041,7 @@
   	},
   	{
   		"ID": 756,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKNTKbSEFhahI6Y6gH5l7Rg",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKNTKbSEFhahI6Y6gH5l7Rg",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "12/10/2025",
@@ -6065,7 +6065,7 @@
   	},
   	{
   		"ID": 759,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYdlg8yJPSL8s_rkLxk4H",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYdlg8yJPSL8s_rkLxk4H",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "17/10/2025",
@@ -6073,7 +6073,7 @@
   	},
   	{
   		"ID": 760,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKXL4eJpX4wQMolq3I-gzOq",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKXL4eJpX4wQMolq3I-gzOq",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "28/09/2025",
@@ -6089,7 +6089,7 @@
   	},
   	{
   		"ID": 762,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKY5IQlI7JZbGfs4ORleFnT",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKY5IQlI7JZbGfs4ORleFnT",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "30/09/2025",
@@ -6097,7 +6097,7 @@
   	},
   	{
   		"ID": 763,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKY5Ic8hJ0WblppoU27xxV3",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKY5Ic8hJ0WblppoU27xxV3",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "01/10/2025",
@@ -6129,7 +6129,7 @@
   	},
   	{
   		"ID": 767,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKZEsAirSX2Qzgydi7rLMOY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKZEsAirSX2Qzgydi7rLMOY",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "06/10/2025",
@@ -6137,7 +6137,7 @@
   	},
   	{
   		"ID": 768,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKY5IX40syRsrHhKL_TliRE",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKY5IX40syRsrHhKL_TliRE",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "07/10/2025",
@@ -6161,7 +6161,7 @@
   	},
   	{
   		"ID": 771,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKZFNKkDoWYrhQPlY7uswlG",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKZFNKkDoWYrhQPlY7uswlG",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "17/10/2025",
@@ -6169,7 +6169,7 @@
   	},
   	{
   		"ID": 772,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKZEr1CohdZ_Zlu0HYYI831",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKZEr1CohdZ_Zlu0HYYI831",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "22/10/2025",
@@ -6193,7 +6193,7 @@
   	},
   	{
   		"ID": 775,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN62LnXRz7lVOmWaUKED61",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN62LnXRz7lVOmWaUKED61",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "28/10/2025",
@@ -6217,7 +6217,7 @@
   	},
   	{
   		"ID": 778,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN8TLs0axBqSZ6y6CnrxFN",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN8TLs0axBqSZ6y6CnrxFN",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "03/11/2025",
@@ -6249,7 +6249,7 @@
   	},
   	{
   		"ID": 782,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN8TcV21kUDpcQ6VOLza6J",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN8TcV21kUDpcQ6VOLza6J",
   		"base_th": "TH15",
   		"base_builder": "Aquiles",
   		"date": "05/11/2025",
@@ -6257,7 +6257,7 @@
   	},
   	{
   		"ID": 783,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYlHR40tbw9-CDUGrfmc-",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKLYlHR40tbw9-CDUGrfmc-",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "05/11/2025",
@@ -6265,7 +6265,7 @@
   	},
   	{
   		"ID": 784,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN62knHnf2nz4OaKqlTqoN",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN62knHnf2nz4OaKqlTqoN",
   		"base_th": "TH15",
   		"base_builder": "Bernaul",
   		"date": "05/11/2025",
@@ -6273,7 +6273,7 @@
   	},
   	{
   		"ID": 785,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKbrGsXSQ9mukcyCIA9doZm",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKbrGsXSQ9mukcyCIA9doZm",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "26/10/2025",
@@ -6281,7 +6281,7 @@
   	},
   	{
   		"ID": 786,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKZEsK0gYWcjk29fuwq_AsQ",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKZEsK0gYWcjk29fuwq_AsQ",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "28/10/2025",
@@ -6313,7 +6313,7 @@
   	},
   	{
   		"ID": 790,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKbrHAIIs4hxEWQsMvzlepN",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKbrHAIIs4hxEWQsMvzlepN",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "03/11/2025",
@@ -6337,7 +6337,7 @@
   	},
   	{
   		"ID": 793,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKbrHKqJys1iCvaQp9js9Qc",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAAGgAAAAKbrHKqJys1iCvaQp9js9Qc",
   		"base_th": "TH16",
   		"base_builder": "Aquiles",
   		"date": "05/11/2025",
@@ -6345,7 +6345,7 @@
   	},
   	{
   		"ID": 794,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKbrG1AKjUk3GU5-zyYFRCY",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGgAAAAKbrG1AKjUk3GU5-zyYFRCY",
   		"base_th": "TH16",
   		"base_builder": "Bernaul",
   		"date": "05/11/2025",
@@ -6369,7 +6369,7 @@
   	},
   	{
   		"ID": 797,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI8BybpsBGiHDkKsDyQXvGC",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI8BybpsBGiHDkKsDyQXvGC",
   		"base_th": "TH17",
   		"base_builder": "Aquiles",
   		"date": "03/11/2025",
@@ -6417,7 +6417,7 @@
   	},
   	{
   		"ID": 803,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAOQAAAAJVFtz7Pchyvz3HAAcvW2Oh",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAOQAAAAJVFtz7Pchyvz3HAAcvW2Oh",
   		"base_th": "TH17",
   		"base_builder": "Celinho",
   		"date": "05/11/2025",
@@ -6425,7 +6425,7 @@
   	},
   	{
   		"ID": 804,
-  		"base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAOQAAAAJVFu15cdO6xe77PRIYCdKX",
+  		"base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAOQAAAAJVFu15cdO6xe77PRIYCdKX",
   		"base_th": "TH17",
   		"base_builder": "Celinho",
   		"date": "05/11/2025",
@@ -6449,7 +6449,7 @@
   	},
     {
         "ID": 807,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5tUTLPavNMQSn9OALcqEV",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5tUTLPavNMQSn9OALcqEV",
         "base_th": "TH17",
         "base_builder": "Aquiles",
         "date": "05/11/2025",
@@ -6457,7 +6457,7 @@
     },
     {
         "ID": 808,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5fpyoMJ9dcFzPhS9pO641",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5fpyoMJ9dcFzPhS9pO641",
         "base_th": "TH17",
         "base_builder": "Aquiles",
         "date": "05/11/2025",
@@ -6465,7 +6465,7 @@
     },
     {
         "ID": 809,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI6RPj_5sIliBfw6wkVoXF8",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI6RPj_5sIliBfw6wkVoXF8",
         "base_th": "TH17",
         "base_builder": "Aquiles",
         "date": "05/11/2025",
@@ -6473,7 +6473,7 @@
     },
     {
         "ID": 810,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI8PO97N5YaCiC4WN4R_zm7",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI8PO97N5YaCiC4WN4R_zm7",
         "base_th": "TH17",
         "base_builder": "Aquiles",
         "date": "05/11/2025",
@@ -6489,7 +6489,7 @@
     },
     {
         "ID": 812,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI46FTNwMAk1-k_3GGKAj7u",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI46FTNwMAk1-k_3GGKAj7u",
         "base_th": "TH17",
         "base_builder": "Bernaul",
         "date": "05/11/2025",
@@ -6497,7 +6497,7 @@
     },
     {
         "ID": 813,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5fpjRx6y1SJanWfghiwzs",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5fpjRx6y1SJanWfghiwzs",
         "base_th": "TH17",
         "base_builder": "Bernaul",
         "date": "05/11/2025",
@@ -6505,7 +6505,7 @@
     },
     {
         "ID": 814,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5tUiFmgwSTmoCsLby-mt1",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI5tUiFmgwSTmoCsLby-mt1",
         "base_th": "TH17",
         "base_builder": "Bernaul",
         "date": "05/11/2025",
@@ -6521,7 +6521,7 @@
     },
     {
         "ID": 816,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKRgYabfNtfExJfpy4aD4zq",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKRgYabfNtfExJfpy4aD4zq",
         "base_th": "TH15",
         "base_builder": "Aquiles",
         "date": "14/11/2025",
@@ -6529,7 +6529,7 @@
     },
     {
         "ID": 817,
-        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN635a739Y9_8Z0KhmJi3l",
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKN635a739Y9_8Z0KhmJi3l",
         "base_th": "TH15",
         "base_builder": "Bernaul",
         "date": "15/11/2025",
@@ -6566,5 +6566,237 @@
         "base_builder": "Satans",
         "date": "16/11/2025",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/799595ba-0f08-41de-02c1-efcbba993c00/image1920"
+    },
+    {
+        "ID": 822,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAMwAAAAJtcyrOmnOzJDw14ZRtLCNj",
+        "base_th": "TH17",
+        "base_builder": "Tris",
+        "date": "06/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/74ee858c-0cb6-4231-faab-c64e03480100/image1920"
+    },
+    {
+        "ID": 823,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAEwAAAAKsdq1p4W8KTSOdYp4RSSrf",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "06/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/3a90c08e-1539-4872-96c4-cf501ad85a00/image1920"
+    },
+    {
+        "ID": 824,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAEwAAAAKsdzk67lQSl5nCcfJUiiGJ",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "06/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/f4fdcd16-f4cc-4882-508b-7833d8252700/image1920"
+    },
+    {
+        "ID": 825,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAJgAAAAKbB03tmTdKFiX4Y_ouTzCf",
+        "base_th": "TH17",
+        "base_builder": "Caetano",
+        "date": "07/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/eee970e1-f0b6-4079-4179-ddddbf226600/image1920"
+    },
+    {
+        "ID": 826,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAJgAAAAKbCHeJ2nx8TrkqtfF6-RVg",
+        "base_th": "TH17",
+        "base_builder": "Caetano",
+        "date": "07/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/79cc881c-edc3-4c7d-bd82-a2710521b100/image1920"
+    },
+    {
+        "ID": 827,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAVwAAAAHXwAMMhqZrfzS2Yv8jE0GL",
+        "base_th": "TH17",
+        "base_builder": "ilCorrax",
+        "date": "07/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/206e19c7-f6d1-4158-6340-107e34545500/image1920"
+    },
+    {
+        "ID": 828,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAFQAAAAKnEKLArnhnA8SKiguTKJhC",
+        "base_th": "TH17",
+        "base_builder": "Leo",
+        "date": "07/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ad3112be-2364-4fa4-e019-e92e4ab18a00/image1920"
+    },
+    {
+        "ID": 829,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAEwAAAAKswVB3XlsqsySuvTp60boh",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "08/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/e0117ae0-de24-4afe-60f1-345142b05900/image1920"
+    },
+    {
+        "ID": 830,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAAwAAAAL9p8qqHhSkFu99wynu1_eC",
+        "base_th": "TH17",
+        "base_builder": "Max",
+        "date": "09/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/45b80e2c-6cbd-4965-ab5a-b3266838a900/image1920"
+    },
+    {
+        "ID": 831,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAFAAAAAKj2WgggJcnWM9b2p9l4w9N",
+        "base_th": "TH17",
+        "base_builder": "Danit2t",
+        "date": "09/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2657517d-fdd2-4540-b0cb-8941d03fc800/image1920"
+    },
+    {
+        "ID": 832,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAJgAAAAKbWrge35CvSHYF9n3-zeyn",
+        "base_th": "TH17",
+        "base_builder": "Caetano",
+        "date": "09/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/b385f081-e6fa-4b0a-995f-a42a5c52e500/image1920"
+    },
+    {
+        "ID": 833,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAEwAAAAKs-FkkqtafC2Qh28_PQO88",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "09/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/d159be2c-10f6-4ca4-7754-76ac562e5e00/image1920"
+    },
+    {
+        "ID": 834,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI81f4t4n0sS-vmZJMfB2jN",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "10/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/f9b1ac94-dbe7-46f5-2d63-701e2da76c00/image1920"
+    },
+    {
+        "ID": 835,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAMwAAAAJuBAPQRAuuwxhc_d9acssX",
+        "base_th": "TH17",
+        "base_builder": "Tris",
+        "date": "10/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4338680f-17a8-4434-7c16-8d42ce4c3300/image1920"
+    },
+    {
+        "ID": 836,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAEwAAAAKtQdOieSD-w0CEQ4XtDt0J",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "11/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ea7e03e4-a578-49b1-7666-396bb8a3bf00/image1920"
+    },
+    {
+        "ID": 837,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAGQAAAAKeEPIw7ogQ34kYPrH9fxWc",
+        "base_th": "TH17",
+        "base_builder": "Satans",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2598cabf-548a-429e-191f-fb181847a700/image1920"
+    },
+    {
+        "ID": 838,
+        "base_url": "https://link.clashofclans.com/pt/?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI4S7kW515BcvyhZGGhYhD1",
+        "base_th": "TH17",
+        "base_builder": "Patolino",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/98567253-99cd-4f1c-c4d0-a61064c52a00/image1920"
+    },
+    {
+        "ID": 839,
+        "base_url": "https://link.clashofclans.com/pt/?action=OpenLayout&id=TH17%3AWB%3AAAAAQgAAAAI4S7s8zdrraSKOkTLhTfN_",
+        "base_th": "TH17",
+        "base_builder": "Patolino",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/a2edbd9b-8ae3-470b-14e5-6e88b4e6d100/image1920"
+    },
+    {
+        "ID": 840,
+        "base_url": "https://link.clashofclans.com/pt/?action=OpenLayout&id=TH17%3AWB%3AAAAABwAAAALhAoYJHbweZAZho_z2XFM1",
+        "base_th": "TH17",
+        "base_builder": "Patolino",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/29162a2e-c132-4438-4654-ebee79c03e00/image1920"
+    },
+    {
+        "ID": 841,
+        "base_url": "https://link.clashofclans.com/pt/?action=OpenLayout&id=TH17%3AWB%3AAAAABwAAAALhApDVBgexm-KC6CXgwsnh",
+        "base_th": "TH17",
+        "base_builder": "Patolino",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/c88f8b19-5784-428b-69a1-625930748100/image1920"
+    },
+    {
+        "ID": 842,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAPwAAAAI70H-aca0O7m_UY7AKm0QG",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/e45539b9-542c-43b6-dc6b-b4de36ab8600/image1920"
+    },
+    {
+        "ID": 843,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI9L4E_jrGNlfpd1dSYkhds",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "12/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/66452b1d-9280-42cf-d0d6-ad3e717a0d00/image1920"
+    },
+    {
+        "ID": 844,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAASQAAAAIJM8ivj_OctCoa1aTnScZp",
+        "base_th": "TH17",
+        "base_builder": "Max",
+        "date": "13/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/4e262c10-e8cf-4595-668b-eacbee74cc00/image1920"
+    },
+    {
+        "ID": 845,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAASQAAAAIJM9vPFAwteUqsKrwJQTbO",
+        "base_th": "TH17",
+        "base_builder": "Max",
+        "date": "13/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/c3e66631-bc5e-4f3a-f2f2-e69449245600/image1920"
+    },
+    {
+        "ID": 846,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAEwAAAAKtafBzPQ46ZRzaWs-6NXN3",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "14/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2714ad0b-b29f-4227-8b65-2951bc1c7500/image1920"
+    },
+    {
+        "ID": 847,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI9kWtBZTtutoxWLMZO2-KQ",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "15/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2d1fd3e8-8a9c-4793-b7ec-69f78d124d00/image1920"
+    },
+    {
+        "ID": 848,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI9kWtBZTtutoxWLMZO2-KQ",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "15/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2d1fd3e8-8a9c-4793-b7ec-69f78d124d00/image1920"
+    },
+    {
+        "ID": 849,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAQgAAAAI9kWtBZTtutoxWLMZO2-KQ",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "15/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/2d1fd3e8-8a9c-4793-b7ec-69f78d124d00/image1920"
+    },
+    {
+        "ID": 850,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAEwAAAAKuC66MKHWF6kYqleWfC3M2",
+        "base_th": "TH17",
+        "base_builder": "Maziar-TK",
+        "date": "16/11/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/84f29b35-3cf0-4d8e-d56c-2645a79f2600/image1920"
     }
 ]
