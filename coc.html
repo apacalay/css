@@ -901,7 +901,7 @@
     <script>
         let data = [];
         
-        fetch('data/bases.json' + Date.now())
+        fetch('data/bases.json?v=' + Date.now())
           .then(res => res.json())
           .then(json => {
             data = json;
