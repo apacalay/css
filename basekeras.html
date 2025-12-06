@@ -924,52 +924,41 @@
         let sortOrder = 'newest';
         let isAtrasisMode = false;
 
-        function renderControls() {
-            const thSet = new Set();
-            const builderSet = new Set();
-            data.forEach(d => {
-                thSet.add(d.base_th);
-                builderSet.add(d.base_builder);
-            });
-            const thSelect = document.getElementById('filterTH');
-            const builderSelect = document.getElementById('filterBuilder');
-            // Sort TH levels numerically (TH17, TH16, TH15, ..., TH4)
-            const sortedTH = [...thSet].sort((a, b) => {
-                const numA = parseInt(a.replace('TH', ''));
-                const numB = parseInt(b.replace('TH', ''));
-                return numB - numA;
-            });
-            thSelect.innerHTML = '<option>All</option>' + sortedTH.map(th => `<option>${th}</option>`).join('');
-            // Sort builder names alphabetically (A-Z)
-            const sortedBuilders = [...builderSet].sort((a, b) => a.localeCompare(b));
-            builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
+function renderControls() {
+    const builderSet = new Set();
+    const thSelect = document.getElementById('filterTH');
+    const builderSelect = document.getElementById('filterBuilder');
 
-            document.getElementById('entriesPerPage').onchange = e => {
-                entries = e.target.value === 'All' ? Infinity : parseInt(e.target.value);
-                currentPage = 1;
-                renderCards();
-            };
-            thSelect.onchange = e => {
-                filterTH = "TH15";
-                updateBuilderFilter();
-                currentPage = 1;
-                renderCards();
-            };
-            builderSelect.onchange = e => {
-                filterBuilder = e.target.value;
-                currentPage = 1;
-                renderCards();
-            };
-            document.getElementById('sortOrder').onchange = e => {
-                sortOrder = e.target.value;
-                renderCards();
-            };
-            
-            document.getElementById('atrasisMode').onchange = e => {
-                isAtrasisMode = e.target.checked;
-                renderCards();
-            };
-        }
+    // Paksa filterTH = TH15, builder list disesuaikan
+    filterTH = 'TH15';
+    const filteredData = data.filter(d => d.base_th === 'TH15');
+    const builders = [...new Set(filteredData.map(d => d.base_builder))];
+    const sortedBuilders = builders.sort((a, b) => a.localeCompare(b));
+    builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
+
+    document.getElementById('entriesPerPage').onchange = e => {
+        entries = e.target.value === 'All' ? Infinity : parseInt(e.target.value);
+        currentPage = 1;
+        renderCards();
+    };
+
+    builderSelect.onchange = e => {
+        filterBuilder = e.target.value;
+        currentPage = 1;
+        renderCards();
+    };
+
+    document.getElementById('sortOrder').onchange = e => {
+        sortOrder = e.target.value;
+        renderCards();
+    };
+
+    document.getElementById('atrasisMode').onchange = e => {
+        isAtrasisMode = e.target.checked;
+        renderCards();
+    };
+}
+
 
         function updateBuilderFilter() {
             const builderSelect = document.getElementById('filterBuilder');
@@ -988,53 +977,57 @@
 
 
 
-        function renderCards() {
-            let filtered = data.filter(d => d.base_th === 'TH15');
+function renderCards() {
+    let filtered = data.filter(d => d.base_th === 'TH15');
 
-        
-            filtered.sort((a, b) => {
-                return sortOrder === 'newest' ? b.ID - a.ID : a.ID - b.ID;
-            });
-        
-            document.getElementById('totalBases').textContent = `Total: ${data.length}`;
-            document.getElementById('filteredBases').textContent = `Showing: ${filtered.length}`;
-        
-            const container = document.getElementById('cardContainer');
-            container.innerHTML = '';
-        
-            const start = (currentPage - 1) * entries;
-            const end = start + entries;
-            const pageItems = filtered.slice(start, entries === Infinity ? filtered.length : end);
-        
-            // 🔹 Optimasi: pakai DocumentFragment biar cepat
-            const fragment = document.createDocumentFragment();
-        
-            for (let d of pageItems) {
-                const div = document.createElement('div');
-                div.className = 'card fade-in';
-                let downloadUrl = d.base_url;
-                if (isAtrasisMode) {
-                    const idx = d.base_url.indexOf('action=OpenLayout');
-                    if (idx !== -1) {
-                        downloadUrl = 'atrasis-ultimate://' + d.base_url.substring(idx);
-                    }
-                }
-        
-                div.innerHTML = `
-                  <h2>${d.base_th}</h2>
-                  <div class="builder">${d.base_builder}</div>
-                  <div class="upload-date">Uploaded: ${d.date}</div>
-                  <img src="${d.image}" alt="${d.base_th}" loading="lazy" onclick="showLightbox(this.src)" />
-                  <a class="download" href="${downloadUrl}" target="_blank">
-                    <i class="fas fa-download"></i> Download Base
-                  </a>
-                `;
-                fragment.appendChild(div);
+    // Tambahkan filter builder agar bekerja
+    if (filterBuilder !== 'All') {
+        filtered = filtered.filter(d => d.base_builder === filterBuilder);
+    }
+
+    filtered.sort((a, b) => {
+        return sortOrder === 'newest' ? b.ID - a.ID : a.ID - b.ID;
+    });
+
+    document.getElementById('totalBases').textContent = `Total: ${data.length}`;
+    document.getElementById('filteredBases').textContent = `Showing: ${filtered.length}`;
+
+    const container = document.getElementById('cardContainer');
+    container.innerHTML = '';
+
+    const start = (currentPage - 1) * entries;
+    const end = start + entries;
+    const pageItems = filtered.slice(start, entries === Infinity ? filtered.length : end);
+
+    const fragment = document.createDocumentFragment();
+
+    for (let d of pageItems) {
+        const div = document.createElement('div');
+        div.className = 'card fade-in';
+        let downloadUrl = d.base_url;
+        if (isAtrasisMode) {
+            const idx = d.base_url.indexOf('action=OpenLayout');
+            if (idx !== -1) {
+                downloadUrl = 'atrasis-ultimate://' + d.base_url.substring(idx);
             }
-        
-            container.appendChild(fragment);
-            renderPagination(filtered.length);
         }
+
+        div.innerHTML = `
+            <h2>${d.base_th}</h2>
+            <div class="builder">${d.base_builder}</div>
+            <div class="upload-date">Uploaded: ${d.date}</div>
+            <img src="${d.image}" alt="${d.base_th}" loading="lazy" onclick="showLightbox(this.src)" />
+            <a class="download" href="${downloadUrl}" target="_blank">
+                <i class="fas fa-download"></i> Download Base
+            </a>
+        `;
+        fragment.appendChild(div);
+    }
+
+    container.appendChild(fragment);
+    renderPagination(filtered.length);
+}
+
 
 
         function renderPagination(total) {
