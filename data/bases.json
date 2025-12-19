@@ -5958,5 +5958,69 @@
         "base_builder": "Caetano",
         "date": "05/12/2025",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/62ae48dc-ee3e-4ad1-5e11-1ff81d673900/image1920"
-    }  
+    },  
+    {
+        "ID": 856,
+        "base_url": "https://link.clashofclans.com/it?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKUXjgBiw8WFY_yvap8d1jS",
+        "base_th": "TH15",
+        "base_builder": "Aquiles",
+        "date": "07/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/34797c56-b0c3-4486-301e-4d1014aba100/image1920"
+    },
+    {
+        "ID": 857,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAVwAAAAHbLqbIH_vkJBg77KBoQMUt",
+        "base_th": "TH15",
+        "base_builder": "LoOP",
+        "date": "09/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ac33bcc3-65d4-4903-74ac-69957d447500/image1920"
+    },
+    {
+        "ID": 858,
+        "base_url": "https://link.clashofclans.com/it?action=OpenLayout&id=TH15%3AWB%3AAAAAKQAAAAKUXkUfnmwl5n6bhvWQIe0T",
+        "base_th": "TH15",
+        "base_builder": "Bernaul",
+        "date": "10/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/39b68e14-7c05-4d50-eef9-24e85833d800/image1920"
+    },
+    {
+        "ID": 859,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH15%3AWB%3AAAAAJwAAAAKgZ5mA_xhOiVQvh5co3Qgl",
+        "base_th": "TH15",
+        "base_builder": "Bernaul",
+        "date": "14/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/27def09a-8581-4554-f85f-945784917300/image1920"
+    },
+    {
+        "ID": 860,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AHV%3AAAAABwAAAALkT4F3Q-Fip9REQpLaqf91",
+        "base_th": "TH16",
+        "base_builder": "ilCorrax",
+        "date": "07/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/1b4d75f5-793b-4df1-2128-090c0b549400/image1920"
+    },
+    {
+        "ID": 861,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGwAAAAKftub8wrDK2PAH0nkYIaoP",
+        "base_th": "TH16",
+        "base_builder": "Caetano",
+        "date": "08/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/7ffa2a3b-e980-4253-53c8-2e6b47dc5800/image1920"
+    },
+    {
+        "ID": 862,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAKCmyf-SkCNvrjqhcIWjAi5",
+        "base_th": "TH16",
+        "base_builder": "Bernaul",
+        "date": "10/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/01b9496d-5556-466d-9fb1-72102b640a00/image1920"
+    },
+    {
+        "ID": 863,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAKCKjtMH7PMTK6mf9OX2t6v",
+        "base_th": "TH16",
+        "base_builder": "Aquiles",
+        "date": "18/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/5a6d1868-a1db-47cc-b769-cd6426aafd00/image1920"
+    }
 ]
