@@ -6022,5 +6022,21 @@
         "base_builder": "Aquiles",
         "date": "18/12/2025",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/5a6d1868-a1db-47cc-b769-cd6426aafd00/image1920"
+    },
+    {
+        "ID": 864,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAKD165562zHPXZu2UV4mUT1",
+        "base_th": "TH16",
+        "base_builder": "Bernaul",
+        "date": "20/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/fbbde25e-1c64-427f-5311-f960ca941b00/image1920"
+    },
+    {
+        "ID": 865,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAABwAAAALmYapvmFOPKN8BkEgoLVdR",
+        "base_th": "TH16",
+        "base_builder": "ilCorrax",
+        "date": "22/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/1d30d138-80a6-444f-c0df-86aa1da9b500/image1920"
     }
 ]
