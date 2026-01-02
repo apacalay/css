@@ -6038,5 +6038,21 @@
         "base_builder": "ilCorrax",
         "date": "22/12/2025",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/1d30d138-80a6-444f-c0df-86aa1da9b500/image1920"
+    },
+    {
+        "ID": 866,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAGwAAAAKiolDLoJlxfEBU9ID6DwYP",
+        "base_th": "TH16",
+        "base_builder": "Caetano",
+        "date": "28/12/2025",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/ffa36a0d-5816-403d-7ec0-0b1094fb5d00/image1920"
+    },
+    {
+        "ID": 867,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAKCKkHHKNWsLz8Fp0nikajh",
+        "base_th": "TH16",
+        "base_builder": "Aquiles",
+        "date": "01/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/e4bf2c72-a7f4-4ad5-e682-5cee07dc5600/image1920"
     }
 ]
