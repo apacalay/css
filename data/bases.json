@@ -6150,5 +6150,45 @@
         "base_builder": "Patolino",
         "date": "04/01/2026",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/f58a0dc5-1a22-471c-e1c0-f84e6842ed00/image1920"
+    },
+    {
+        "ID": 880,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AHV%3AAAAAKAAAAAKaoTKWB6M_an-TLOaKKLg3",
+        "base_th": "TH17",
+        "base_builder": "ilCorrax",
+        "date": "04/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/d6d2d8cb-024f-44b2-3c96-7783af863b00/image1920"
+    },
+    {
+        "ID": 881,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAFAAAAAKq9io2NsFG_uuqnOFijPqi",
+        "base_th": "TH17",
+        "base_builder": "Satans",
+        "date": "04/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/5a8fa7ca-9d40-4ee7-76bb-c53535063900/image1920"
+    },
+    {
+        "ID": 882,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH17%3AWB%3AAAAAFAAAAAKrGJj88JxcOFW5GkLoyGB0",
+        "base_th": "TH17",
+        "base_builder": "LoOP",
+        "date": "04/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/e161dfd2-1799-4c3e-c1f8-c8a338880100/image1920"
+    },
+    {
+        "ID": 883,
+        "base_url": "https://link.clashofclans.com/pt/?action=OpenLayout&id=TH17%3AHV%3AAAAALgAAAAKGJtr5m8ep8nXY-1pXIsX8",
+        "base_th": "TH17",
+        "base_builder": "Patolino",
+        "date": "04/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/3131e656-12b3-46b5-7fae-b30e0b5de900/image1920"
+    },
+    {
+        "ID": 884,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AHV%3AAAAALgAAAAKGJtkC3lorPmr9GioN0Mcn",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "05/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/263e03b0-a518-4fbe-f18f-968b0f240c00/image1920"
     }
 ]
