@@ -6286,5 +6286,53 @@
         "base_builder": "Aquiles",
         "date": "05/01/2026",
         "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/357b069c-0bab-4c28-dc40-8f19f0309300/image1920"
+    },
+    {
+        "ID": 897,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AWB%3AAAAAKgAAAAKGrAU9lNh0nK_sSdSEfZSZ",
+        "base_th": "TH16",
+        "base_builder": "Patolino",
+        "date": "11/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/fe3975c4-bc28-4fa3-57ad-244e27d2fa00/image1920"
+    },
+    {
+        "ID": 898,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH16%3AHV%3AAAAAKgAAAAKGr2lN5tqP0zweW3-fYH9O",
+        "base_th": "TH16",
+        "base_builder": "Aquiles",
+        "date": "12/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/17c8cd02-e443-42db-7fa6-5975467f6800/image1920"
+    },
+    {
+        "ID": 899,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAALgAAAAKGJtwJJtd0Z6PEQknElfpM",
+        "base_th": "TH17",
+        "base_builder": "Bernaul",
+        "date": "15/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/a51e1a1d-f64a-4590-cd05-77336e1abd00/image1920"
+    },
+    {
+        "ID": 900,
+        "base_url": "https://link.clashofclans.com/pt?action=OpenLayout&id=TH17%3AWB%3AAAAALgAAAAKGKWi6Ma6kwAnLgwwnpBBA",
+        "base_th": "TH17",
+        "base_builder": "Aquiles",
+        "date": "16/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/6f476eb8-d770-4987-ee8a-5cde9a5c1700/image1920"
+    },
+    {
+        "ID": 901,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAVwAAAAHeq8OkNiD09w2LbHrPmsss",
+        "base_th": "TH15",
+        "base_builder": "LoOP",
+        "date": "08/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/6927556e-2ebf-4de7-defe-27971cbef100/image1920"
+    },
+    {
+        "ID": 902,
+        "base_url": "https://link.clashofclans.com/en?action=OpenLayout&id=TH15%3AWB%3AAAAAVwAAAAHfUIz_tWno5zRxkx57WMZi",
+        "base_th": "TH15",
+        "base_builder": "Caetano",
+        "date": "15/01/2026",
+        "image": "https://clashchamps.com/cdn-cgi/imagedelivery/m4td0QhRkBTnwv62pP40vA/99190b86-58a7-4b34-3757-d8a3388e5000/image1920"
     }
 ]
