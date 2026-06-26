@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>COC Base Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 1rem;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+            position: relative;
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            z-index: 1000;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: auto;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .dark-mode-toggle.dark {
+            background: linear-gradient(135deg, #e6a23c, #d69e2e);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 1.5s ease-out 1;
+        }
+
+        @keyframes glow {
+            from { 
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+                transform: scale(1); 
+            }
+            to { 
+                text-shadow: 2px 2px 20px rgba(255,255,255,0.5); 
+                transform: scale(1.02); 
+            }
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 0.9; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            animation: slideIn 1s ease-out 0.3s both;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .controls select {
+            padding: 0.6rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            background: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .controls select:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .controls select:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .controls select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-out 0.9s both;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: cardAppear 0.6s ease-out;
+        }
+
+        @keyframes cardAppear {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: translateX(2px); 
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover .builder {
+            background: rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: scale(1.02);
+        }
+
+        .card:hover::before {
+            animation: shimmer 1s ease-in-out infinite;
+            background: linear-gradient(90deg, #764ba2, #667eea, #764ba2);
+        }
+
+        .card h2 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover h2 {
+            color: #667eea;
+            transform: scale(1.05);
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+
+        .builder {
+            margin: 0.2rem 0 0.3rem 0;
+            background: rgba(102, 126, 234, 0.08);
+            color: #667eea;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 400;
+            text-align: center;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+            opacity: 0.8;
+        }
+
+        .upload-date {
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .card:hover .upload-date {
+            color: #999;
+            transform: scale(1.02);
+            font-weight: 500;
+        }
+
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .card img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card:hover img::after {
+            opacity: 1;
+        }
+
+        .card img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        .download {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download i {
+            transition: all 0.3s ease;
+        }
+
+        .download::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+
+        .download:hover::before {
+            left: 100%;
+        }
+
+        .download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .download:hover i {
+            transform: translateY(-1px);
+            animation: bounce 0.6s ease infinite;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { 
+                transform: translateY(0) scale(1); 
+            }
+            40% { 
+                transform: translateY(-3px) scale(1.1); 
+            }
+            60% { 
+                transform: translateY(-1px) scale(1.05); 
+            }
+        }
+
+        .download:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .pagination {
+            margin-top: 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            animation: slideIn 1s ease-out 1.2s both;
+        }
+
+        .pagination button {
+            padding: 0.6rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 45px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .pagination button:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .pagination button:disabled {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            cursor: not-allowed;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        #lightbox img {
+            max-width: 95vw;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            user-select: none;
+            -webkit-user-drag: none;
+            transition: transform 0.1s ease;
+        }
+
+        #lightbox span {
+            position: fixed;             /* <— ubah absolute jadi fixed */
+            top: 1.5rem;                 /* sedikit lebih dekat ke pojok */
+            right: 1.5rem;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 1100;               /* <— pastikan di atas gambar */
+        }
+
+
+        #lightbox span:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        #lightbox span:hover i {
+            transform: rotate(90deg);
+        }
+
+        #lightbox span:active {
+            transform: scale(0.95);
+        }
+
+        #lightbox span i {
+            transition: all 0.3s ease;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: white;
+            font-size: 1.2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: spin 1s linear infinite;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading p {
+            animation: pulse 2s ease-in-out infinite;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .stats {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out 0.6s both;
+        }
+
+        .stats span {
+            margin: 0 1rem;
+            font-weight: 500;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .stats span:hover {
+            color: #764ba2;
+            transform: scale(1.05);
+            text-shadow: 0 2px 4px rgba(118, 75, 162, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .control-group {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            .stats span {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(15px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* ===== MOBILE PERFORMANCE: Disable heavy GPU effects ===== */
+        @media (max-width: 768px) {
+            .controls,
+            .card,
+            .back-to-top,
+            #lightbox span {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+            }
+
+            /* Disable card hover 3D effects on touch devices */
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            }
+
+            .card:hover h2 {
+                transform: none;
+            }
+        }
+
+        /* ===== ACCESSIBILITY: Respect user's reduced motion preference ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.1ms !important;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-to-top i {
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover i {
+            transform: translateY(-2px);
+            animation: bounce 0.6s ease infinite;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            animation: bounceIn 0.6s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.3) translateY(20px) rotate(180deg); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.05) translateY(-5px) rotate(0deg); 
+            }
+            70% { 
+                transform: scale(0.9) translateY(0) rotate(0deg); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0) rotate(0deg); 
+            }
+        }
+
+        /* Dark Mode Styles - June Update: Dark Days Theme */
+        body.dark-mode {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+        }
+
+        body.dark-mode .header {
+            color: #ffffff;
+        }
+
+        body.dark-mode .header h1 {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        body.dark-mode .controls {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .control-group label {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .controls select {
+            background: rgba(40, 40, 40, 0.9);
+            border-color: #555555;
+            color: #ffffff;
+        }
+
+        body.dark-mode .controls select:hover {
+            border-color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .controls select:focus {
+            border-color: #87ceeb;
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+        }
+
+        body.dark-mode .card {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .card::before {
+            background: linear-gradient(90deg, #87ceeb, #4a90e2);
+        }
+
+        body.dark-mode .card h2 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .card:hover h2 {
+            color: #87ceeb;
+            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .builder {
+            background: rgba(135, 206, 235, 0.1);
+            color: #87ceeb;
+            border: 1px solid rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .card:hover .builder {
+            background: rgba(135, 206, 235, 0.15);
+            border-color: rgba(135, 206, 235, 0.5);
+        }
+
+        body.dark-mode .upload-date {
+            color: #cccccc;
+        }
+
+        body.dark-mode .card:hover .upload-date {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .download {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .download:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .pagination button {
+            background: rgba(30, 58, 95, 0.9);
+            border-color: rgba(135, 206, 235, 0.3);
+            color: #87ceeb;
+        }
+
+        body.dark-mode .pagination button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: white;
+            border-color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .pagination button:disabled {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            color: white;
+            border-color: #87ceeb;
+            box-shadow: 0 2px 8px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .back-to-top {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .back-to-top:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .stats {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            color: #87ceeb;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
+        }
+
+        body.dark-mode .stats span {
+            color: #87ceeb;
+        }
+
+        body.dark-mode .stats span:hover {
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .loading {
+            color: #87ceeb;
+        }
+
+        body.dark-mode #lightbox {
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        body.dark-mode #lightbox span {
+            color: #87ceeb;
+        }
+
+        body.dark-mode #lightbox span:hover {
+            color: #ffffff;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            box-shadow: 0 6px 20px rgba(135, 206, 235, 0.4);
+        }
+
+        body.dark-mode .dark-mode-toggle.dark {
+            background: linear-gradient(135deg, #e6a23c, #d69e2e);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button class="dark-mode-toggle" type="button">
+            <i class="fas fa-moon"></i>
+        </button>
+        <h1><i class="fas fa-shield-alt"></i> COC Base Viewer</h1>
+        <p>Browse and download the best Clash of Clans bases</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label><i class="fas fa-list"></i> Show:</label>
+            <select id="entriesPerPage">
+                <option>25</option>
+                <option>50</option>
+                <option>75</option>
+                <option>6</option>
+                <option>All</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-crown"></i> TH:</label>
+            <select id="filterTH"></select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-user"></i> Builder:</label>
+            <select id="filterBuilder"></select>
+        </div>
+        <div class="control-group">
+            <label><i class="fas fa-sort"></i> Sort:</label>
+            <select id="sortOrder">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label><input type="checkbox" id="atrasisMode"> Atrasis Mode</label>
+        </div>
+    </div>
+
+    <div class="stats" id="stats">
+        <span id="totalBases">Total: 0</span>
+        <span id="filteredBases">Showing: 0</span>
+    </div>
+
+    <div class="grid" id="cardContainer">
+        <div class="loading">
+            <i class="fas fa-spinner"></i>
+            <p>Loading bases...</p>
+        </div>
+    </div>
+    
+    <div class="pagination" id="pagination"></div>
+
+    <div id="lightbox">
+        <span onclick="document.getElementById('lightbox').style.display='none'">
+            <i class="fas fa-times"></i>
+        </span>
+        <img id="lightbox-img" src="" alt="Zoomed" />
+    </div>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        let data = [];
+        
+        fetch('data/bases.json?v=' + Date.now())
+          .then(res => res.json())
+          .then(json => {
+            data = json;
+            initializeEverything(); // mulai app setelah data selesai di-load
+          })
+          .catch(err => {
+            console.error('Failed to load data:', err);
+            document.getElementById('cardContainer').innerHTML = `
+              <div class="loading">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Gagal memuat data base. Pastikan file <b>bases.json</b> ada di folder /data</p>
+              </div>
+            `;
+          });
+
+        let currentPage = 1;
+        let entries = 25;
+        let filterTH = 'All';
+        let filterBuilder = 'All';
+        let sortOrder = 'newest';
+        let isAtrasisMode = false;
+
+        function renderControls() {
+            const thSet = new Set();
+            const builderSet = new Set();
+            data.forEach(d => {
+                thSet.add(d.base_th);
+                builderSet.add(d.base_builder);
+            });
+            const thSelect = document.getElementById('filterTH');
+            const builderSelect = document.getElementById('filterBuilder');
+            // Sort TH levels numerically (TH17, TH16, TH15, ..., TH4)
+            const sortedTH = [...thSet].sort((a, b) => {
+                const numA = parseInt(a.replace('TH', ''));
+                const numB = parseInt(b.replace('TH', ''));
+                return numB - numA;
+            });
+            thSelect.innerHTML = '<option>All</option>' + sortedTH.map(th => `<option>${th}</option>`).join('');
+            // Sort builder names alphabetically (A-Z)
+            const sortedBuilders = [...builderSet].sort((a, b) => a.localeCompare(b));
+            builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
+
+            document.getElementById('entriesPerPage').onchange = e => {
+                entries = e.target.value === 'All' ? Infinity : parseInt(e.target.value);
+                currentPage = 1;
+                renderCards();
+            };
+            thSelect.onchange = e => {
+                filterTH = e.target.value;
+                updateBuilderFilter();
+                currentPage = 1;
+                renderCards();
+            };
+            builderSelect.onchange = e => {
+                filterBuilder = e.target.value;
+                currentPage = 1;
+                renderCards();
+            };
+            document.getElementById('sortOrder').onchange = e => {
+                sortOrder = e.target.value;
+                renderCards();
+            };
+            
+            document.getElementById('atrasisMode').onchange = e => {
+                isAtrasisMode = e.target.checked;
+                renderCards();
+            };
+        }
+
+        function updateBuilderFilter() {
+            const builderSelect = document.getElementById('filterBuilder');
+            const filteredData = filterTH === 'All' ? data : data.filter(d => d.base_th === filterTH);
+            const builders = [...new Set(filteredData.map(d => d.base_builder))];
+            // Sort builder names alphabetically (A-Z)
+            const sortedBuilders = builders.sort((a, b) => a.localeCompare(b));
+            builderSelect.innerHTML = '<option>All</option>' + sortedBuilders.map(b => `<option>${b}</option>`).join('');
+        }
+
+        function parseDate(str) {
+            const [day, month, year] = str.split("/");
+            return new Date(`${year}-${month}-${day}`);
+        }
+
+
+
+
+        function renderCards() {
+            let filtered = data.filter(d =>
+                (filterTH === 'All' || d.base_th === filterTH) &&
+                (filterBuilder === 'All' || d.base_builder === filterBuilder)
+            );
+        
+            filtered.sort((a, b) => {
+                return sortOrder === 'newest' ? b.ID - a.ID : a.ID - b.ID;
+            });
+        
+            document.getElementById('totalBases').textContent = `Total: ${data.length}`;
+            document.getElementById('filteredBases').textContent = `Showing: ${filtered.length}`;
+        
+            const container = document.getElementById('cardContainer');
+            container.innerHTML = '';
+        
+            const start = (currentPage - 1) * entries;
+            const end = start + entries;
+            const pageItems = filtered.slice(start, entries === Infinity ? filtered.length : end);
+        
+            // 🔹 Optimasi: pakai DocumentFragment biar cepat
+            const fragment = document.createDocumentFragment();
+        
+            for (let d of pageItems) {
+                const div = document.createElement('div');
+                div.className = 'card fade-in';
+                let downloadUrl = d.base_url;
+                if (isAtrasisMode) {
+                    const idx = d.base_url.indexOf('action=OpenLayout');
+                    if (idx !== -1) {
+                        downloadUrl = 'atrasis-ultimate://' + d.base_url.substring(idx);
+                    }
+                }
+        
+                div.innerHTML = `
+                  <h2>${d.base_th}</h2>
+                  <div class="builder">${d.base_builder}</div>
+                  <div class="upload-date">Uploaded: ${d.date}</div>
+                  <img src="${d.image}" alt="${d.base_th}" loading="lazy" decoding="async" width="400" height="280" onclick="showLightbox(this.src)" />
+                  <a class="download" href="${downloadUrl}" target="_blank">
+                    <i class="fas fa-download"></i> Download Base
+                  </a>
+                `;
+                fragment.appendChild(div);
+            }
+        
+            container.appendChild(fragment);
+            renderPagination(filtered.length);
+        }
+
+
+        function renderPagination(total) {
+            const pages = Math.ceil(total / entries);
+            const container = document.getElementById('pagination');
+            container.innerHTML = '';
+        
+            // Tidak perlu pagination kalau cuma 1 halaman
+            if (pages <= 1) return;
+        
+            const maxButtons = 7; // jumlah tombol yang ditampilkan sekaligus
+        
+            // Tambah tombol "Previous"
+            const prev = document.createElement('button');
+            prev.textContent = '←';
+            prev.disabled = currentPage === 1;
+            prev.onclick = () => { currentPage--; renderCards(); };
+            container.appendChild(prev);
+        
+            // Tentukan range halaman yang ditampilkan
+            let start = Math.max(1, currentPage - 3);
+            let end = Math.min(pages, currentPage + 3);
+        
+            // Jika di awal, tampilkan langsung halaman pertama
+            if (start > 1) {
+                addPageButton(1);
+                if (start > 2) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.padding = '0.5rem';
+                    container.appendChild(dots);
+                }
+            }
+        
+            // Tambahkan tombol di sekitar halaman aktif
+            for (let i = start; i <= end; i++) addPageButton(i);
+        
+            // Jika masih ada halaman di akhir
+            if (end < pages) {
+                if (end < pages - 1) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.padding = '0.5rem';
+                    container.appendChild(dots);
+                }
+                addPageButton(pages);
+            }
+        
+            // Tambah tombol "Next"
+            const next = document.createElement('button');
+            next.textContent = '→';
+            next.disabled = currentPage === pages;
+            next.onclick = () => { currentPage++; renderCards(); };
+            container.appendChild(next);
+        
+            // Helper untuk buat tombol halaman
+            function addPageButton(i) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                btn.disabled = i === currentPage;
+                btn.onclick = () => { currentPage = i; renderCards(); };
+                container.appendChild(btn);
+            }
+        }
+
+
+        let lightboxZoom = 1;
+        let lightboxImg = null;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
+
+        function showLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+            
+            // Reset zoom and position when opening
+            lightboxZoom = 1;
+            translateX = 0;
+            translateY = 0;
+            lightboxImg = img;
+            img.style.transform = 'scale(1) translate(0px, 0px)';
+            img.style.cursor = 'zoom-in';
+            
+            // Add click event for zoom in/out
+            img.onclick = function(e) {
+                e.stopPropagation();
+                if (lightboxZoom === 1) {
+                    lightboxZoom = 2;
+                    img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
+                    img.style.cursor = 'grab';
+                } else {
+                    lightboxZoom = 1;
+                    translateX = 0;
+                    translateY = 0;
+                    img.style.transform = 'scale(1) translate(0px, 0px)';
+                    img.style.cursor = 'zoom-in';
+                }
+            };
+            
+            // Add scroll wheel zoom
+            lightbox.onwheel = function(e) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    // Zoom in
+                    lightboxZoom = Math.min(lightboxZoom + 0.5, 4);
+                } else {
+                    // Zoom out
+                    lightboxZoom = Math.max(lightboxZoom - 0.5, 0.5);
+                }
+                img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
+                img.style.cursor = lightboxZoom > 1 ? 'grab' : 'zoom-in';
+            };
+            
+            // Add drag functionality like Discord - smooth and responsive
+            img.onmousedown = function(e) {
+                if (lightboxZoom > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    img.style.cursor = 'grabbing';
+                    img.style.transition = 'none'; // Disable transition for smooth dragging
+                    e.preventDefault();
+                }
+            };
+            
+            img.onmousemove = function(e) {
+                if (isDragging) {
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
+                }
+            };
+            
+            img.onmouseup = function() {
+                if (isDragging) {
+                    isDragging = false;
+                    img.style.cursor = 'grab';
+                    img.style.transition = 'transform 0.1s ease'; // Re-enable smooth transitions
+                }
+            };
+            
+            img.onmouseleave = function() {
+                if (isDragging) {
+                    isDragging = false;
+                    img.style.cursor = 'grab';
+                    img.style.transition = 'transform 0.1s ease';
+                }
+            };
+        }
+
+        // Initialize the app
+        function initApp() {
+            try {
+                renderControls();
+                renderCards();
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                document.getElementById('cardContainer').innerHTML = `
+                    <div class="loading">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Error loading bases. Please refresh the page.</p>
+                    </div>
+                `;
+            }
+        }
+
+
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button (RAF-throttled to avoid scroll jank)
+        let scrollTicking = false;
+        window.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                requestAnimationFrame(function() {
+                    const backToTop = document.getElementById('backToTop');
+                    if (window.pageYOffset > 300) {
+                        backToTop.classList.add('show');
+                    } else {
+                        backToTop.classList.remove('show');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        }, { passive: true });
+
+        // Dark Mode Functions
+        function toggleDarkMode() {
+            const body = document.body;
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                toggleBtn.classList.remove('dark');
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.add('dark');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        function initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            const body = document.body;
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+            
+            // Default to dark mode if no preference is saved
+            if (savedMode === null || savedMode === 'true') {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.add('dark');
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        function initializeEverything() {
+            // Initialize app
+            initApp();
+            
+            // Initialize dark mode
+            initDarkMode();
+            
+            // Add event listener to toggle button
+            const toggleBtn = document.querySelector('.dark-mode-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleDarkMode();
+                });
+            } else {
+                console.error('Dark mode toggle button not found');
+            }
+        }
+
+        // Initialize when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeEverything);
+        } else {
+            initializeEverything();
+        }
+    </script>
+</body>
+
+</html>
