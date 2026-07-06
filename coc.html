@@ -1182,6 +1182,7 @@
         }
 
 
+        // Global variables for lightbox zoom and pan
         let lightboxZoom = 1;
         let lightboxImg = null;
         let isDragging = false;
@@ -1189,6 +1190,14 @@
         let startY = 0;
         let translateX = 0;
         let translateY = 0;
+
+        // Mobile touch variables
+        let initialTouchDistance = 0;
+        let initialZoom = 1;
+        let isMultiTouch = false;
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTimes = 0;
 
         function showLightbox(src) {
             const lightbox = document.getElementById('lightbox');
@@ -1203,38 +1212,51 @@
             lightboxImg = img;
             img.style.transform = 'scale(1) translate(0px, 0px)';
             img.style.cursor = 'zoom-in';
+        }
 
-            // Add click event for zoom in/out
+        function initLightboxEvents() {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            if (!lightbox || !img) return;
+
+            // Close lightbox when clicking background
+            lightbox.onclick = function (e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            };
+
+            // Mouse Zoom (Click)
             img.onclick = function (e) {
                 e.stopPropagation();
+                toggleZoom();
+            };
+
+            function toggleZoom() {
                 if (lightboxZoom === 1) {
-                    lightboxZoom = 2;
-                    img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
-                    img.style.cursor = 'grab';
+                    lightboxZoom = 2; // Tap 1x perbesar 2x
+                    translateX = 0;
+                    translateY = 0;
                 } else {
                     lightboxZoom = 1;
                     translateX = 0;
                     translateY = 0;
-                    img.style.transform = 'scale(1) translate(0px, 0px)';
-                    img.style.cursor = 'zoom-in';
                 }
-            };
+                updateImageTransform();
+            }
 
-            // Add scroll wheel zoom
-            lightbox.onwheel = function (e) {
-                e.preventDefault();
-                if (e.deltaY < 0) {
-                    // Zoom in
-                    lightboxZoom = Math.min(lightboxZoom + 0.5, 4);
-                } else {
-                    // Zoom out
-                    lightboxZoom = Math.max(lightboxZoom - 0.5, 0.5);
+            function updateImageTransform() {
+                if (img) {
+                    if (lightboxZoom <= 1) {
+                        translateX = 0;
+                        translateY = 0;
+                    }
+                    img.style.transform = `scale(${lightboxZoom}) translate(${translateX / lightboxZoom}px, ${translateY / lightboxZoom}px)`;
+                    img.style.cursor = lightboxZoom > 1 ? 'grab' : 'zoom-in';
                 }
-                img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
-                img.style.cursor = lightboxZoom > 1 ? 'grab' : 'zoom-in';
-            };
+            }
 
-            // Add drag functionality like Discord - smooth and responsive
+            // Mouse Drag
             img.onmousedown = function (e) {
                 if (lightboxZoom > 1) {
                     isDragging = true;
@@ -1246,29 +1268,111 @@
                 }
             };
 
-            img.onmousemove = function (e) {
-                if (isDragging) {
+            window.addEventListener('mousemove', function (e) {
+                if (isDragging && lightboxZoom > 1) {
                     translateX = e.clientX - startX;
                     translateY = e.clientY - startY;
-                    img.style.transform = `scale(${lightboxZoom}) translate(${translateX}px, ${translateY}px)`;
+                    updateImageTransform();
                 }
-            };
+            });
 
-            img.onmouseup = function () {
-                if (isDragging) {
-                    isDragging = false;
-                    img.style.cursor = 'grab';
-                    img.style.transition = 'transform 0.1s ease'; // Re-enable smooth transitions
-                }
-            };
-
-            img.onmouseleave = function () {
+            window.addEventListener('mouseup', function () {
                 if (isDragging) {
                     isDragging = false;
                     img.style.cursor = 'grab';
                     img.style.transition = 'transform 0.1s ease';
                 }
+            });
+
+            // Mouse Scroll Wheel Zoom
+            lightbox.onwheel = function (e) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    lightboxZoom = Math.min(lightboxZoom + 0.5, 4); // Max 4x
+                } else {
+                    lightboxZoom = Math.max(lightboxZoom - 0.5, 1); // Min 1x
+                }
+                updateImageTransform();
             };
+
+            // Mobile Touch Events
+            img.addEventListener('touchstart', function (e) {
+                if (e.touches.length === 1) {
+                    // Single finger: drag or tap detection
+                    isDragging = true;
+                    isMultiTouch = false;
+                    startX = e.touches[0].clientX - translateX;
+                    startY = e.touches[0].clientY - translateY;
+                    
+                    // Tap detection coordinates
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    touchStartTimes = Date.now();
+                    
+                    img.style.transition = 'none'; // Disable transitions for smooth movement
+                } else if (e.touches.length === 2) {
+                    // Two fingers: pinch zoom
+                    isDragging = false;
+                    isMultiTouch = true;
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    initialTouchDistance = Math.hypot(dx, dy);
+                    initialZoom = lightboxZoom;
+                    img.style.transition = 'none';
+                }
+            }, { passive: true });
+
+            img.addEventListener('touchmove', function (e) {
+                if (isDragging && !isMultiTouch && lightboxZoom > 1) {
+                    // Pan image
+                    if (e.cancelable) e.preventDefault();
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateImageTransform();
+                } else if (isMultiTouch && e.touches.length === 2) {
+                    // Pinch zoom
+                    if (e.cancelable) e.preventDefault();
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    const currentDistance = Math.hypot(dx, dy);
+                    if (initialTouchDistance > 0) {
+                        const factor = currentDistance / initialTouchDistance;
+                        // Limit zoom to max 4x and min 0.8x for standard pinch interaction
+                        lightboxZoom = Math.min(Math.max(initialZoom * factor, 0.8), 4);
+                        updateImageTransform();
+                    }
+                }
+            }, { passive: false });
+
+            img.addEventListener('touchend', function (e) {
+                img.style.transition = 'transform 0.1s ease'; // Re-enable smooth transitions
+                
+                if (isMultiTouch) {
+                    isMultiTouch = false;
+                    // Snap back if zoom is less than 1
+                    if (lightboxZoom < 1) {
+                        lightboxZoom = 1;
+                        translateX = 0;
+                        translateY = 0;
+                        updateImageTransform();
+                    }
+                } else if (isDragging) {
+                    isDragging = false;
+                    
+                    // Tap detection
+                    if (e.changedTouches.length > 0) {
+                        const diffX = Math.abs(e.changedTouches[0].clientX - touchStartX);
+                        const diffY = Math.abs(e.changedTouches[0].clientY - touchStartY);
+                        const timeDiff = Date.now() - touchStartTimes;
+                        
+                        if (diffX < 10 && diffY < 10 && timeDiff < 300) {
+                            // Tap detected! Toggle zoom between 1x and 2x
+                            e.preventDefault();
+                            toggleZoom();
+                        }
+                    }
+                }
+            }, { passive: false });
         }
 
         // Initialize the app
@@ -1355,6 +1459,9 @@
 
             // Initialize dark mode
             initDarkMode();
+
+            // Initialize lightbox event listeners (both desktop and mobile)
+            initLightboxEvents();
 
             // Add event listener to toggle button
             const toggleBtn = document.querySelector('.dark-mode-toggle');
