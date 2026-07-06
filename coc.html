@@ -9,6 +9,28 @@
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            --text-color: #ffffff;
+            --container-bg: rgba(20, 20, 20, 0.95);
+            --border-color: rgba(135, 206, 235, 0.2);
+            --accent-color: #87ceeb;
+            --accent-hover: #4a90e2;
+            --accent-shadow: rgba(135, 206, 235, 0.3);
+            --select-bg: rgba(40, 40, 40, 0.9);
+            --select-border: #555555;
+            --card-bar-gradient: linear-gradient(90deg, #87ceeb, #4a90e2);
+            --builder-bg: rgba(135, 206, 235, 0.1);
+            --builder-border: rgba(135, 206, 235, 0.3);
+            --date-color: #cccccc;
+            --date-hover: #87ceeb;
+            --btn-gradient: linear-gradient(135deg, #1e3a5f, #2d5a8b);
+            --btn-gradient-hover: linear-gradient(135deg, #2d5a8b, #1e3a5f);
+            --pagination-bg: rgba(30, 58, 95, 0.9);
+            --pagination-border: rgba(135, 206, 235, 0.3);
+            --lightbox-bg: rgba(0, 0, 0, 0.95);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,67 +39,32 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--bg-gradient);
             min-height: 100vh;
             padding: 1rem;
-            color: #333;
+            color: var(--text-color);
         }
 
         .header {
             text-align: center;
             margin-bottom: 2rem;
-            color: white;
+            color: var(--text-color);
             position: relative;
-        }
-
-        .dark-mode-toggle {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            z-index: 1000;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            pointer-events: auto;
-        }
-
-        .dark-mode-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .dark-mode-toggle.dark {
-            background: linear-gradient(135deg, #e6a23c, #d69e2e);
         }
 
         .header h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: glow 1.5s ease-out 1;
         }
 
         @keyframes glow {
             from {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 transform: scale(1);
             }
-
             to {
                 text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5);
                 transform: scale(1.02);
@@ -96,7 +83,6 @@
                 opacity: 0;
                 transform: translateY(30px) scale(0.95);
             }
-
             to {
                 opacity: 0.9;
                 transform: translateY(0) scale(1);
@@ -104,13 +90,13 @@
         }
 
         .controls {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
@@ -127,38 +113,38 @@
 
         .control-group label {
             font-weight: 500;
-            color: #555;
+            color: var(--accent-color);
             font-size: 0.9rem;
         }
 
         .controls select {
             padding: 0.6rem 1rem;
-            border: 2px solid #e1e5e9;
+            border: 2px solid var(--select-border);
             border-radius: 12px;
-            background: white;
+            background: var(--select-bg);
             font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
-            color: #333;
+            color: var(--text-color);
             cursor: pointer;
             transition: all 0.3s ease;
             min-width: 120px;
         }
 
         .controls select:hover {
-            border-color: #667eea;
+            border-color: var(--accent-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 4px 12px var(--accent-shadow);
         }
 
         .controls select:active {
             transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 2px 8px var(--accent-shadow);
         }
 
         .controls select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
             transform: translateY(-1px);
         }
 
@@ -172,12 +158,12 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -192,7 +178,6 @@
                 opacity: 0;
                 transform: translateY(20px) scale(0.95);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -206,18 +191,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: var(--card-bar-gradient);
             pointer-events: none;
         }
 
         @keyframes shimmer {
-
-            0%,
-            100% {
+            0%, 100% {
                 opacity: 1;
                 transform: translateX(0);
             }
-
             50% {
                 opacity: 0.7;
                 transform: translateX(2px);
@@ -226,45 +208,45 @@
 
         .card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .card:hover .builder {
-            background: rgba(102, 126, 234, 0.15);
-            border-color: rgba(102, 126, 234, 0.5);
+            background: rgba(135, 206, 235, 0.15);
+            border-color: rgba(135, 206, 235, 0.5);
             transform: scale(1.02);
         }
 
         .card:hover::before {
             animation: shimmer 1s ease-in-out infinite;
-            background: linear-gradient(90deg, #764ba2, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4a90e2, #87ceeb, #4a90e2);
         }
 
         .card h2 {
             margin: 0 0 0.4rem 0;
             font-size: 1.8rem;
             font-weight: 700;
-            color: #333;
+            color: var(--text-color);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .card:hover h2 {
-            color: #667eea;
+            color: var(--accent-color);
             transform: scale(1.05);
-            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+            text-shadow: 0 2px 4px var(--accent-shadow);
         }
 
         .builder {
             margin: 0.2rem 0 0.3rem 0;
-            background: rgba(102, 126, 234, 0.08);
-            color: #667eea;
+            background: var(--builder-bg);
+            color: var(--accent-color);
             padding: 0.2rem 0.6rem;
             border-radius: 10px;
             font-size: 0.7rem;
             font-weight: 400;
             text-align: center;
-            border: 1px solid rgba(102, 126, 234, 0.2);
+            border: 1px solid var(--builder-border);
             transition: all 0.3s ease;
             display: inline-block;
             opacity: 0.8;
@@ -273,14 +255,14 @@
         .upload-date {
             font-size: 0.75rem;
             margin-bottom: 0.8rem;
-            color: #555;
+            color: var(--date-color);
             font-weight: 400;
             transition: all 0.3s ease;
             opacity: 0.9;
         }
 
         .card:hover .upload-date {
-            color: #999;
+            color: var(--date-hover);
             transform: scale(1.02);
             font-weight: 500;
         }
@@ -292,7 +274,7 @@
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
@@ -315,14 +297,14 @@
 
         .card img:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             filter: brightness(1.1) contrast(1.05);
         }
 
         .download {
             margin-top: 1rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background: var(--btn-gradient);
+            color: var(--accent-color);
             padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 25px;
@@ -334,7 +316,7 @@
             text-decoration: none;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px var(--accent-shadow);
             position: relative;
             overflow: hidden;
         }
@@ -361,10 +343,10 @@
 
         .download:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px var(--accent-shadow);
             text-decoration: none;
             color: white;
-            background: linear-gradient(135deg, #764ba2, #667eea);
+            background: var(--btn-gradient-hover);
         }
 
         .download:hover i {
@@ -374,19 +356,12 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
+            0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0) scale(1);
             }
-
             40% {
                 transform: translateY(-3px) scale(1.1);
             }
-
             60% {
                 transform: translateY(-1px) scale(1.05);
             }
@@ -394,7 +369,7 @@
 
         .download:active {
             transform: translateY(0);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px var(--accent-shadow);
         }
 
         .pagination {
@@ -409,9 +384,10 @@
 
         .pagination button {
             padding: 0.6rem 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--pagination-border);
+            background: var(--pagination-bg);
             border-radius: 12px;
+            color: var(--accent-color);
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             cursor: pointer;
@@ -420,24 +396,24 @@
         }
 
         .pagination button:hover:not(:disabled) {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: var(--btn-gradient);
             color: white;
-            border-color: #667eea;
+            border-color: var(--accent-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px var(--accent-shadow);
         }
 
         .pagination button:active:not(:disabled) {
             transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 2px 8px var(--accent-shadow);
         }
 
         .pagination button:disabled {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: var(--btn-gradient);
             color: white;
-            border-color: #667eea;
+            border-color: var(--accent-color);
             cursor: not-allowed;
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 2px 8px var(--accent-shadow);
         }
 
         #lightbox {
@@ -447,7 +423,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.9);
+            background: var(--lightbox-bg);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -471,12 +447,10 @@
 
         #lightbox span {
             position: fixed;
-            /* <— ubah absolute jadi fixed */
             top: 1.5rem;
-            /* sedikit lebih dekat ke pojok */
             right: 1.5rem;
             font-size: 2rem;
-            color: white;
+            color: var(--accent-color);
             cursor: pointer;
             background: rgba(0, 0, 0, 0.6);
             width: 45px;
@@ -488,12 +462,11 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             z-index: 1100;
-            /* <— pastikan di atas gambar */
         }
-
 
         #lightbox span:hover {
             background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
             transform: scale(1.1);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
         }
@@ -513,7 +486,7 @@
         .loading {
             text-align: center;
             padding: 3rem;
-            color: white;
+            color: var(--accent-color);
             font-size: 1.2rem;
             animation: fadeIn 0.5s ease;
         }
@@ -526,13 +499,8 @@
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .loading p {
@@ -541,13 +509,10 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
+            0%, 100% {
                 opacity: 0.7;
                 transform: scale(1);
             }
-
             50% {
                 opacity: 1;
                 transform: scale(1.05);
@@ -555,27 +520,28 @@
         }
 
         .stats {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1rem;
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
             margin-bottom: 1rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             animation: slideIn 1s ease-out 0.6s both;
         }
 
         .stats span {
             margin: 0 1rem;
             font-weight: 500;
-            color: #667eea;
+            color: var(--accent-color);
             transition: all 0.3s ease;
         }
 
         .stats span:hover {
-            color: #764ba2;
+            color: #ffffff;
             transform: scale(1.05);
-            text-shadow: 0 2px 4px rgba(118, 75, 162, 0.3);
+            text-shadow: 0 2px 4px var(--accent-shadow);
         }
 
         @media (max-width: 768px) {
@@ -624,7 +590,6 @@
                 opacity: 0;
                 transform: translateY(15px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -633,7 +598,6 @@
 
         /* ===== MOBILE PERFORMANCE: Disable heavy GPU effects ===== */
         @media (max-width: 768px) {
-
             .controls,
             .card,
             .back-to-top,
@@ -655,7 +619,6 @@
 
         /* ===== ACCESSIBILITY: Respect user's reduced motion preference ===== */
         @media (prefers-reduced-motion: reduce) {
-
             *,
             *::before,
             *::after {
@@ -669,7 +632,7 @@
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: var(--btn-gradient);
             color: white;
             width: 50px;
             height: 50px;
@@ -679,7 +642,7 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px var(--accent-shadow);
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
@@ -688,13 +651,13 @@
 
         .back-to-top:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #764ba2, #667eea);
+            box-shadow: 0 8px 20px var(--accent-shadow);
+            background: var(--btn-gradient-hover);
         }
 
         .back-to-top:active {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px var(--accent-shadow);
         }
 
         .back-to-top i {
@@ -717,195 +680,23 @@
                 opacity: 0;
                 transform: scale(0.3) translateY(20px) rotate(180deg);
             }
-
             50% {
                 opacity: 1;
                 transform: scale(1.05) translateY(-5px) rotate(0deg);
             }
-
             70% {
                 transform: scale(0.9) translateY(0) rotate(0deg);
             }
-
             100% {
                 opacity: 1;
                 transform: scale(1) translateY(0) rotate(0deg);
             }
-        }
-
-        /* Dark Mode Styles - June Update: Dark Days Theme */
-        body.dark-mode {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            color: #ffffff;
-        }
-
-        body.dark-mode .header {
-            color: #ffffff;
-        }
-
-        body.dark-mode .header h1 {
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        body.dark-mode .controls {
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid rgba(135, 206, 235, 0.2);
-        }
-
-        body.dark-mode .control-group label {
-            color: #87ceeb;
-        }
-
-        body.dark-mode .controls select {
-            background: rgba(40, 40, 40, 0.9);
-            border-color: #555555;
-            color: #ffffff;
-        }
-
-        body.dark-mode .controls select:hover {
-            border-color: #87ceeb;
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
-        }
-
-        body.dark-mode .controls select:focus {
-            border-color: #87ceeb;
-            box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
-        }
-
-        body.dark-mode .card {
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid rgba(135, 206, 235, 0.2);
-        }
-
-        body.dark-mode .card::before {
-            background: linear-gradient(90deg, #87ceeb, #4a90e2);
-        }
-
-        body.dark-mode .card h2 {
-            color: #ffffff;
-        }
-
-        body.dark-mode .card:hover h2 {
-            color: #87ceeb;
-            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .builder {
-            background: rgba(135, 206, 235, 0.1);
-            color: #87ceeb;
-            border: 1px solid rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .card:hover .builder {
-            background: rgba(135, 206, 235, 0.15);
-            border-color: rgba(135, 206, 235, 0.5);
-        }
-
-        body.dark-mode .upload-date {
-            color: #cccccc;
-        }
-
-        body.dark-mode .card:hover .upload-date {
-            color: #87ceeb;
-        }
-
-        body.dark-mode .download {
-            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
-            color: #87ceeb;
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .download:hover {
-            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
-            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
-        }
-
-        body.dark-mode .pagination button {
-            background: rgba(30, 58, 95, 0.9);
-            border-color: rgba(135, 206, 235, 0.3);
-            color: #87ceeb;
-        }
-
-        body.dark-mode .pagination button:hover:not(:disabled) {
-            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
-            color: white;
-            border-color: #87ceeb;
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .pagination button:disabled {
-            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
-            color: white;
-            border-color: #87ceeb;
-            box-shadow: 0 2px 8px rgba(135, 206, 235, 0.2);
-        }
-
-        body.dark-mode .back-to-top {
-            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .back-to-top:hover {
-            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
-            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
-        }
-
-        body.dark-mode .stats {
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid rgba(135, 206, 235, 0.2);
-            border-radius: 25px;
-            padding: 0.8rem 1.5rem;
-            color: #87ceeb;
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.2);
-        }
-
-        body.dark-mode .stats span {
-            color: #87ceeb;
-        }
-
-        body.dark-mode .stats span:hover {
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .loading {
-            color: #87ceeb;
-        }
-
-        body.dark-mode #lightbox {
-            background: rgba(0, 0, 0, 0.95);
-        }
-
-        body.dark-mode #lightbox span {
-            color: #87ceeb;
-        }
-
-        body.dark-mode #lightbox span:hover {
-            color: #ffffff;
-        }
-
-        body.dark-mode .dark-mode-toggle {
-            background: linear-gradient(135deg, #1e3a5f, #2d5a8b);
-            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
-        }
-
-        body.dark-mode .dark-mode-toggle:hover {
-            background: linear-gradient(135deg, #2d5a8b, #1e3a5f);
-            box-shadow: 0 6px 20px rgba(135, 206, 235, 0.4);
-        }
-
-        body.dark-mode .dark-mode-toggle.dark {
-            background: linear-gradient(135deg, #e6a23c, #d69e2e);
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <button class="dark-mode-toggle" type="button">
-            <i class="fas fa-moon"></i>
-        </button>
         <h1><i class="fas fa-shield-alt"></i> COC Base Viewer</h1>
         <p>Browse and download the best Clash of Clans bases</p>
     </div>
@@ -1418,62 +1209,13 @@
             }
         }, { passive: true });
 
-        // Dark Mode Functions
-        function toggleDarkMode() {
-            const body = document.body;
-            const toggleBtn = document.querySelector('.dark-mode-toggle');
-            const icon = toggleBtn.querySelector('i');
-
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                toggleBtn.classList.remove('dark');
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('darkMode', 'false');
-            } else {
-                body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
-
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('darkMode');
-            const body = document.body;
-            const toggleBtn = document.querySelector('.dark-mode-toggle');
-            const icon = toggleBtn.querySelector('i');
-
-            // Default to dark mode if no preference is saved
-            if (savedMode === null || savedMode === 'true') {
-                body.classList.add('dark-mode');
-                toggleBtn.classList.add('dark');
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
-
         // Initialize everything when DOM is loaded
         function initializeEverything() {
             // Initialize app
             initApp();
 
-            // Initialize dark mode
-            initDarkMode();
-
             // Initialize lightbox event listeners (both desktop and mobile)
             initLightboxEvents();
-
-            // Add event listener to toggle button
-            const toggleBtn = document.querySelector('.dark-mode-toggle');
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleDarkMode();
-                });
-            } else {
-                console.error('Dark mode toggle button not found');
-            }
         }
 
         // Initialize when DOM is loaded
