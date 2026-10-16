@@ -4,94 +4,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clash of Clans Link Converter</title>
+
+    <title>CoC Link Converter</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
             margin: 0;
-            padding: 40px;
+            padding: 20px;
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background: #f3f4f6;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .container {
-            max-width: 700px;
-            margin: auto;
+            width: 100%;
+            max-width: 600px;
+
+            margin-top: 30px;
+
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            padding: 24px;
+
+            border-radius: 16px;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         h2 {
-            margin-top: 0;
+            margin: 0 0 8px;
+
+            font-size: 24px;
+
+            text-align: center;
         }
 
-        .input-group {
+        .description {
+            text-align: center;
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* INPUT */
+
+        .input-wrapper {
+            position: relative;
+
+            width: 100%;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+
+            height: 52px;
+
+            padding: 0 52px 0 15px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+        }
+
+        .input-wrapper input:focus {
+            border-color: #6366f1;
+
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+
+        /* PASTE ICON */
+
+        .paste-button {
+            position: absolute;
+
+            right: 6px;
+            top: 6px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #f0f0f0;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
             display: flex;
-            gap: 8px;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.2s;
         }
 
-        input {
-            flex: 1;
+        .paste-button:hover {
+            background: #e5e5e5;
+        }
+
+        .paste-button:active {
+            transform: scale(0.92);
+        }
+
+
+        /* RESULT */
+
+        #result {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 16px;
+
+            border-radius: 12px;
+
+            background: #f7f7f7;
+
+            border: 1px solid #e5e5e5;
+        }
+
+        .result-title {
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .result-link {
+            display: block;
+
             padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 7px;
+
+            background: white;
+
+            border-radius: 9px;
+
+            border: 1px solid #ddd;
+
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            word-break: break-all;
+        }
+
+        .result-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* COPY BUTTON */
+
+        .copy-button {
+            width: 100%;
+
+            margin-top: 10px;
+
+            height: 45px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #111827;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .copy-button:active {
+            transform: scale(0.98);
+        }
+
+
+        /* ERROR */
+
+        .error {
+            color: #dc2626;
+
             font-size: 14px;
         }
 
-        button {
-            padding: 12px 18px;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            background: #333;
-            color: white;
+
+        /* MOBILE */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                margin-top: 10px;
+
+                padding: 20px;
+
+                border-radius: 14px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            .description {
+                font-size: 13px;
+            }
+
+            .input-wrapper input {
+                height: 50px;
+
+                font-size: 14px;
+            }
+
+            .result-link {
+                font-size: 13px;
+            }
+
         }
 
-        button:hover {
-            background: #555;
-        }
-
-        #result {
-            margin-top: 25px;
-            padding: 15px;
-            background: #f7f7f7;
-            border-radius: 8px;
-            word-break: break-all;
-            display: none;
-        }
-
-        #result a {
-            color: #0066cc;
-            font-weight: bold;
-        }
-
-        .error {
-            color: red;
-        }
     </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <h2>Clash of Clans Link Converter</h2>
+    <h2>⚔️ CoC Link Converter</h2>
 
-    <div class="input-group">
+    <div class="description">
+        Paste link Clash of Clans untuk membuka dengan Atrasis Ultimate
+    </div>
+
+
+    <!-- INPUT -->
+
+    <div class="input-wrapper">
 
         <input
             type="text"
             id="cocLink"
-            placeholder="Paste link Clash of Clans di sini..."
+            placeholder="Paste Clash of Clans link..."
+            autocomplete="off"
         >
 
-        <button onclick="pasteLink()">Paste</button>
-
-        <button onclick="processLink()">Proses</button>
+        <button
+            class="paste-button"
+            onclick="pasteLink()"
+            title="Paste"
+            aria-label="Paste link"
+        >
+            📋
+        </button>
 
     </div>
+
+
+    <!-- RESULT -->
 
     <div id="result"></div>
 
@@ -100,87 +302,238 @@
 
 <script>
 
+const input = document.getElementById("cocLink");
+const result = document.getElementById("result");
+
+
+/*
+    PASTE DARI TOMBOL
+*/
+
 async function pasteLink() {
 
     try {
 
         const text = await navigator.clipboard.readText();
 
-        document.getElementById("cocLink").value = text;
+        if (!text) {
 
-        // langsung proses setelah paste
+            showError("Clipboard kosong.");
+
+            return;
+        }
+
+        input.value = text;
+
         processLink();
 
     } catch (error) {
 
-        alert("Browser tidak mengizinkan akses clipboard. Silakan paste manual.");
+        showError(
+            "Tidak bisa membaca clipboard. Silakan paste manual."
+        );
 
     }
 
 }
 
 
+/*
+    PROSES LINK
+*/
+
 function processLink() {
 
-    const input = document.getElementById("cocLink").value.trim();
-
-    const result = document.getElementById("result");
+    const inputValue = input.value.trim();
 
 
-    if (!input) {
+    if (!inputValue) {
 
-        result.style.display = "block";
-
-        result.innerHTML = '<span class="error">Masukkan link terlebih dahulu.</span>';
+        result.style.display = "none";
 
         return;
-
     }
 
 
     try {
 
-        const url = new URL(input);
+        const url = new URL(inputValue);
 
-        // Ambil bagian query
-        const query = url.search;
 
-        // Buat link atrasis-ultimate
-        const newLink = "atrasis-ultimate://" + query.substring(1);
+        /*
+            Pastikan link Clash of Clans
+        */
 
+        if (
+            !url.hostname.includes("link.clashofclans.com")
+        ) {
+
+            showError(
+                "Link bukan link Clash of Clans."
+            );
+
+            return;
+        }
+
+
+        /*
+            Ambil query
+
+            Contoh:
+
+            ?action=OpenLayout&id=TH18%3AHV...
+
+            menjadi:
+
+            action=OpenLayout&id=TH18%3AHV...
+        */
+
+        const query = url.search.substring(1);
+
+
+        if (!query) {
+
+            showError("Format link tidak valid.");
+
+            return;
+        }
+
+
+        /*
+            Ubah menjadi Atrasis Ultimate
+        */
+
+        const newLink =
+            "atrasis-ultimate://" + query;
+
+
+        /*
+            Tampilkan result
+        */
 
         result.style.display = "block";
 
         result.innerHTML = `
-            <strong>Result:</strong><br><br>
-            <a href="${newLink}">
+
+            <div class="result-title">
+                Result
+            </div>
+
+            <a
+                class="result-link"
+                href="${newLink}"
+            >
                 ${newLink}
             </a>
+
+            <button
+                class="copy-button"
+                onclick="copyResult('${escapeForJS(newLink)}')"
+            >
+                📋 Copy Link
+            </button>
+
         `;
+
 
     } catch (error) {
 
-        result.style.display = "block";
-
-        result.innerHTML = `
-            <span class="error">
-                Link tidak valid.
-            </span>
-        `;
+        showError(
+            "Format link tidak valid."
+        );
 
     }
 
 }
 
 
-// Kalau user paste menggunakan Ctrl + V,
-// langsung proses otomatis
+/*
+    COPY RESULT
+*/
 
-document.getElementById("cocLink").addEventListener("paste", function() {
+async function copyResult(link) {
+
+    try {
+
+        await navigator.clipboard.writeText(link);
+
+        const button =
+            document.querySelector(".copy-button");
+
+        button.innerText = "✓ Copied!";
+
+
+        setTimeout(() => {
+
+            button.innerText = "📋 Copy Link";
+
+        }, 1500);
+
+
+    } catch (error) {
+
+        alert("Gagal menyalin link.");
+
+    }
+
+}
+
+
+/*
+    ERROR
+*/
+
+function showError(message) {
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+        <div class="error">
+            ⚠️ ${message}
+        </div>
+    `;
+
+}
+
+
+/*
+    Escape sederhana untuk onclick
+*/
+
+function escapeForJS(text) {
+
+    return text
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/"/g, "&quot;");
+
+}
+
+
+/*
+    JIKA USER PASTE MANUAL
+    DENGAN CTRL + V
+*/
+
+input.addEventListener("paste", function() {
 
     setTimeout(() => {
+
         processLink();
+
     }, 100);
+
+});
+
+
+/*
+    JIKA USER MENGETIK / MENGUBAH INPUT
+*/
+
+input.addEventListener("input", function() {
+
+    // Bisa diaktifkan kalau ingin
+    // langsung memproses saat mengetik.
 
 });
 
@@ -188,4 +541,3 @@ document.getElementById("cocLink").addEventListener("paste", function() {
 
 </body>
 </html>
-
