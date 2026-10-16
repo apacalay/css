@@ -1,0 +1,191 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans Link Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #333;
+            color: white;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            word-break: break-all;
+            display: none;
+        }
+
+        #result a {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Clash of Clans Link Converter</h2>
+
+    <div class="input-group">
+
+        <input
+            type="text"
+            id="cocLink"
+            placeholder="Paste link Clash of Clans di sini..."
+        >
+
+        <button onclick="pasteLink()">Paste</button>
+
+        <button onclick="processLink()">Proses</button>
+
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+async function pasteLink() {
+
+    try {
+
+        const text = await navigator.clipboard.readText();
+
+        document.getElementById("cocLink").value = text;
+
+        // langsung proses setelah paste
+        processLink();
+
+    } catch (error) {
+
+        alert("Browser tidak mengizinkan akses clipboard. Silakan paste manual.");
+
+    }
+
+}
+
+
+function processLink() {
+
+    const input = document.getElementById("cocLink").value.trim();
+
+    const result = document.getElementById("result");
+
+
+    if (!input) {
+
+        result.style.display = "block";
+
+        result.innerHTML = '<span class="error">Masukkan link terlebih dahulu.</span>';
+
+        return;
+
+    }
+
+
+    try {
+
+        const url = new URL(input);
+
+        // Ambil bagian query
+        const query = url.search;
+
+        // Buat link atrasis-ultimate
+        const newLink = "atrasis-ultimate://" + query.substring(1);
+
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+            <strong>Result:</strong><br><br>
+            <a href="${newLink}">
+                ${newLink}
+            </a>
+        `;
+
+    } catch (error) {
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+            <span class="error">
+                Link tidak valid.
+            </span>
+        `;
+
+    }
+
+}
+
+
+// Kalau user paste menggunakan Ctrl + V,
+// langsung proses otomatis
+
+document.getElementById("cocLink").addEventListener("paste", function() {
+
+    setTimeout(() => {
+        processLink();
+    }, 100);
+
+});
+
+</script>
+
+</body>
+</html>
+```
