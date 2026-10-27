@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perbesar ukuran PDF</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1b2430;--muted:#5d6b7c;--line:#d5dbe3;--accent:#1f5fbf;--accent-text:#fff;--ok:#1c7a46}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--card:#1b212a;--text:#e7ebf0;--muted:#9aa7b6;--line:#2f3844;--accent:#6aa3f5;--accent-text:#0b1320;--ok:#5fd08e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px 16px}
+main{max-width:520px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+h1{font-size:1.35rem;margin:0 0 4px}
+p.sub{margin:0 0 20px;color:var(--muted);font-size:.95rem}
+label{display:block;font-weight:600;margin:16px 0 6px}
+#drop{display:block;border:2px dashed var(--line);border-radius:8px;padding:22px 12px;text-align:center;cursor:pointer;color:var(--muted)}
+#drop:hover,#drop:focus-within,#drop.over{border-color:var(--accent)}
+#drop input{position:absolute;opacity:0;width:1px;height:1px}
+input[type=number]{width:120px;padding:8px 10px;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px}
+button,a.btn{display:inline-block;margin-top:20px;padding:10px 18px;font:inherit;font-weight:600;color:var(--accent-text);background:var(--accent);border:0;border-radius:6px;cursor:pointer;text-decoration:none}
+button:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#info{margin-top:16px;font-size:.95rem}
+.ok{color:var(--ok)}.err{color:#c0392b}
+</style>
+</head>
+<body>
+<main>
+  <h1>Perbesar ukuran PDF</h1>
+  <p class="sub">Menyisipkan lampiran pengisi ke dalam PDF. Halaman dan teks tidak berubah. Semua diproses di browser kamu, file tidak diunggah ke mana pun.</p>
+
+  <label for="file">File PDF</label>
+  <label id="drop" for="file"><span id="dropText">Klik atau seret file PDF ke sini</span><input id="file" type="file" accept="application/pdf"></label>
+
+  <label for="target">Ukuran target (MB)</label>
+  <input id="target" type="number" min="0.1" step="0.1" value="2">
+
+  <button id="go" disabled>Perbesar PDF</button>
+  <div id="info" role="status"></div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+let srcBytes = null, srcName = "";
+const MB = 1024 * 1024;
+
+function setFile(f){
+  if(!f) return;
+  if(f.type !== "application/pdf" && !f.name.toLowerCase().endsWith(".pdf")){
+    $("info").innerHTML = '<span class="err">File harus berformat PDF.</span>'; return;
+  }
+  srcName = f.name;
+  $("dropText").textContent = f.name + " (" + (f.size / 1024).toFixed(0) + " KB)";
+  f.arrayBuffer().then(b => { srcBytes = new Uint8Array(b); $("go").disabled = false; $("info").textContent = ""; });
+}
+$("file").addEventListener("change", e => setFile(e.target.files[0]));
+["dragover","dragenter"].forEach(ev => $("drop").addEventListener(ev, e => { e.preventDefault(); $("drop").classList.add("over"); }));
+["dragleave","drop"].forEach(ev => $("drop").addEventListener(ev, e => { e.preventDefault(); $("drop").classList.remove("over"); }));
+$("drop").addEventListener("drop", e => setFile(e.dataTransfer.files[0]));
+
+function randomBytes(n){
+  const out = new Uint8Array(n);
+  for(let i = 0; i < n; i += 65536) crypto.getRandomValues(out.subarray(i, Math.min(i + 65536, n)));
+  return out;
+}
+
+async function build(padSize){
+  const doc = await PDFLib.PDFDocument.load(srcBytes, { ignoreEncryption: true });
+  if(padSize > 0){
+    await doc.attach(randomBytes(padSize), "pengisi.bin", {
+      mimeType: "application/octet-stream",
+      description: "Lampiran pengisi ukuran",
+      creationDate: new Date(), modificationDate: new Date()
+    });
+  }
+  return await doc.save();
+}
+
+$("go").addEventListener("click", async () => {
+  const target = Math.round(parseFloat($("target").value) * MB);
+  const info = $("info");
+  if(!srcBytes || !(target > 0)) return;
+  if(target <= srcBytes.length){
+    info.innerHTML = '<span class="err">Ukuran target harus lebih besar dari ukuran file asli (' + (srcBytes.length / MB).toFixed(2) + ' MB).</span>'; return;
+  }
+  $("go").disabled = true;
+  info.textContent = "Memproses...";
+  try{
+    let pad = target - srcBytes.length, out;
+    for(let i = 0; i < 4; i++){
+      out = await build(pad);
+      const diff = target - out.length;
+      if(Math.abs(diff) < 2048) break;
+      pad = Math.max(1, pad + diff);
+    }
+    const url = URL.createObjectURL(new Blob([out], { type: "application/pdf" }));
+    const name = srcName.replace(/\.pdf$/i, "") + "-besar.pdf";
+    info.innerHTML = '<span class="ok">Selesai: ' + (srcBytes.length / MB).toFixed(2) + ' MB menjadi ' + (out.length / MB).toFixed(2) + ' MB.</span><br>';
+    const a = document.createElement("a");
+    a.className = "btn"; a.href = url; a.download = name; a.textContent = "Unduh " + name;
+    info.appendChild(a);
+  }catch(e){
+    info.innerHTML = '<span class="err">Gagal memproses PDF: ' + (e.message || e) + '. Jika PDF terkunci dengan kata sandi, buka kuncinya dulu.</span>';
+  }
+  $("go").disabled = false;
+});
+</script>
+</body>
+</html>
